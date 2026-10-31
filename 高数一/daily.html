@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>每日一练 · 山东专升本高数一</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+.anline{margin-top:8px;font-size:13px;line-height:1.9;color:var(--ink-2)}
+.dl-dist{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;
+  padding:15px 17px;margin-bottom:22px}
+.dl-dist-t{font-size:13.5px;font-weight:700;color:var(--blue-900);margin-bottom:11px}
+.dl-chips{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}
+.dl-chip{background:#fff;border:1px solid var(--line);border-radius:9px;
+  padding:7px 11px;font-size:12.5px;color:var(--ink-3);
+  display:flex;align-items:center;gap:7px}
+.dl-chip b{margin-left:auto;color:var(--blue-800);font-size:13.5px}
+.pbar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.pbar a{background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none}
+.pbar a:hover{border-color:var(--blue-400);color:var(--blue-700)}
+.pbar a.dis{opacity:.4;pointer-events:none}
+.pbar button{background:#fff;border:1px solid var(--line);border-radius:8px;
+  padding:7px 15px;font-size:13px;color:var(--ink-2);cursor:pointer;font-family:inherit}
+.pbar button:hover{border-color:var(--blue-400);color:var(--blue-700)}
+.pbar .sp{margin-left:auto}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1 id="h1">每日一练</h1>
+    <div class="sub" id="sub"></div>
+  </div>
+</div>
+
+<div class="main narrow">
+
+  <div class="pbar">
+    <a id="pBack" href="每日一练.html">← 全部</a>
+    <a id="pPrev" href="#">← 上一天</a>
+    <a id="pNext" href="#">下一天 →</a>
+    <span class="sp"></span>
+    <button id="dlAll">全部看答案</button>
+    <button id="dlNone">全部收起</button>
+  </div>
+
+  <div id="main"></div>
+</div>
+
+<div class="footer">山东专升本高数一</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script>window.GS_STATIC_MAP={"__home": "每日一练.html"};</script>
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script src="data/questions.js"></script>
+<script src="data/daily100.js"></script>
+<script src="../assets/pg_daily100.js"></script>
+<script src="../assets/mathrender.js"></script>
+<script>(function(){"use strict";var e=document.getElementById("top");
+if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+</body>
+</html>

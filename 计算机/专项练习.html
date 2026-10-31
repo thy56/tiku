@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>专项练习 · 山东专升本计算机</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+.tk-sec{margin:30px 0 12px;font-size:15.5px;font-weight:700;color:var(--blue-900);
+  display:flex;align-items:center;gap:9px;padding-bottom:9px;border-bottom:1px solid var(--line-2)}
+.tk-sec .n{font-size:11.5px;font-weight:400;color:var(--ink-4)}
+.tk-sec .tag{margin-left:auto;font-size:11.5px;font-weight:400;color:var(--ink-4)}
+.today{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;
+  padding:18px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.today .t{font-size:13px;color:var(--ink-3);line-height:1.7}
+.today .t b{color:var(--blue-800);font-size:15px;display:block;margin-bottom:3px}
+.today .go{margin-left:auto;background:var(--blue-600);color:#fff;text-decoration:none;
+  padding:9px 20px;border-radius:9px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.today .go:hover{background:var(--blue-700)}
+.nodata{background:var(--bg-2);border:1px dashed var(--line);border-radius:14px;
+  padding:16px 20px;font-size:13px;color:var(--ink-4);line-height:1.8}
+</style>
+
+<style>
+.kp-sum{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;
+  padding:16px 20px;font-size:13px;color:var(--ink-3);line-height:1.85;margin-bottom:6px}
+.kp-sum b{color:var(--blue-800)}
+.kp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:14px}
+.kp-card{padding:16px 18px}
+.kp-card h3{font-size:15px;margin:0 0 7px;line-height:1.45;color:var(--blue-900)}
+.kp-card .dc{font-size:12.5px;color:var(--ink-3);line-height:1.65;margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.kp-card .mt{margin-top:10px;font-size:12px;color:var(--ink-4);
+  display:flex;justify-content:space-between;align-items:center;gap:8px}
+.kp-card .mt .go{color:var(--blue-600);font-weight:600}
+.kp-sec{margin:26px 0 12px;font-size:15px;font-weight:700;color:var(--blue-900);
+  display:flex;align-items:baseline;gap:9px;padding-bottom:8px;border-bottom:1px solid var(--line-2)}
+.kp-sec .n{font-size:12px;font-weight:400;color:var(--ink-4);margin-left:auto}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1>专项练习 <span class="badge">53 个考点 · 312 题</span></h1>
+    <div class="sub">按考点组织：每张卡是一块考点，写明所含知识点，点进去做该章练习。先补薄弱考点，再刷整章。</div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="kp-sum">全科 <b>10 章</b>、<b>53 个考点</b>、<b>227 条知识点</b>、<b>312 道题</b>。每张卡是一块考点，列出所含知识点，点进去做本章对应练习。</div>
+  <div class="kp-sec">第 1 章 · 信息技术与计算机文化<span class="n">1 个考点 · 33 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch1.html">
+      <h3>信息技术与计算机文化（14分左右）</h3>
+      <div class="dc">数据与信息、信息技术、信息社会、计算机文化的内涵、知名企业的兴衰变化过程 等</div>
+      <div class="mt"><span>22 个知识点 · 14 分</span><span class="go">本章 33 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 2 章 · Windows 10 操作系统<span class="n">3 个考点 · 24 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch2.html">
+      <h3>操作系统</h3>
+      <div class="dc">操作系统是一种控制和管理计算机系统的硬件…、操作系统是用户和计算机的接口，同时也是计…、操作系统的主要功能、现代操作系统主要特征、进程、线程、作业的关系：作业不一定是进程… 等</div>
+      <div class="mt"><span>6 个知识点</span><span class="go">本章 24 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch2.html">
+      <h3>国产操作系统</h3>
+      <div class="dc">华为的欧拉与鸿蒙：跨平台创新、统信软件的 UOS：国产化与普及化</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 24 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch2.html">
+      <h3>Windows 10</h3>
+      <div class="dc">主要特征：、睡眠：只有内存在供电，其他都不耗电、休眠：“假关机” 将数据从 CPU 中存…、Windows 10 是一个多任务操作系统，但是某一时刻，只能有一个窗口处于活动状态。、窗口 等</div>
+      <div class="mt"><span>16 个知识点</span><span class="go">本章 24 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 3 章 · Word 2016 文字处理<span class="n">5 个考点 · 40 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch3.html">
+      <h3>Microsoft Office 2016</h3>
+      <div class="dc">Microsoft Office 2016</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 40 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch3.html">
+      <h3>Office 2016应用程序界面结构</h3>
+      <div class="dc">标题栏、功能区、文档编辑区、状态栏、Backstage 视图</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 40 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch3.html">
+      <h3>Office 2016的文档操作</h3>
+      <div class="dc">创建文件、保存文档、文档的打开</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 40 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch3.html">
+      <h3>Word 2016</h3>
+      <div class="dc">概述、基本操作、文档格式化与排版、表格制作、图文混排 等</div>
+      <div class="mt"><span>8 个知识点</span><span class="go">本章 40 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch3.html">
+      <h3>快捷键</h3>
+      <div class="dc">快捷键</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 40 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 4 章 · 电子表格处理（Excel 2016）<span class="n">8 个考点 · 38 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>基本操作</h3>
+      <div class="dc">基本操作、窗口界面、工作簿与工作表、单元格区域的管理、输入和输出数据 等</div>
+      <div class="mt"><span>8 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>公式与函数</h3>
+      <div class="dc">公式、函数</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>格式化工作表</h3>
+      <div class="dc">格式化单元格及单元格区域、单元格的行高和列宽、自动套用格式和条件格式</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>数据处理</h3>
+      <div class="dc">数据清单、排序和筛选、分类汇总、合并计算、数据透视表 等</div>
+      <div class="mt"><span>7 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>使用图表</h3>
+      <div class="dc">使用图表、创建图表、图表样式、图表编辑、格式化表格 等</div>
+      <div class="mt"><span>8 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>迷你图</h3>
+      <div class="dc">迷你图</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>打印</h3>
+      <div class="dc">打印、页面选项卡、页边距选项卡、页眉/页脚选项</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch4.html">
+      <h3>快捷键</h3>
+      <div class="dc">快捷键</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 5 章 · 演示文稿制作（PowerPoint 2016）<span class="n">6 个考点 · 20 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch5.html">
+      <h3>基础</h3>
+      <div class="dc">基础、演示文稿视图</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 20 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch5.html">
+      <h3>幻灯片设计</h3>
+      <div class="dc">幻灯片设计、新建和组织幻灯片、编辑幻灯片、格式化幻灯片、插入对象 等</div>
+      <div class="mt"><span>7 个知识点</span><span class="go">本章 20 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch5.html">
+      <h3>幻灯片外观修饰</h3>
+      <div class="dc">背景与大小、主题、母版</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 20 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch5.html">
+      <h3>动画效果和动画设置</h3>
+      <div class="dc">设置幻灯片动画效果、设置幻灯片切换效果、设置超链接、动作设置、动作按钮</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 20 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch5.html">
+      <h3>播放和打印演示文稿</h3>
+      <div class="dc">设置放映方式、放映演示文稿、排练计时、打印演示文稿</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 20 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch5.html">
+      <h3>演示文稿的导出</h3>
+      <div class="dc">创建PDF/XPS文档、创建视频、将演示文稿打包成CD、创建讲义、更改文件类型</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 20 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 6 章 · 数据库技术<span class="n">5 个考点 · 26 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch6.html">
+      <h3>基础</h3>
+      <div class="dc">基础、数据库的基本概念、数据管理技术的发展、数据库系统的组成、数据库模型 等</div>
+      <div class="mt"><span>6 个知识点</span><span class="go">本章 26 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch6.html">
+      <h3>数据库管理系统（DBMS）</h3>
+      <div class="dc">数据库管理系统（DBMS）、组成和功能、层次结构、常见的数据管理系统</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 26 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch6.html">
+      <h3>结构化查询语言SQL</h3>
+      <div class="dc">结构化查询语言SQL、数据查询、数据定义（是对表结构框架的操作）、数据操纵（对表记录操作，修改记录值）</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 26 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch6.html">
+      <h3>非关系型数据库（NoSQL）</h3>
+      <div class="dc">非关系型数据库（NoSQL）、特点、兴起原因</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 26 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch6.html">
+      <h3>扩展</h3>
+      <div class="dc">数据库的三级模式二级映射和三级范式基础知…、NoSQL与关系数据库的比较</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 26 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 7 章 · 计算机网络基础<span class="n">7 个考点 · 38 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>基础</h3>
+      <div class="dc">基础、计算机网络概述、数据通信基础知识、计算机网络的组成、计算机网络的功能 等</div>
+      <div class="mt"><span>7 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>系统</h3>
+      <div class="dc">网络硬件、网络软件、计算机网络协议与体系结构</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>internet基础</h3>
+      <div class="dc">internet基础、Internet的IP 地址及域名系统、Internet 的接入方式、Internet 应用</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>网页基本概念</h3>
+      <div class="dc">网站、服务器与浏览器、网页</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>网页制作</h3>
+      <div class="dc">网页制作</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>HTML简介</h3>
+      <div class="dc">HTML简介、HTML 语言概述、常用的 HTML 标记</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch7.html">
+      <h3>信息检索</h3>
+      <div class="dc">信息检索、信息检索的概念、网络搜索引擎、信息检索的方法</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 8 章 · 数字多媒体技术基础<span class="n">3 个考点 · 11 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch8.html">
+      <h3>概述</h3>
+      <div class="dc">媒体与数字多媒体技术、数字多媒体技术的特点、数字多媒体系统中的媒体元素、数字多媒体相关技术、数字多媒体技术的应用领域</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 11 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch8.html">
+      <h3>系统组成</h3>
+      <div class="dc">系统组成、多媒体个人计算机硬件系统、多媒体个人计算机软件系统</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 11 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch8.html">
+      <h3>常用的多媒体制作软件</h3>
+      <div class="dc">图形/图像处理软件、视频处理软件、音频处理软件、动画处理软件</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 11 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 9 章 · 信息安全<span class="n">6 个考点 · 38 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch9.html">
+      <h3>概述</h3>
+      <div class="dc">概述、信息安全意识、信息伦理与职业行为自律、计算机犯罪、常见信息安全技术</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch9.html">
+      <h3>计算机病毒</h3>
+      <div class="dc">病毒的定义与特点、病毒的传播途径、病毒的类型、几种常见的计算机病毒、病毒的清除</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch9.html">
+      <h3>防火墙</h3>
+      <div class="dc">防火墙的概念、防火墙的类型、防火墙的优缺点</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch9.html">
+      <h3>Windows10操作系统安全</h3>
+      <div class="dc">Windows10操作系统安全</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch9.html">
+      <h3>移动互联网安全</h3>
+      <div class="dc">移动互联网安全</div>
+      <div class="mt"><span>1 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch9.html">
+      <h3>电子商务和电子政务安全</h3>
+      <div class="dc">电子商务安全、电子政务安全</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 38 题 →</span></div>
+    </a>
+  </div>
+
+  <div class="kp-sec">第 10 章 · 新一代信息技术<span class="n">9 个考点 · 44 题</span></div>
+  <div class="kp-grid">
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>虚拟现实和增强现实</h3>
+      <div class="dc">虚拟现实、增强现实</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>云计算与高性能计算</h3>
+      <div class="dc">云计算、高性能计算</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>物联网技术</h3>
+      <div class="dc">基础与发展、特征、物联网的意义、趋势及应用、物联网的体系结构及关键技术</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>大数据概念</h3>
+      <div class="dc">大数据的概念、大数据的特征、大数据产生的根源、大数据思维</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>区块链概念</h3>
+      <div class="dc">区块链概念、区块链的起源与发展、区块链的分类、区块链的特点、区块链的工作过程及解决的核心问题</div>
+      <div class="mt"><span>5 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>移动通信</h3>
+      <div class="dc">移动通信、5G 移动通信的技术特点</div>
+      <div class="mt"><span>2 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>量子信息</h3>
+      <div class="dc">量子信息、量子信息的发展历程、量子信息的技术特点、量子信息的应用领域</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>元宇宙</h3>
+      <div class="dc">元宇宙、元宇宙的基本特征、元宇宙的技术</div>
+      <div class="mt"><span>3 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+    <a class="home-card kp-card" href="pr-ch10.html">
+      <h3>人工智能</h3>
+      <div class="dc">人工智能、人工智能分类、人工智能的关键技术、人工智能的技术特点与典型应用</div>
+      <div class="mt"><span>4 个知识点</span><span class="go">本章 44 题 →</span></div>
+    </a>
+  </div>
+
+
+</div>
+
+<div class="footer">山东专升本计算机</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = {"mode": "rot", "items": [{"title": "第 1 章 · 信息技术与计算机文化", "desc": "本章 33 题。"}, {"title": "第 2 章 · Windows 10 操作系统", "desc": "本章 24 题。"}, {"title": "第 3 章 · Word 2016 文字处理", "desc": "本章 40 题。"}, {"title": "第 4 章 · 电子表格处理（Excel 2016）", "desc": "本章 38 题。"}, {"title": "第 5 章 · 演示文稿制作（PowerPoint 2016）", "desc": "本章 20 题。"}, {"title": "第 6 章 · 数据库技术", "desc": "本章 26 题。"}, {"title": "第 7 章 · 计算机网络基础", "desc": "本章 38 题。"}, {"title": "第 8 章 · 数字多媒体技术基础", "desc": "本章 11 题。"}, {"title": "第 9 章 · 信息安全", "desc": "本章 38 题。"}, {"title": "第 10 章 · 新一代信息技术", "desc": "本章 44 题。"}]};
+  var START = "2026-10-29";
+  var PREFIX = "pr-ch";
+  function today(){
+    var d = new Date();
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+  function parse(s){
+    var p = s.split("-");
+    return new Date(+p[0], +p[1]-1, +p[2]);
+  }
+  var t = today(), title, desc, href, idx;
+
+  if (DATA.mode === "date") {
+    var hit = null;
+    for (var i=0;i<DATA.items.length;i++){
+      var it = DATA.items[i];
+      if (!hit && parse(it.date) <= t && t < parse(it.end)) hit = it;
+    }
+    if (!hit) hit = DATA.items[0];
+    title = "第 " + hit.no + " 组 · " + hit.theme;
+    desc  = "覆盖 " + hit.date + " ~ " + hit.end + "，共 0 题。";
+    href  = PREFIX + hit.no + ".html";
+  } else {
+    var days = Math.floor((t - parse(START)) / 86400000);
+    if (days < 0) days = 0;
+    idx = (days % DATA.items.length);
+    var it2 = DATA.items[idx];
+    title = it2.title;
+    desc  = it2.desc;
+    href  = PREFIX + (idx+1) + ".html";
+  }
+  var a = document.getElementById("dayTitle");
+  if (a) a.textContent = title;
+  var b = document.getElementById("dayDesc");
+  if (b) b.textContent = desc;
+  var c = document.getElementById("dayGo");
+  if (c) c.href = href;
+  var d2 = document.getElementById("dayTag");
+  if (d2) d2.textContent = "今天 " + (t.getMonth()+1) + " 月 " + t.getDate() + " 日";
+})();
+</script>
+</body>
+</html>

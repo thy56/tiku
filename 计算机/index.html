@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山东专升本计算机 · 知识体系与题库</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="header">
+  <h1> 山东专升本计算机</h1>
+  <p>
+    <span class="sub" id="s1">10 章</span>
+    <span class="sub" id="s2">227 个知识点</span>
+    <span class="sub" id="s3">115 道例题</span>
+    <span class="sub" id="s4">312 道题</span>
+  </p>
+</div>
+
+<div class="main">
+
+  <div class="home-sec"> 三个独立分册</div>
+  <div class="home-grid">
+    <a class="home-card" href="know.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.6" width="18" height="11.8" rx="1.9"/><path d="M9 20h6M12 16.4V20"/></svg></div>
+      <h3>知识体系</h3>
+      <div class="dc">按考纲八章组织，从「信息技术与计算机文化」到「数字多媒体技术」。每条知识点含定义、对比要点与考点提示。</div>
+      <div class="mt"><span>先看懂再做题</span><span><b id="c-k">227</b> 个知识点</span></div>
+    </a>
+    <a class="home-card" href="examples.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 17.4a6 6 0 1 1 5.2 0"/><path d="M9.8 20.2h4.4M10.6 17.4h2.8"/></svg></div>
+      <h3>例题精讲</h3>
+      <div class="dc">与知识体系<b>分开存放</b>。41 类题型共 115 例，每题按「题目 → 思路 → 详解 → 易错点」展开。</div>
+      <div class="mt"><span>学完一章看例题</span><span><b id="c-e">115</b> 例</span></div>
+    </a>
+    <a class="home-card" href="%E9%A2%98%E5%BA%93.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.4 6.6h11.2M8.4 12h11.2M8.4 17.4h11.2"/><path d="M4.6 6.6h.01M4.6 12h.01M4.6 17.4h.01"/></svg></div>
+      <h3>题库中心</h3>
+      <div class="dc">三块合一：<b>专项</b>按 10 章切分，<b>每日一练</b>按日期自动轮转，<b>真题</b>按年份进入整卷（2022—2024）。</div>
+      <div class="mt"><span>专项 · 每日一练 · 真题</span><span><b id="c-zt">195</b> 题</span></div>
+    </a>
+  </div>
+
+  <div class="home-sec"> 八章分值分布</div>
+  <div class="home-grid" id="chapGrid"></div>
+
+  
+
+</div>
+
+<div class="footer">山东专升本计算机</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+(function(){
+"use strict";
+var NAV = window.JS_NAV || {chapters:[], stats:{}};
+var S = NAV.stats || {};
+
+function set(id, v){ var el = document.getElementById(id); if(el && v != null) el.textContent = v; }
+set("c-k", S.items);
+set("c-e", S.examples);
+set("c-q", S.questions); set("c-zt", S.zhenti);
+set("s1", (S.chapters||0) + " 章");
+set("s2", (S.items||0) + " 个知识点");
+set("s3", (S.examples||0) + " 道例题");
+set("s4", (S.questions||0) + " 道题");
+
+/* 章节卡片 */
+var g = document.getElementById("chapGrid");
+if(g && NAV.chapters){
+  g.innerHTML = (NAV.chapters||[]).map(function(c){
+    var short = c.title.replace(/^第.章　?/, "");
+    return '<a class="home-card" href="know.html#ch'+c.no+'">' +
+      '<div class="ic" style="font-size:15px;font-weight:700;color:#2e74b5">' + c.no + '</div>' +
+      '<h3>' + short + '</h3>' +
+      '<div class="dc">知识点 <b>' + c.items + '</b> · 考点 <b>' + c.points + '</b><br>' +
+      '例题 ' + c.examples + ' 道 · 题库 ' + c.questions + ' 题</div>' +
+      '</a>';
+  }).join("");
+}
+})();
+</script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>

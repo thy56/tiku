@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文学常识 · 山东专升本语文</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1> 文学常识 <span class="badge" id="hBadge">1292 条</span></h1>
+    <div class="sub" id="hSub">板块 → 大类 → 细分 → 条目，逐层深入</div>
+  </div>
+</div>
+
+<div class="bar" id="bar" style="display:none">
+  <div class="bar-in">
+    <div class="search">
+      <input id="q" type="search" placeholder="在当前细分里搜索…" autocomplete="off">
+    </div>
+    <div class="tabs">
+      <a class="tab" id="backUp" href="changshi.html">↑ 上一层</a>
+    </div>
+  </div>
+</div>
+
+<div class="main narrow">
+
+  <nav class="cs-crumb" id="crumb"></nav>
+
+  <div id="subbar"></div>
+  <div id="main"></div>
+  <div id="pager"></div>
+
+</div>
+
+<div class="footer">山东专升本语文</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script src="data/d_base.js"></script>
+<script src="data/d_sections.js"></script>
+<script>
+(function(){
+"use strict";
+
+var KN = window.YUWEN_DATA || {sections:[]};
+var SECS = KN.sections || [];
+
+/* ---------------- 参数 ---------------- */
+function qsv(k){
+  var m = new RegExp("[?&]" + k + "=([^&]*)").exec(location.search || "");
+  return m ? decodeURIComponent(m[1]) : null;
+}
+var CH = qsv("ch");
+var G  = qsv("g");
+var S3 = qsv("s");
+
+var KEY = "";
+
+/* ---------------- 工具 ---------------- */
+function esc(s){
+  return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+function url(o){
+  var p = "changshi.html";
+  var q = [];
+  if(o.ch) q.push("ch=" + encodeURIComponent(o.ch));
+  if(o.g)  q.push("g="  + encodeURIComponent(o.g));
+  if(o.s)  q.push("s="  + encodeURIComponent(o.s));
+  return q.length ? p + "?" + q.join("&") : p;
+}
+function has(v){ return String(v==null?"":v).toLowerCase().indexOf(KEY) !== -1; }
+function hl(s){
+  var t = esc(s);
+  if(!KEY) return t;
+  var re = new RegExp("("+KEY.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi");
+  return t.replace(re,'<span class="hl">$1</span>');
+}
+
+/* ============================================================
+   归并表：条目 → (大类, 细分)
+   ============================================================ */
+var ERA = [
+  ["先秦",       ["先秦","春秋","战国","西周","殷商","夏","上古"]],
+  ["秦汉",       ["秦","秦代","汉代","西汉","东汉","东汉末","汉末三国","汉"]],
+  ["魏晋南北朝", ["魏晋","魏晋南北朝","三国","三国魏","三国蜀","三国吴","西晋","东晋",
+                  "南北朝","南朝宋","南朝齐","南朝梁","南朝陈","北魏","北朝"]],
+  ["隋唐五代",   ["隋","唐","初唐","盛唐","中唐","晚唐","五代","五代南唐","晚唐五代","南唐"]],
+  ["宋",         ["宋","北宋","南宋","南宋后期","宋金"]],
+  ["元",         ["元","金元","元末明初","金"]],
+  ["明",         ["明","明初"]],
+  ["清",         ["清","清末","清末民初"]],
+  ["近代以来",   ["近代","现代","当代"]]
+];
+var ERA_ORDER = ERA.map(function(x){ return x[0]; });
+var ERA_MAP = {};
+ERA.forEach(function(p){ p[1].forEach(function(n){ ERA_MAP[n] = p[0]; }); });
+
+var THEME = [
+  ["时令民俗", ["纪年纪时","节令民俗"]],
+  ["称谓礼仪", ["称谓避讳","年龄称谓","谦敬辞令"]],
+  ["制度礼法", ["科举官制","职官制度","礼制婚丧","宗法家族"]],
+  ["典籍文献", ["经史子集","四书五经","史书","科技典籍"]],
+  ["思想学说", ["思想学派","宗教哲学","六义"]],
+  ["文体流派", ["文体知识","文学流派","小说"]],
+  ["名物杂识", ["地理方位","书画艺术","音乐名物","其他"]]
+];
+var THEME_ORDER = THEME.map(function(x){ return x[0]; });
+var THEME_MAP = {};
+THEME.forEach(function(p){ p[1].forEach(function(n){ THEME_MAP[n] = p[0]; }); });
+
+var AREA = [
+  ["古希腊罗马", ["古希腊","古罗马"]],
+  ["意大利",     ["意大利"]],
+  ["英国",       ["英国","爱尔兰"]],
+  ["法国",       ["法国"]],
+  ["俄苏",       ["俄国","苏联"]],
+  ["美国",       ["美国"]],
+  ["德语区",     ["德国","奥地利"]],
+  ["其他国别",   ["西班牙","日本","印度","阿拉伯","挪威","丹麦","哥伦比亚","瑞典",
+                  "波兰","捷克","匈牙利","希腊","瑞士","比利时","葡萄牙"]]
+];
+var AREA_ORDER = AREA.map(function(x){ return x[0]; });
+var AREA_MAP = {};
+AREA.forEach(function(p){ p[1].forEach(function(n){ AREA_MAP[n] = p[0]; }); });
+
+var D_ORDER = ["作家作品","流派思潮","作品与刊物"];
+
+function dType(it){
+  var cat = (it.cat || "").trim();
+  if(cat === "作家作品") return "作家作品";
+  if(cat === "文学流派") return "流派思潮";
+  var head = String(it.item || "").split("：")[0].split("；")[0].slice(0, 22);
+  if(/(社|派|思潮|运动|作家群|诗群|文学潮流|烈士)$/.test(head)) return "流派思潮";
+  if(/(社|派|思潮|运动|作家群|诗群)/.test(head)) return "流派思潮";
+  if(head.indexOf("《") === 0) return "作品与刊物";
+  return "作家作品";
+}
+
+function ladder(sec, it){
+  var k = sec.key;
+  if(k === "A"){
+    var d = String(it.dynasty || "").trim();
+    if(!d) return { l2:"未系朝代", l3:"待考补遗" };
+    return { l2: ERA_MAP[d] || "其他朝代", l3: d };
+  }
+  if(k === "B"){
+    var t = String(it.theme || it.cat || "").trim() || "未分类";
+    return { l2: THEME_MAP[t] || "其他常识", l3: t };
+  }
+  if(k === "C"){
+    var c = String(it.dynasty || "").trim();
+    if(!c) return { l2:"国别待考", l3:"未标国别" };
+    return { l2: AREA_MAP[c] || "其他国别", l3: c };
+  }
+  if(k === "D"){
+    var p = String(it.dynasty || "").trim() || "现代";
+    return { l2: p, l3: dType(it) };
+  }
+  return { l2:"其他", l3:"其他" };
+}
+
+function orderOf(sec, names){
+  var ref = sec.key === "A" ? ERA_ORDER
+          : sec.key === "B" ? THEME_ORDER
+          : sec.key === "C" ? AREA_ORDER
+          : D_ORDER;
+  var tail = [];
+  Object.keys(names).forEach(function(n){
+    if(ref.indexOf(n) === -1) tail.push(n);
+  });
+  return ref.filter(function(n){ return names[n]; }).concat(tail.sort());
+}
+
+/* 板块统计 */
+function secTree(sec){
+  var t = {}, c2 = {};
+  sec.items.forEach(function(it){
+    var g = ladder(sec, it);
+    (t[g.l2] = t[g.l2] || {});
+    (t[g.l2][g.l3] = t[g.l2][g.l3] || []).push(it);
+    c2[g.l2] = (c2[g.l2] || 0) + 1;
+  });
+  return { tree: t, order: orderOf(sec, c2), counts: c2 };
+}
+
+/* ============================================================
+   渲染
+   ============================================================ */
+var $crumb = document.getElementById("crumb");
+var $sub   = document.getElementById("subbar");
+var $main  = document.getElementById("main");
+var $pager = document.getElementById("pager");
+var $bar   = document.getElementById("bar");
+var $q     = document.getElementById("q");
+
+function crumb(parts){
+  var h = '<a href="changshi.html">文学常识</a>';
+  parts.forEach(function(p, i){
+    h += '<span class="cs-sep">›</span>';
+    if(p.href && i < parts.length - 1) h += '<a href="' + p.href + '">' + esc(p.t) + '</a>';
+    else h += '<span class="cs-cur">' + esc(p.t) + '</span>';
+  });
+  $crumb.innerHTML = h;
+}
+
+function statBar(list){
+  var h = '<div class="cst-top" style="margin-bottom:14px">';
+  h += '<span>';
+  h += list.map(function(x){ return x[0] + ' <b>' + x[1] + '</b>'; }).join(' · ');
+  h += '</span></div>';
+  return h;
+}
+
+function cardGrid(items){
+  var h = '<div class="chapidx">';
+  items.forEach(function(c){
+    h += '<a class="ci-card" href="' + c.href + '">';
+    h += '<div class="ci-no"' + (c.badge && String(c.badge).length > 2 ? ' style="font-size:12.5px"' : '') + '>' + esc(c.badge) + '</div>';
+    h += '<div class="ci-bd">';
+    h += '<h3>' + esc(c.title) + '</h3>';
+    if(c.desc) h += '<p>' + esc(c.desc) + '</p>';
+    h += '<div class="ci-st"><span><b>' + c.n + '</b> 条</span>';
+    if(c.sub != null) h += '<span><b>' + c.sub + '</b> 个细分</span>';
+    h += '</div></div><div class="ci-go">→</div></a>';
+  });
+  h += '</div>';
+  return h;
+}
+
+function pager(prev, next, up, upLabel){
+  var h = '<div class="chpager">';
+  h += prev
+    ? '<a class="cp-a prev" href="' + prev.href + '"><span>← 上一</span><b>' + esc(prev.label) + '</b></a>'
+    : '<span class="cp-a dis"><span>← 上一</span><b>已是第一个</b></span>';
+  h += '<a class="cp-a mid" href="' + up + '">' + esc(upLabel) + '</a>';
+  h += next
+    ? '<a class="cp-a next" href="' + next.href + '"><span>下一 →</span><b>' + esc(next.label) + '</b></a>'
+    : '<span class="cp-a dis"><span>下一 →</span><b>已是最后一个</b></span>';
+  h += '</div>';
+  return h;
+}
+
+function setHead(badge, sub){
+  document.getElementById("hBadge").textContent = badge;
+  document.getElementById("hSub").textContent = sub;
+}
+
+/* ---------- L0：板块列表 ---------- */
+function renderL0(){
+  $bar.style.display = "none";
+  crumb([{ t: "全部板块" }]);
+
+  var total = 0;
+  var items = SECS.map(function(s){
+    total += s.items.length;
+    var st = secTree(s);
+    return {
+      href: url({ ch: s.key }),
+      badge: s.key,
+      title: s.name,
+      desc: (s.desc ? s.desc + "。" : "") + "分 " + st.order.length + " 个大类",
+      n: s.items.length,
+      sub: st.order.length
+    };
+  });
+
+  $main.innerHTML = statBar([["板块", SECS.length], ["条目总数", total]]) + cardGrid(items);
+  $pager.innerHTML = "";
+  setHead(total + " 条", "共 " + total + " 条，分 " + SECS.length +
+          " 个板块。点板块进去看大类，再点大类看细分，最后看条目。");
+}
+
+/* ---------- L1：某板块的大类 ---------- */
+function renderL1(sec){
+  $bar.style.display = "none";
+  var st = secTree(sec);
+  crumb([{ t: "板块列表", href: url({}) }, { t: sec.name }]);
+
+  var totalSub = 0;
+  var items = st.order.map(function(l2){
+    var l3s = Object.keys(st.tree[l2]);
+    totalSub += l3s.length;
+    var cn = 0;
+    l3s.forEach(function(x){ cn += st.tree[l2][x].length; });
+    return {
+      href: url({ ch: sec.key, g: l2 }),
+      badge: l2.length > 2 ? "◆" : l2,
+      title: l2,
+      desc: l3s.slice(0, 8).join("、") + (l3s.length > 8 ? " 等" : ""),
+      n: cn,
+      sub: l3s.length
+    };
+  });
+
+  $main.innerHTML = statBar([["大类", st.order.length], ["细分", totalSub], ["条目", sec.items.length]])
+                  + cardGrid(items);
+  $pager.innerHTML = "";
+  setHead(sec.name + " · " + st.order.length + " 大类",
+    (sec.desc ? sec.desc + "。" : "") + "共 " + sec.items.length + " 条，分 " +
+    st.order.length + " 个大类、" + totalSub + " 个细分。点大类继续往下。");
+}
+
+/* ---------- L2：某大类的细分 ---------- */
+function renderL2(sec, l2){
+  $bar.style.display = "none";
+  var st = secTree(sec);
+  if(!st.tree[l2]){ renderL1(sec); return; }
+  crumb([{ t:"板块列表", href: url({}) },
+         { t: sec.name, href: url({ ch: sec.key }) },
+         { t: l2 }]);
+
+  var l3map = st.tree[l2];
+  var l3names = Object.keys(l3map).sort(function(a,b){ return l3map[b].length - l3map[a].length; });
+
+  var items = l3names.map(function(s3){
+    return {
+      href: url({ ch: sec.key, g: l2, s: s3 }),
+      badge: "·",
+      title: s3,
+      desc: "",
+      n: l3map[s3].length
+    };
+  });
+
+  $main.innerHTML = statBar([["细分", l3names.length], ["条目", st.counts[l2]]]) + cardGrid(items);
+
+  /* 同级翻页 */
+  var idx = st.order.indexOf(l2);
+  var prev = idx > 0 ? { href: url({ch:sec.key, g:st.order[idx-1]}), label: st.order[idx-1] } : null;
+  var next = idx < st.order.length-1 ? { href: url({ch:sec.key, g:st.order[idx+1]}), label: st.order[idx+1] } : null;
+  $pager.innerHTML = pager(prev, next, url({ ch: sec.key }), "返回大类");
+
+  setHead(l2 + " · " + l3names.length + " 细分",
+    sec.name + " → " + l2 + "，共 " + st.counts[l2] + " 条，分 " + l3names.length + " 个细分。");
+}
+
+/* ---------- L3：某细分的条目 ---------- */
+function renderL3(sec, l2, s3){
+  $bar.style.display = "";
+  var st = secTree(sec);
+  if(!st.tree[l2] || !st.tree[l2][s3]){ renderL2(sec, l2); return; }
+  crumb([{ t:"板块列表", href: url({}) },
+         { t: sec.name, href: url({ ch: sec.key }) },
+         { t: l2, href: url({ ch: sec.key, g: l2 }) },
+         { t: s3 }]);
+
+  var all = st.tree[l2][s3];
+  var items = KEY ? all.filter(function(it){
+    return has(it.item) || has(it.dynasty) || has(it.cat) || has(it.theme);
+  }) : all;
+
+  var h = statBar([["本细分", all.length + " 条"] + (KEY ? ["命中", items.length] : [])]);
+
+  if(!items.length){
+    h += '<div class="empty">本细分没有匹配「' + esc(KEY) + '」的条目</div>';
+  }else{
+    h += '<div class="cs-cat"><h3>' + esc(s3) + '（' + items.length + ' 条）</h3>';
+    items.forEach(function(it){
+      h += '<div class="cs-item" id="ci-' + esc(it.id||'') + '">' + hl(it.item) + '</div>';
+    });
+    h += '</div>';
+  }
+  $main.innerHTML = h;
+
+  /* 同级翻页：在同一个大类内按细分走 */
+  var sibs = Object.keys(st.tree[l2]).sort(function(a,b){ return st.tree[l2][b].length - st.tree[l2][a].length; });
+  var i = sibs.indexOf(s3);
+  var prev = i > 0 ? { href: url({ch:sec.key, g:l2, s:sibs[i-1]}), label: sibs[i-1] } : null;
+  var next = i < sibs.length-1 ? { href: url({ch:sec.key, g:l2, s:sibs[i+1]}), label: sibs[i+1] } : null;
+  $pager.innerHTML = pager(prev, next, url({ ch: sec.key, g: l2 }), "返回细分");
+
+  document.getElementById("backUp").href = url({ ch: sec.key, g: l2 });
+
+  setHead(s3 + " · " + all.length + " 条",
+    sec.name + " → " + l2 + " → " + s3 + "，共 " + all.length + " 条。");
+}
+
+/* ============================================================
+   启动
+   ============================================================ */
+var sec = null;
+if(CH){
+  sec = SECS.filter(function(s){ return String(s.key) === String(CH); })[0] || null;
+}
+
+if(sec && G && S3)      renderL3(sec, G, S3);
+else if(sec && G)       renderL2(sec, G);
+else if(sec)            renderL1(sec);
+else                    renderL0();
+
+/* 搜索：只在条目页生效，作用范围是当前细分 */
+if($q){
+  var timer = null;
+  $q.addEventListener("input", function(){
+    clearTimeout(timer);
+    var v = this.value;
+    timer = setTimeout(function(){
+      KEY = String(v || "").trim().toLowerCase();
+      if(sec && G && S3) renderL3(sec, G, S3);
+    }, 160);
+  });
+  if(!(sec && G && S3)){
+    $q.disabled = true;
+    $q.placeholder = "进到条目页后可搜索";
+  }
+}
+
+/* 回到顶部 */
+var t = document.getElementById("top");
+if(t){
+  window.addEventListener("scroll", function(){
+    t.classList.toggle("show", window.scrollY > 480);
+  }, {passive:true});
+  t.addEventListener("click", function(){ window.scrollTo({top:0, behavior:"smooth"}); });
+}
+})();
+</script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>

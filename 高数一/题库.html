@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>题库 · 山东专升本高数一</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+.tk-sec{margin:30px 0 12px;font-size:15.5px;font-weight:700;color:var(--blue-900);
+  display:flex;align-items:center;gap:9px;padding-bottom:9px;border-bottom:1px solid var(--line-2)}
+.tk-sec .n{font-size:11.5px;font-weight:400;color:var(--ink-4)}
+.tk-sec .tag{margin-left:auto;font-size:11.5px;font-weight:400;color:var(--ink-4)}
+.today{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;
+  padding:18px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.today .t{font-size:13px;color:var(--ink-3);line-height:1.7}
+.today .t b{color:var(--blue-800);font-size:15px;display:block;margin-bottom:3px}
+.today .go{margin-left:auto;background:var(--blue-600);color:#fff;text-decoration:none;
+  padding:9px 20px;border-radius:9px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.today .go:hover{background:var(--blue-700)}
+.nodata{background:var(--bg-2);border:1px dashed var(--line);border-radius:14px;
+  padding:16px 20px;font-size:13px;color:var(--ink-4);line-height:1.8}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1>题库 <span class="badge">8 章 · 427 题</span></h1>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="home-grid">
+  <a class="home-card" href="专项练习.html">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3.8" y="3.8" width="6.6" height="6.6" rx="1.4"/><rect x="13.6" y="3.8" width="6.6" height="6.6" rx="1.4"/><rect x="3.8" y="13.6" width="6.6" height="6.6" rx="1.4"/><rect x="13.6" y="13.6" width="6.6" height="6.6" rx="1.4"/></svg></div>
+    <h3>专项练习</h3>
+    <div class="dc">按知识板块切分，逐块专项突破</div>
+    <div class="mt"><span>按章节切分，共 8 章</span><span>8 个板块</span></div>
+  </a>
+  <a class="home-card" href="每日一练.html">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.4" width="16" height="14.6" rx="2.2"/><path d="M4 10h16M8.6 3.4v3.6M15.4 3.4v3.6"/></svg></div>
+    <h3>每日一练</h3>
+    <div class="dc">100 套模拟卷，每套 21 题（选择5 + 填空5 + 计算9 + 应用1 + 证明1）</div>
+    <div class="mt"><span>100 天</span><span>21 题/套</span></div>
+  </a>
+  <a class="home-card" href="历年真题.html">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.6h8.4L19 8.2v12.2H6z"/><path d="M14 3.6v4.8h5"/><path d="M9.2 13h6M9.2 16.4h4"/></svg></div>
+    <h3>历年真题</h3>
+    <div class="dc">2 套：2020 全套 21 题、2025 第 18–21 题</div>
+    <div class="mt"><span>2 套</span><span>25 题</span></div>
+  </a>
+  </div>
+
+</div>
+
+<div class="footer">山东专升本高数一</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = {"mode": "rot", "items": [{"title": "第 1 章 · 函数、极限和连续", "desc": "本章 70 题。"}, {"title": "第 2 章 · 一元函数微分学", "desc": "本章 51 题。"}, {"title": "第 3 章 · 一元函数积分学", "desc": "本章 50 题。"}, {"title": "第 4 章 · 向量代数与空间解析几何", "desc": "本章 37 题。"}, {"title": "第 5 章 · 多元函数微积分学", "desc": "本章 39 题。"}, {"title": "第 6 章 · 无穷级数", "desc": "本章 37 题。"}, {"title": "第 7 章 · 常微分方程", "desc": "本章 37 题。"}, {"title": "第 8 章 · 必备公式与难点题型", "desc": "本章 106 题。"}]};
+  var START = "2026-10-29";
+  var PREFIX = "pr-ch";
+  function today(){
+    var d = new Date();
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+  function parse(s){
+    var p = s.split("-");
+    return new Date(+p[0], +p[1]-1, +p[2]);
+  }
+  var t = today(), title, desc, href, idx;
+
+  if (DATA.mode === "date") {
+    var hit = null;
+    for (var i=0;i<DATA.items.length;i++){
+      var it = DATA.items[i];
+      if (!hit && parse(it.date) <= t && t < parse(it.end)) hit = it;
+    }
+    if (!hit) hit = DATA.items[0];
+    title = "第 " + hit.no + " 组 · " + hit.theme;
+    desc  = "覆盖 " + hit.date + " ~ " + hit.end + "，共 0 题。";
+    href  = PREFIX + hit.no + ".html";
+  } else {
+    var days = Math.floor((t - parse(START)) / 86400000);
+    if (days < 0) days = 0;
+    idx = (days % DATA.items.length);
+    var it2 = DATA.items[idx];
+    title = it2.title;
+    desc  = it2.desc;
+    href  = PREFIX + (idx+1) + ".html";
+  }
+  var a = document.getElementById("dayTitle");
+  if (a) a.textContent = title;
+  var b = document.getElementById("dayDesc");
+  if (b) b.textContent = desc;
+  var c = document.getElementById("dayGo");
+  if (c) c.href = href;
+  var d2 = document.getElementById("dayTag");
+  if (d2) d2.textContent = "今天 " + (t.getMonth()+1) + " 月 " + t.getDate() + " 日";
+})();
+</script>
+</body>
+</html>

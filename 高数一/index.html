@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山东专升本高数一 · 知识体系与题库</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="header">
+  <h1>山东专升本高数一</h1>
+  <p>
+    <span class="sub" id="s1">141 个知识点</span>
+    <span class="sub" id="s2">220 条公式</span>
+    <span class="sub" id="s3">134 道例题</span>
+    <span class="sub" id="s4">321 道题</span>
+  </p>
+</div>
+
+<div class="main">
+
+  <div class="home-sec">学习主线和三个独立分册</div>
+  <div class="home-grid">
+    <a class="home-card" href="know.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 3.6c-1.9 0-2.9 1.2-2.9 3.2v10.4c0 2-1 3.2-2.9 3.2"/></svg></div>
+      <h3>知识体系</h3>
+      <div class="dc">第一章至第七章全覆盖：函数与极限 → 导数与微分 → 积分 → 空间解析几何 → 多元微积分 → 无穷级数 → 微分方程。每条配公式与考点提示。</div>
+      <div class="mt"><span>先看懂再做题</span><span><b id="c-k">141</b> 个知识点</span></div>
+    </a>
+
+    <a class="home-card" href="formulas.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M17.4 4.4H7.4l5.2 7.6-5.2 7.6h10"/></svg></div>
+      <h3>公式总表</h3>
+      <div class="dc">七章共 <b>405</b> 条公式按章分组索引，支持全文搜索、逐条复制、整章复制。与知识体系里的公式是两套：这里是可抄写的清单。</div>
+      <div class="mt"><span>记不住就查这里</span><span><b id="c-f">405</b> 条公式</span></div>
+    </a>
+
+    <a class="home-card" href="examples.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 17.4a6 6 0 1 1 5.2 0"/><path d="M9.8 20.2h4.4M10.6 17.4h2.8"/></svg></div>
+      <h3>例题精讲</h3>
+      <div class="dc">与知识体系<b>分开存放</b>。<b id="t-e">36</b> 类题型，每题按「题目 → 思路 → 详解 → 易错点」展开，覆盖8章典型考法。</div>
+      <div class="mt"><span>学完一节就看例题</span><span><b id="c-e">134</b> 例</span></div>
+    </a>
+
+    <a class="home-card" href="%E9%A2%98%E5%BA%93.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8.4 6.6h11.2M8.4 12h11.2M8.4 17.4h11.2"/><path d="M4.6 6.6h.01M4.6 12h.01M4.6 17.4h.01"/></svg></div>
+      <h3>题库中心</h3>
+      <div class="dc">三块合一：<b>专项</b>按 8 章切分，<b>每日一练</b>按日期自动轮转，<b>真题</b>待收集原卷后补入。</div>
+      <div class="mt"><span>专项 · 每日一练</span><span><b>321</b> 题</span></div>
+    </a>
+  </div>
+
+  <div class="home-sec">各章内容分布</div>
+  <div class="home-grid" id="chapGrid"></div>
+
+  
+
+</div>
+
+<div class="footer">山东专升本高数一</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>
+(function(){
+"use strict";
+var NAV = window.GS_NAV || {stats:{}};
+var S = NAV.stats || {};
+
+function set(id, v){ var el = document.getElementById(id); if(el && v != null) el.textContent = v; }
+
+set("c-k", S.items);
+set("c-f", 405);
+set("c-e", S.examples);
+set("c-q", S.questions);
+set("s1", (S.items||0) + " 个知识点");
+set("s2", (S.formulas||0) + " 条公式");
+set("s3", (S.examples||0) + " 道例题");
+set("s4", (S.questions||0) + " 道题");
+
+  /* 各章内容分布：动态渲染 */
+  (function(){
+    var g = document.getElementById("chapGrid");
+    if (!g || !NAV.chapters) return;
+    g.innerHTML = NAV.chapters.map(function(c){
+      var short = c.title.replace(/^第[一二三四五六七]章\u3000?/, "");
+      return '<div class="home-card" style="cursor:default">' +
+        '<div class="ic" style="font-size:13px;font-weight:700;color:#2b5f8f">' + c.no + '</div>' +
+        '<h3>' + short + '</h3>' +
+        '<div class="dc">' +
+          '知识点 <b>' + c.items + '</b> · 公式 ' + c.formulas + ' 条 · 考点 ' + c.points + ' 条<br>' +
+          '例题 ' + c.examples + ' 例 · 题库 ' + c.questions + ' 题' +
+        '</div>' +
+      '</div>';
+    }).join("");
+  })();
+
+  /* 题型数与题库数 */
+  set("t-e", S.topics);
+  set("t-q", S.questions);
+})();
+</script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>

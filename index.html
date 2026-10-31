@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>山东专升本 · 四科总站</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta name="description" content="山东专升本四科学习站：语文、英语、高数一、计算机。题库 4566 道，知识点与例题精讲。">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+</head>
+<body>
+
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="index.html"><i class="bi" style="background:linear-gradient(135deg,#193c56,#2b6486)"><svg viewBox='0 0 24 24' fill='currentColor'><rect x='2.6' y='13' width='3.6' height='6.4' rx='1'/><rect x='7.9' y='10' width='3.6' height='9.4' rx='1'/><rect x='13.2' y='7' width='3.6' height='12.4' rx='1'/><rect x='18.5' y='4' width='3.6' height='15.4' rx='1'/></svg></i>四科总览</a>
+    <nav class="top-nav">
+      <a href="#subjects" class="on">四科入口</a>
+      <a href="#path">学习路径</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-in">
+    <h1>山东专升本 · 四科学习站</h1>
+    <div class="lead">
+      语文、英语、高数一、计算机，四科的题库、知识体系、例题精讲都在这里。
+    </div>
+    <div class="hero-stats" id="hstats"></div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <div class="sec-h" id="subjects">
+    <h2>四科入口</h2>
+    <span class="tip">点卡片进各科首页</span>
+  </div>
+  <div class="subj-grid" id="subjGrid"></div>
+
+  <div class="sec-h" id="path">
+    <h2>建议学习路径</h2>
+    <span class="tip">按这个顺序走，别一上来就刷题</span>
+  </div>
+  <div class="path" id="pathBox"></div>
+
+  <div class="foot">
+    山东专升本四科学习站 ｜ 语文 · 英语 · 高数一 · 计算机<br>
+  </div>
+</main>
+
+<button class="gotop" id="gotop" title="回到顶部">↑</button>
+
+<script src="assets/subjects.js"></script>
+<script src="assets/hub.js"></script>
+<script>
+(function(){
+"use strict";
+var H = window.HUB || {subjects:[], path:[], stats:{}};
+var S = H.stats || {};
+
+function esc(s){
+  return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+/* ---------- 顶部统计 ---------- */
+(function(){
+  var items = [
+    {v: S.questions, i: "道题"},
+    {v: S.items, i: "个知识点"},
+    {v: S.examples, i: "道例题"}
+  ];
+  document.getElementById("hstats").innerHTML = items.map(function(x){
+    return '<div class="hstat"><b>' + x.v + '</b><i>' + x.i + '</i></div>';
+  }).join("");
+})();
+
+/* ---------- 科目卡片 ---------- */
+(function(){
+  var g = document.getElementById("subjGrid");
+  g.innerHTML = (H.subjects||[]).map(function(s){
+    var nums = (s.nums||[]).map(function(n){
+      return '<span>' + esc(n.t) + ' <b>' + esc(n.v) + '</b></span>';
+    }).join("");
+    return '<div class="subj" style="--c:' + s.color + '">' +
+      '<div class="ico">' + s.icon + '</div>' +
+      '<h3>' + esc(s.name) + '</h3>' +
+      '<div class="desc">' + esc(s.desc) + '</div>' +
+      '<div class="nums">' + nums + '</div>' +
+      '<div class="go">' +
+        '<a href="' + s.dir + 'index.html">进入' + esc(s.name) + ' →</a>' +
+      '</div>' +
+    '</div>';
+  }).join("");
+})();
+
+/* ---------- 学习路径 ---------- */
+(function(){
+  var box = document.getElementById("pathBox");
+  box.innerHTML = (H.path||[]).map(function(p){
+    return '<div class="step">' +
+      '<div class="no">' + esc(p.n) + '</div>' +
+      '<h4>' + esc(p.t) + '</h4>' +
+      '<p>' + esc(p.d) + '</p>' +
+    '</div>';
+  }).join("");
+})();
+
+/* ---------- 回到顶部 ---------- */
+(function(){
+  var b = document.getElementById("gotop");
+  window.addEventListener("scroll", function(){
+    if(window.scrollY > 480) b.classList.add("show");
+    else b.classList.remove("show");
+  }, {passive:true});
+  b.addEventListener("click", function(){
+    window.scrollTo({top:0, behavior:"smooth"});
+  });
+})();
+
+/* ---------- 顶栏高亮 ---------- */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll(".top-nav a"));
+  var secs = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  window.addEventListener("scroll", function(){
+    var y = window.scrollY + 110, cur = 0;
+    secs.forEach(function(sec, i){
+      if(sec && sec.offsetTop <= y) cur = i;
+    });
+    links.forEach(function(a, i){ a.classList.toggle("on", i === cur); });
+  }, {passive:true});
+})();
+
+})();
+</script>
+</body>
+</html>

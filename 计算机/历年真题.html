@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>历年真题 · 山东专升本计算机</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+.tk-sec{margin:30px 0 12px;font-size:15.5px;font-weight:700;color:var(--blue-900);
+  display:flex;align-items:center;gap:9px;padding-bottom:9px;border-bottom:1px solid var(--line-2)}
+.tk-sec .n{font-size:11.5px;font-weight:400;color:var(--ink-4)}
+.tk-sec .tag{margin-left:auto;font-size:11.5px;font-weight:400;color:var(--ink-4)}
+.today{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;
+  padding:18px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.today .t{font-size:13px;color:var(--ink-3);line-height:1.7}
+.today .t b{color:var(--blue-800);font-size:15px;display:block;margin-bottom:3px}
+.today .go{margin-left:auto;background:var(--blue-600);color:#fff;text-decoration:none;
+  padding:9px 20px;border-radius:9px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.today .go:hover{background:var(--blue-700)}
+.nodata{background:var(--bg-2);border:1px dashed var(--line);border-radius:14px;
+  padding:16px 20px;font-size:13px;color:var(--ink-4);line-height:1.8}
+</style>
+
+<style>
+.zt-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px;margin-top:8px}
+.ycard .mt{align-items:center}
+.zb{font-size:11.5px;padding:2px 9px;border-radius:20px;font-weight:600}
+.zb.ok{background:#e8f5e9;color:#2e7d32;border:1px solid #c8e6c9}
+.zb.no{background:#fff8e1;color:#e65100;border:1px solid #ffe0b2}
+.zn{font-size:12px;color:#8a8f98;margin-top:6px}
+.zt-sum{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:14px;
+  padding:16px 20px;font-size:13px;color:var(--ink-3);line-height:1.85;margin-bottom:22px}
+.zt-sum b{color:var(--blue-800)}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1>历年真题 <span class="badge">3 套 · 195 题</span></h1>
+    <div class="sub">共 195 题</div>
+  </div>
+</div>
+
+<div class="wrap">
+<div class="zt-sum">共 <b>3</b> 套真题、<b>195</b> 道题，其中 <b>187</b> 题已配参考答案与解析。另有 <b>8</b> 题因回忆版缺少题图（关系表、流程图、效果图）无法作答，如实标注、不编造。</div><div class="zt-grid">
+  <a class="home-card ycard" href="zt-2024.html">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.6h8.4L19 8.2v12.2H6z"/><path d="M14 3.6v4.8h5"/><path d="M9.2 13h6M9.2 16.4h4"/></svg></div>
+    <h3>2024 年真题</h3>
+    <div class="dc">2024 年完整试卷，共 50 题，全部含参考答案与解析</div>
+    <div class="mt"><span>1 套</span><span class="zb ok">含答案</span></div>
+  </a>
+  <a class="home-card ycard" href="zt-2023.html">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.6h8.4L19 8.2v12.2H6z"/><path d="M14 3.6v4.8h5"/><path d="M9.2 13h6M9.2 16.4h4"/></svg></div>
+    <h3>2023 年真题</h3>
+    <div class="dc">2023 年完整试卷，共 70 题，67 题含答案（3 题缺题图）</div>
+    <div class="mt"><span>1 套</span><span class="zb ok">含答案</span></div>
+  </a>
+  <a class="home-card ycard" href="zt-2022.html">
+    <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3.6h8.4L19 8.2v12.2H6z"/><path d="M14 3.6v4.8h5"/><path d="M9.2 13h6M9.2 16.4h4"/></svg></div>
+    <h3>2022 年真题</h3>
+    <div class="dc">2022 年完整试卷，共 75 题，70 题含答案（5 题缺题图）</div>
+    <div class="mt"><span>1 套</span><span class="zb ok">含答案</span></div>
+  </a>
+</div>
+
+</div>
+
+<div class="footer">山东专升本计算机</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+<script>
+(function(){
+  "use strict";
+  var DATA = {"mode": "rot", "items": [{"title": "第 1 章 · 信息技术与计算机文化", "desc": "本章 33 题。"}, {"title": "第 2 章 · Windows 10 操作系统", "desc": "本章 24 题。"}, {"title": "第 3 章 · Word 2016 文字处理", "desc": "本章 40 题。"}, {"title": "第 4 章 · 电子表格处理（Excel 2016）", "desc": "本章 38 题。"}, {"title": "第 5 章 · 演示文稿制作（PowerPoint 2016）", "desc": "本章 20 题。"}, {"title": "第 6 章 · 数据库技术", "desc": "本章 26 题。"}, {"title": "第 7 章 · 计算机网络基础", "desc": "本章 38 题。"}, {"title": "第 8 章 · 数字多媒体技术基础", "desc": "本章 11 题。"}, {"title": "第 9 章 · 信息安全", "desc": "本章 38 题。"}, {"title": "第 10 章 · 新一代信息技术", "desc": "本章 44 题。"}]};
+  var START = "2026-10-29";
+  var PREFIX = "pr-ch";
+  function today(){
+    var d = new Date();
+    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
+  }
+  function parse(s){
+    var p = s.split("-");
+    return new Date(+p[0], +p[1]-1, +p[2]);
+  }
+  var t = today(), title, desc, href, idx;
+
+  if (DATA.mode === "date") {
+    var hit = null;
+    for (var i=0;i<DATA.items.length;i++){
+      var it = DATA.items[i];
+      if (!hit && parse(it.date) <= t && t < parse(it.end)) hit = it;
+    }
+    if (!hit) hit = DATA.items[0];
+    title = "第 " + hit.no + " 组 · " + hit.theme;
+    desc  = "覆盖 " + hit.date + " ~ " + hit.end + "，共 0 题。";
+    href  = PREFIX + hit.no + ".html";
+  } else {
+    var days = Math.floor((t - parse(START)) / 86400000);
+    if (days < 0) days = 0;
+    idx = (days % DATA.items.length);
+    var it2 = DATA.items[idx];
+    title = it2.title;
+    desc  = it2.desc;
+    href  = PREFIX + (idx+1) + ".html";
+  }
+  var a = document.getElementById("dayTitle");
+  if (a) a.textContent = title;
+  var b = document.getElementById("dayDesc");
+  if (b) b.textContent = desc;
+  var c = document.getElementById("dayGo");
+  if (c) c.href = href;
+  var d2 = document.getElementById("dayTag");
+  if (d2) d2.textContent = "今天 " + (t.getMonth()+1) + " 月 " + t.getDate() + " 日";
+})();
+</script>
+</body>
+</html>

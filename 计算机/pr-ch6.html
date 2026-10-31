@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>题库 · 山东专升本计算机 · 6</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1> 题库 <span class="badge" id="hBadge">230 题</span></h1>
+    <div class="sub" id="hSub">按章分开做，一章一页。选择题与判断题点选项即判对错；填空题先自己写，再对照答案。</div>
+  </div>
+</div>
+
+<div class="bar" id="bar" style="display:none">
+  <div class="bar-in">
+    <div class="search">
+      <input id="q" type="search" placeholder="搜索本章：题干 / 解析…" autocomplete="off">
+      <select id="fType">
+        <option value="all">全部题型</option>
+        <option value="单选">单选</option>
+        <option value="填空">填空</option>
+        <option value="判断">判断</option>
+      </select>
+      <select id="fState">
+        <option value="all">全部题目</option>
+        <option value="wrong">只看错题</option>
+        <option value="todo">只看未做</option>
+      </select>
+    </div>
+    <div class="tabs">
+      <button class="tab" id="btnReset"> 清空本章</button>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div id="chapbar"></div>
+  <div id="chapidx"></div>
+  <div id="main"></div>
+  <div id="chpager"></div>
+</div>
+
+<div class="footer">山东专升本计算机</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script>window.GS_FIXED_CH=6;window.GS_STATIC_MAP={"__home": "专项练习.html", "1": "pr-ch1.html", "2": "pr-ch2.html", "3": "pr-ch3.html", "4": "pr-ch4.html", "5": "pr-ch5.html", "6": "pr-ch6.html", "7": "pr-ch7.html", "8": "pr-ch8.html", "9": "pr-ch9.html", "10": "pr-ch10.html"};</script>
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script src="assets/chapnav.js"></script>
+<script src="assets/store.js"></script>
+<script src="data/questions.js"></script>
+<script src="../assets/pg_js_practice.js"></script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>
