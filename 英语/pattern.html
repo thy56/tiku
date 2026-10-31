@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>句式分层 · 山东专升本英语</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+/* ---- 层切换 ---- */
+#tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px;margin-bottom:18px}
+.lbtn{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 16px;
+  text-align:left;cursor:pointer;font-family:inherit;transition:border-color .15s,box-shadow .15s}
+.lbtn:hover{border-color:var(--blue-400);box-shadow:0 3px 12px rgba(46,116,181,.08)}
+.lbtn.on{border:1.5px solid var(--blue-500);background:var(--blue-50)}
+.lbtn b{display:block;font-size:15px;color:var(--blue-900);margin-bottom:4px}
+.lbtn span{font-size:12px;color:var(--ink-4)}
+
+/* ---- 说明区 ---- */
+#guide{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;
+  padding:14px 18px;font-size:13px;line-height:1.85;color:var(--ink-3);margin-bottom:16px}
+#guide b{color:var(--blue-800)}
+
+/* ---- 进度 ---- */
+#stat{margin-bottom:18px}
+.sline{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--ink-3);flex-wrap:wrap}
+.sline b{color:var(--blue-700);font-size:14px}
+.sp-bar{flex:1;min-width:140px;height:7px;background:var(--line);border-radius:20px;overflow:hidden}
+.sp-bar i{display:block;height:100%;background:var(--blue-500);border-radius:20px;transition:width .25s}
+
+/* ---- 题卡 ---- */
+.qcard,.pcard{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:17px 19px;margin-bottom:14px;position:relative}
+.qcard.ok{border-color:#56b377;background:#f6fdf8}
+.qcard.no{border-color:#e08b8b;background:#fffafa}
+.qno{font-size:12px;font-weight:700;color:var(--blue-600);margin-bottom:7px}
+.qen{font-size:15px;line-height:1.75;color:var(--ink);font-weight:600}
+.qcn{font-size:13px;line-height:1.7;color:var(--ink-4);margin-top:5px}
+.qtip{display:inline-block;margin-top:9px;font-size:11.5px;color:var(--blue-700);
+  background:var(--blue-50);border:1px solid var(--blue-200);border-radius:20px;padding:2px 10px}
+
+/* ---- 选项 ---- */
+.qopts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:9px;margin-top:13px}
+.opt{background:#fff;border:1px solid var(--line);border-radius:10px;padding:10px 12px;
+  text-align:left;cursor:pointer;font-family:inherit;transition:all .13s;line-height:1.4}
+.opt:hover:not(:disabled){border-color:var(--blue-400);background:var(--blue-50)}
+.opt b{display:block;font-size:13.5px;color:var(--blue-900);font-weight:700;font-family:var(--font-mono,ui-monospace,monospace)}
+.opt span{display:block;font-size:11.5px;color:var(--ink-4);margin-top:2px}
+.opt.right{border:1.5px solid #56b377;background:#eefaf1}
+.opt.right b{color:#2f7d4f}
+.opt.wrong{border:1.5px solid #e08b8b;background:#fdf0f0}
+.opt.wrong b{color:#b04a4a}
+.opt.dim{opacity:.42}
+.opt:disabled{cursor:default}
+
+/* ---- 答案区 ---- */
+.qans{margin-top:13px;border-top:1px dashed var(--line-2);padding-top:12px}
+.qverdict{font-size:13px;font-weight:700;margin-bottom:7px}
+.isok .qverdict{color:#2f7d4f}
+.isno .qverdict{color:#b04a4a}
+.qwhy{font-size:13px;line-height:1.85;color:var(--ink-2)}
+.qtk{margin-top:8px;font-size:12.5px;line-height:1.7;color:var(--blue-800);
+  background:var(--blue-50);border-left:3px solid var(--blue-400);border-radius:0 7px 7px 0;
+  padding:7px 11px}
+
+/* ---- 段落层 ---- */
+.pen{font-size:14.5px;line-height:1.9;color:var(--ink)}
+.pbtns{margin-top:12px}
+.ptog{background:var(--blue-600);color:#fff;border:none;border-radius:9px;
+  padding:9px 17px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.ptog:hover{background:var(--blue-700)}
+.pans{margin-top:14px;border-top:1px dashed var(--line-2);padding-top:12px}
+.plbl{font-size:12px;font-weight:700;color:var(--blue-700);margin:11px 0 5px}
+.plbl:first-child{margin-top:0}
+.ptxt{font-size:13.5px;line-height:1.9;color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1 id="h1">句式分层</h1>
+    <div class="sub" id="sub"></div>
+  </div>
+</div>
+
+<div class="main narrow">
+
+  <div id="tabs"></div>
+  <div id="guide"></div>
+  <div id="stat"></div>
+
+  <div class="pbar" style="display:flex;gap:9px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+    <a href="专项练习.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">← 翻译练习</a>
+    <span style="margin-left:auto"></span>
+    <button id="btnReset" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);cursor:pointer;font-family:inherit">重置本层</button>
+  </div>
+
+  <div id="list"></div>
+</div>
+
+<div class="footer">山东专升本英语</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script>window.GS_STATIC_MAP={ "__home": "专项练习.html" };</script>
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script src="data/pattern.js"></script>
+<script src="../assets/pg_en_pattern.js"></script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>
