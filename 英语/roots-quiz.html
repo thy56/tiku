@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>词根专项 · 山东专升本英语</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+#tabs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-bottom:18px}
+.mbtn{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 16px;
+  text-align:left;cursor:pointer;font-family:inherit;transition:border-color .15s,box-shadow .15s}
+.mbtn:hover{border-color:var(--blue-400);box-shadow:0 3px 12px rgba(46,116,181,.08)}
+.mbtn.on{border:1.5px solid var(--blue-500);background:var(--blue-50)}
+.mbtn b{display:block;font-size:15px;color:var(--blue-900);margin-bottom:4px}
+.mbtn span{font-size:12px;color:var(--ink-4)}
+
+#guide{background:var(--bg-2);border:1px solid var(--line);border-radius:13px;
+  padding:14px 18px;font-size:13px;line-height:1.85;color:var(--ink-3);margin-bottom:16px}
+#guide b{color:var(--blue-800)}
+
+.sline{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--ink-3);
+  flex-wrap:wrap;margin-bottom:18px}
+.sline b{color:var(--blue-700);font-size:14px}
+.sp-bar{flex:1;min-width:140px;height:7px;background:var(--line);border-radius:20px;overflow:hidden}
+.sp-bar i{display:block;height:100%;background:var(--blue-500);border-radius:20px;transition:width .25s}
+
+.qcard{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;margin-bottom:13px}
+.qcard.ok{border-color:#56b377;background:#f6fdf8}
+.qcard.no{border-color:#e08b8b;background:#fffafa}
+.qmeta{font-size:11.5px;color:var(--ink-4);margin-bottom:9px}
+.qroot{font-size:26px;font-weight:700;color:var(--blue-900);letter-spacing:.5px;
+  font-family:var(--font-mono,ui-monospace,monospace);margin-bottom:6px}
+.qstem{font-size:14px;line-height:1.95;color:var(--ink)}
+.qq{font-size:13px;color:var(--blue-800);font-weight:600}
+
+.qopts{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+.opt{background:#fff;border:1px solid var(--line);border-radius:9px;padding:10px 16px;
+  cursor:pointer;font-family:inherit;font-size:13.5px;color:var(--ink-2);transition:all .13s}
+.opt:hover:not(:disabled){border-color:var(--blue-400);background:var(--blue-50)}
+.opt.right{border:1.5px solid #56b377;background:#eefaf1;color:#2f7d4f;font-weight:600}
+.opt.wrong{border:1.5px solid #e08b8b;background:#fdf0f0;color:#b04a4a}
+.opt.dim{opacity:.4}
+.opt:disabled{cursor:default}
+
+.chiprow{display:flex;flex-wrap:wrap;gap:7px;margin-top:11px}
+.chip{background:var(--blue-50);border:1px solid var(--blue-200);border-radius:8px;
+  padding:5px 11px;font-size:12.5px;color:var(--blue-800)}
+.chip b{font-family:var(--font-mono,ui-monospace,monospace);margin-right:5px}
+
+.qans{margin-top:12px;border-top:1px dashed var(--line-2);padding-top:11px}
+.qverdict{font-size:13px;font-weight:700;margin-bottom:7px}
+.isok .qverdict{color:#2f7d4f}
+.isno .qverdict{color:#b04a4a}
+.qwhy{font-size:13px;line-height:1.85;color:var(--ink-2)}
+.qwhy b{color:var(--blue-800);font-family:var(--font-mono,ui-monospace,monospace)}
+.qexp{margin-top:7px;font-size:12.5px;line-height:1.8;color:var(--ink-4)}
+
+.pbtns{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}
+.ptog{background:var(--blue-600);color:#fff;border:none;border-radius:9px;
+  padding:9px 16px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit}
+.ptog:hover{background:var(--blue-700)}
+.mark{background:#fff;border:1px solid var(--line);border-radius:9px;
+  padding:8px 14px;font-size:12.5px;color:var(--ink-3);cursor:pointer;font-family:inherit}
+.mark:hover{border-color:#56b377;color:#2f7d4f}
+.mark.on{background:#eefaf1;border-color:#56b377;color:#2f7d4f;font-weight:600}
+.mark.no.on{background:#fdf0f0;border-color:#e08b8b;color:#b04a4a}
+
+.pans{margin-top:13px;border-top:1px dashed var(--line-2);padding-top:12px}
+.plbl{font-size:12px;font-weight:700;color:var(--blue-700);margin:10px 0 5px}
+.plbl:first-child{margin-top:0}
+.ptxt{font-size:13px;line-height:1.9;color:var(--ink-2)}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1>词根专项 <span class="badge" id="hBadge">168 题</span></h1>
+    <div class="sub">1120 道翻译练习里的 168 道词根题：释义、构词、派生三类分开练，一个词根串起一整族词。</div>
+  </div>
+</div>
+
+<div class="main narrow">
+
+  <div class="pbar" style="display:flex;gap:9px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+    <a href="专项练习.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">← 翻译练习</a>
+    <a href="pattern-all.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">句式全库</a>
+    <span style="margin-left:auto"></span>
+    <button id="btnReset" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);cursor:pointer;font-family:inherit">重置本模式</button>
+  </div>
+
+  <div id="tabs"></div>
+  <div id="guide"></div>
+  <div id="stat"></div>
+  <div id="list"></div>
+</div>
+
+<div class="footer">山东专升本英语</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script>window.GS_STATIC_MAP={ "__home": "专项练习.html" };</script>
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script src="data/roots_quiz.js"></script>
+<script src="../assets/pg_en_roots2.js"></script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>
