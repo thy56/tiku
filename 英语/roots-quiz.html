@@ -58,7 +58,6 @@
 .isno .qverdict{color:#b04a4a}
 .qwhy{font-size:13px;line-height:1.85;color:var(--ink-2)}
 .qwhy b{color:var(--blue-800);font-family:var(--font-mono,ui-monospace,monospace)}
-.qexp{margin-top:7px;font-size:12.5px;line-height:1.8;color:var(--ink-4)}
 
 .pbtns{display:flex;gap:9px;margin-top:12px;flex-wrap:wrap}
 .ptog{background:var(--blue-600);color:#fff;border:none;border-radius:9px;
@@ -71,49 +70,95 @@
 .mark.no.on{background:#fdf0f0;border-color:#e08b8b;color:#b04a4a}
 
 .pans{margin-top:13px;border-top:1px dashed var(--line-2);padding-top:12px}
-.plbl{font-size:12px;font-weight:700;color:var(--blue-700);margin:10px 0 5px}
-.plbl:first-child{margin-top:0}
-.ptxt{font-size:13px;line-height:1.9;color:var(--ink-2)}
 
-/* ===== 详细解析块 ===== */
-.dchip{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px}
-.dch{background:#f3f7fc;border:1px solid #d5e3f2;border-radius:8px;
-  padding:5px 11px;font-size:12px;color:var(--blue-800);display:inline-flex;
-  align-items:baseline;gap:5px}
-.dch em{font-style:normal;font-size:10.5px;color:#8296aa;letter-spacing:.3px}
-.dch b{font-family:var(--font-mono,ui-monospace,monospace);font-size:12.5px}
+/* ===== 答案条 ===== */
+.dans{background:#f2f9f4;border:1px solid #cfe8d8;border-radius:9px;
+  padding:10px 14px;font-size:13.5px;line-height:1.9;color:#276a43;margin-bottom:14px}
+.dans span{display:inline-block;font-size:11px;font-weight:700;color:#5aa87a;
+  background:#fff;border:1px solid #cfe8d8;border-radius:5px;padding:1px 7px;
+  margin-right:9px;vertical-align:1px}
 
-.dblock{margin-top:14px;border:1px solid var(--line);border-radius:11px;
-  background:#fbfdff;overflow:hidden}
-.dhead{display:flex;align-items:baseline;gap:10px;padding:10px 14px;
-  background:#f1f7fd;border-bottom:1px solid var(--line);flex-wrap:wrap}
-.dro{font-family:var(--font-mono,ui-monospace,monospace);font-size:16px;
-  color:var(--blue-900);letter-spacing:.4px}
-.dmean{font-size:13px;color:#2f7d4f;font-weight:600}
-.dcnt{margin-left:auto;font-size:11.5px;color:#93a5b6}
+/* ===== 词根详解卡 ===== */
+.dwrap{margin-top:6px}
+.dcard{border:1px solid var(--line);border-radius:12px;background:#fcfdff;
+  margin-bottom:16px;overflow:hidden}
+.dhd{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;
+  background:linear-gradient(180deg,#eef6fd,#f7fbff);
+  border-bottom:1px solid var(--line);padding:12px 16px}
+.droot{font-family:var(--font-mono,ui-monospace,monospace);font-size:19px;
+  color:var(--blue-900);letter-spacing:.5px}
+.dcore{font-size:14px;font-weight:700;color:#2f7d4f}
 
-.dfam{padding:9px 14px;font-size:12.5px;line-height:1.85;color:var(--ink-3);
-  border-bottom:1px dashed var(--line-2);background:#fff}
-.dfam em{font-style:normal;font-size:10.5px;color:#8fa4b8;border:1px solid #dae5f0;
-  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:1px}
+.dsec{padding:12px 16px;border-bottom:1px solid #f0f4f8}
+.dsec:last-child{border-bottom:none}
+.dsk{font-size:11.5px;font-weight:700;color:#7d94a8;letter-spacing:.4px;
+  margin-bottom:7px;text-transform:none}
+.dst{font-size:13px;line-height:1.95;color:var(--ink-2)}
 
+/* 词族表 */
+.dfam{width:100%;border-collapse:collapse;font-size:12.5px}
+.dfam td{padding:6px 8px;vertical-align:top}
+.dfam tr:nth-child(odd) td{border-top:1px solid #f2f6fa}
+.fc-pre{white-space:nowrap;color:#8fa4b8;font-size:11.5px;width:1%;
+  padding-left:0 !important}
+.fc-w{font-family:var(--font-mono,ui-monospace,monospace);font-weight:600;
+  color:var(--blue-800);white-space:nowrap;width:1%}
+.fc-pos{color:#a8b8c6;font-size:11px;white-space:nowrap;width:1%}
+.fc-cn{color:var(--ink-2)}
+.fc-why{color:#8ca0b3;font-size:11.5px;line-height:1.7;
+  padding-top:0 !important;padding-bottom:8px !important}
+
+/* 搭配 */
+.dcol{margin:0;padding-left:20px;font-size:12.5px;line-height:2;color:var(--ink-2)}
+.dcol li{list-style:disc}
+.dcol li::marker{color:var(--blue-300)}
+
+/* 辨析 */
+.dconf{background:#fff;border:1px solid #eef3f8;border-radius:9px;
+  padding:9px 12px;margin-bottom:8px}
+.dconf:last-child{margin-bottom:0}
+.dconf-h{font-size:12.5px;margin-bottom:5px}
+.dconf-h b{font-family:var(--font-mono,ui-monospace,monospace);
+  color:#b06a2a;background:#fdf6ec;border:1px solid #f2e2c9;
+  border-radius:5px;padding:1px 7px}
+.dconf-h .vs{color:#b8c6d2;font-size:11px;margin:0 2px}
+.dconf-t{font-size:12.5px;line-height:1.85;color:var(--ink-2)}
+
+/* 记忆诀窍 / 考点 */
+.dmnem{background:#fffdf5;border-left:3px solid #e8c56a}
+.dexam{background:#f7fbfe;border-left:3px solid var(--blue-300)}
+.dmnem .dsk{color:#b8952f}
+.dexam .dsk{color:var(--blue-600)}
+
+/* 词族词汇表 */
+.dwords{border:1px solid var(--line);border-radius:12px;background:#fff;
+  padding:12px 16px;margin-top:4px}
 .dtab{width:100%;border-collapse:collapse;font-size:12.5px}
-.dtab td{padding:6px 8px;vertical-align:top;border-bottom:1px solid #f0f4f8}
+.dtab td{padding:5px 7px;vertical-align:top;border-bottom:1px solid #f4f7fa}
 .dtab tr:last-child td{border-bottom:none}
 .dw{font-family:var(--font-mono,ui-monospace,monospace);color:var(--blue-800);
-  font-weight:600;white-space:nowrap;width:1%;padding-left:14px !important}
+  font-weight:600;white-space:nowrap;width:1%}
 .dp{color:#a0b0c0;font-size:11px;white-space:nowrap;width:1%}
 .dm{color:var(--ink-2)}
 .dmem{color:#8ca0b3;font-size:11.5px;line-height:1.7;padding-top:0 !important;
-  padding-bottom:8px !important}
-.dmore{padding:8px 14px;font-size:11.5px;color:#93a5b6;
-  border-top:1px dashed var(--line-2);text-align:center}
+  padding-bottom:7px !important}
+.dmore{padding:7px 0 0;font-size:11.5px;color:#93a5b6;text-align:center}
+
+/* 原题解析 */
+.dexp{margin-top:12px;background:#f8fafc;border:1px dashed var(--line-2);
+  border-radius:9px;padding:10px 13px;font-size:12.5px;line-height:1.85;color:var(--ink-3)}
+.dexp span{display:inline-block;font-size:10.5px;color:#93a5b6;
+  border:1px solid #e3ebf3;border-radius:4px;padding:1px 6px;margin-right:8px;
+  vertical-align:1px;background:#fff}
 
 @media (max-width:640px){
   .qroot{font-size:22px}
-  .dtab{font-size:11.5px}
-  .dtab td{padding:5px 6px}
-  .dw{padding-left:10px !important}
+  .dsec{padding:10px 12px}
+  .dhd{padding:10px 12px}
+  .droot{font-size:17px}
+  .dfam,.dtab{font-size:11.5px}
+  .dfam td,.dtab td{padding:5px 5px}
+  .fc-pre{font-size:10.5px}
 }
 </style>
 </head>
@@ -124,7 +169,7 @@
 <div class="page-head">
   <div class="in">
     <h1>词根专项 <span class="badge" id="hBadge">168 题</span></h1>
-    <div class="sub">1120 道翻译练习里的 168 道词根题，逐题配词族解析：词根释义、同族词串、拆解结构、记忆线索。</div>
+    <div class="sub">168 道词根题，每题配完整词根档案：词源来历 · 构词逻辑 · 前缀词族 · 固定搭配 · 易混辨析 · 记忆诀窍 · 考点提示。</div>
   </div>
 </div>
 
@@ -155,6 +200,7 @@
 <script src="assets/manifest.js"></script>
 <script src="assets/nav.js"></script>
 <script src="data/roots_quiz.js"></script>
+<script src="data/root_deep.js"></script>
 <script src="../assets/pg_en_roots2.js"></script>
 <script src="../assets/hub.js"></script>
 </body>

@@ -1,18 +1,18 @@
-/* 词根专项练习 · 渲染 v2（168 题 + 详细解析）
- * 数据：英语/data/roots_quiz.js → window.ROOTS
- *   detail.roots[]    词根释义 + 同族词串 + 单词表（含记忆线索）
- *   detail.prefixes[] 前缀提示
- *   detail.suffixes[] 后缀提示
- * A 释义 56：选择式自动判分，答完展示词根全族
+/* 词根专项练习 · 渲染 v3（168 题 + 词根详解）
+ * 数据：
+ *   英语/data/roots_quiz.js → window.ROOTS（题目 + 词表）
+ *   英语/data/root_deep.js  → window.ROOT_DEEP（68 词根详解）
+ * 详解结构：词源 / 构词逻辑 / 前缀词族 / 固定搭配 / 易混辨析 / 记忆诀窍 / 考点提示
+ * A 释义 56：选择式自动判分
  * B 构词 56：折叠自评
  * C 派生 56：折叠自评
- * 进度：localStorage gs_roots_v2
  */
 (function () {
   'use strict';
 
   var D = window.ROOTS || { a: [], b: [], c: [] };
-  var KEY = 'gs_roots_quiz_v2';
+  var DEEP = window.ROOT_DEEP || {};
+  var KEY = 'gs_roots_quiz_v3';
 
   var state = load();
   var MODE = (function () {
@@ -42,8 +42,12 @@
     }
     return a;
   }
+  /* vers(t) / duce/duct / sens(t) → vers / duce / sens */
+  function normRoot(r) {
+    return String(r).replace(/\([a-z]*\)/g, '').split('/')[0].trim().toLowerCase();
+  }
 
-  /* ---------- 选项生成 ---------- */
+  /* ---------- 选项 ---------- */
   function buildOptions(item, pool) {
     var right = item.pairs[item.roots[0]] || '';
     var opts = [right];
@@ -60,55 +64,133 @@
     return shuffle(opts);
   }
 
-  /* ---------- 详细解析块 ---------- */
-  function detailHTML(it, limitWords) {
-    var d = it.detail;
-    if (!d) return '';
-    var h = '';
+  /* ---------- 词根详解块 ---------- */
+  function deepBlock(rootRaw) {
+    var k = normRoot(rootRaw);
+    var g = DEEP[k];
+    if (!g) return '';
 
-    // 前缀 / 后缀提示
-    var pre = d.prefixes || [], suf = d.suffixes || [];
-    if (pre.length || suf.length) {
-      h += '<div class="dchip">';
-      pre.forEach(function (p) {
-        h += '<span class="dch"><em>前缀</em><b>' + esc(p.form) + '-</b>' + esc(p.cn) + '</span>';
+    var h = '<div class="dcard">';
+
+    /* 标题 */
+    h += '<div class="dhd">';
+    h += '<b class="droot">' + esc(g.lemma || k) + '</b>';
+    h += '<span class="dcore">＝ ' + esc(g.core) + '</span>';
+    h += '</div>';
+
+    /* 词源 */
+    if (g.origin) {
+      h += '<div class="dsec"><div class="dsk">词源来历</div>' +
+        '<div class="dst">' + esc(g.origin) + '</div></div>';
+    }
+
+    /* 构词逻辑 */
+    if (g.logic) {
+      h += '<div class="dsec"><div class="dsk">构词逻辑</div>' +
+        '<div class="dst">' + esc(g.logic) + '</div></div>';
+    }
+
+    /* 前缀词族表 */
+    if (g.fam && g.fam.length) {
+      h += '<div class="dsec"><div class="dsk">前缀词族 · ' + g.fam.length + ' 个</div>';
+      h += '<table class="dfam"><tbody>';
+      g.fam.forEach(function (f) {
+        h += '<tr>' +
+          '<td class="fc-pre">' + esc(f.pre) + '</td>' +
+          '<td class="fc-w">' + esc(f.word) + '</td>' +
+          '<td class="fc-pos">' + esc(f.pos || '') + '</td>' +
+          '<td class="fc-cn">' + esc(f.cn) + '</td>' +
+          '</tr>';
+        if (f.why) {
+          h += '<tr><td></td><td colspan="3" class="fc-why">' + esc(f.why) + '</td></tr>';
+        }
       });
-      suf.forEach(function (s) {
-        h += '<span class="dch"><em>后缀</em><b>-' + esc(s) + '</b></span>';
+      h += '</tbody></table></div>';
+    }
+
+    /* 固定搭配 */
+    if (g.col && g.col.length) {
+      h += '<div class="dsec"><div class="dsk">固定搭配 · ' + g.col.length + ' 条</div>';
+      h += '<ul class="dcol">';
+      g.col.forEach(function (c) {
+        h += '<li>' + esc(c) + '</li>';
+      });
+      h += '</ul></div>';
+    }
+
+    /* 易混辨析 */
+    if (g.conf && g.conf.length) {
+      h += '<div class="dsec"><div class="dsk">易混辨析 · ' + g.conf.length + ' 组</div>';
+      g.conf.forEach(function (c) {
+        h += '<div class="dconf">';
+        var names = [c.a, c.b, c.c].filter(Boolean);
+        h += '<div class="dconf-h">' + names.map(function (x) {
+          return '<b>' + esc(x) + '</b>';
+        }).join(' <span class="vs">vs</span> ') + '</div>';
+        h += '<div class="dconf-t">' + esc(c.note) + '</div>';
+        h += '</div>';
       });
       h += '</div>';
     }
 
-    // 每个词的词根详情
-    (d.roots || []).forEach(function (r) {
-      h += '<div class="dblock">';
-      h += '<div class="dhead"><b class="dro">' + esc(r.root) + '</b>' +
-        (r.meaning ? '<span class="dmean">＝ ' + esc(r.meaning) + '</span>' : '') +
-        '<span class="dcnt">' + (r.words || []).length + ' 词</span></div>';
+    /* 记忆诀窍 */
+    if (g.mnem) {
+      h += '<div class="dsec dmnem"><div class="dsk">记忆诀窍</div>' +
+        '<div class="dst">' + esc(g.mnem) + '</div></div>';
+    }
 
-      if (r.fam) {
-        h += '<div class="dfam"><em>同族</em>' + esc(r.fam) + '</div>';
-      }
+    /* 考点提示 */
+    if (g.exam) {
+      h += '<div class="dsec dexam"><div class="dsk">考点提示</div>' +
+        '<div class="dst">' + esc(g.exam) + '</div></div>';
+    }
 
+    h += '</div>';
+    return h;
+  }
+
+  /* ---------- 同族词表（来自 roots_quiz 的 detail.words） ---------- */
+  function wordsBlock(it, limit) {
+    var d = it.detail;
+    if (!d || !d.roots || !d.roots.length) return '';
+    var h = '';
+    d.roots.forEach(function (r) {
       var ws = r.words || [];
-      var show = limitWords === 0 ? ws : ws.slice(0, limitWords);
-      if (show.length) {
-        h += '<table class="dtab">';
-        show.forEach(function (w) {
-          h += '<tr><td class="dw">' + esc(w.word) + '</td>' +
-            '<td class="dp">' + esc(w.pos || '') + '</td>' +
-            '<td class="dm">' + esc(w.meaning || '') + '</td></tr>';
-          if (w.memory) {
-            h += '<tr><td></td><td></td><td class="dmem">' + esc(w.memory) + '</td></tr>';
-          }
-        });
-        h += '</table>';
-        if (limitWords > 0 && ws.length > limitWords) {
-          h += '<div class="dmore">还有 ' + (ws.length - limitWords) + ' 个词未展开</div>';
+      if (!ws.length) return;
+      var show = limit === 0 ? ws : ws.slice(0, limit);
+      h += '<div class="dwords">';
+      h += '<div class="dsk">' + esc(r.root) + ' 词族词汇 · ' + ws.length + ' 词</div>';
+      h += '<table class="dtab">';
+      show.forEach(function (w) {
+        h += '<tr><td class="dw">' + esc(w.word) + '</td>' +
+          '<td class="dp">' + esc(w.pos || '') + '</td>' +
+          '<td class="dm">' + esc(w.meaning || '') + '</td></tr>';
+        if (w.memory) {
+          h += '<tr><td></td><td></td><td class="dmem">' + esc(w.memory) + '</td></tr>';
         }
+      });
+      h += '</table>';
+      if (limit > 0 && ws.length > limit) {
+        h += '<div class="dmore">还有 ' + (ws.length - limit) + ' 个词未展开</div>';
       }
       h += '</div>';
     });
+    return h;
+  }
+
+  /* ---------- 组合完整解析 ---------- */
+  function analysisHTML(it, wordLimit) {
+    var h = '<div class="dwrap">';
+    var roots = it.roots || [];
+    if (!roots.length) return h + '</div>';
+    roots.forEach(function (r) {
+      h += deepBlock(r);
+    });
+    h += wordsBlock(it, wordLimit);
+    if (it.exp) {
+      h += '<div class="dexp"><span>原题解析</span>' + esc(it.exp) + '</div>';
+    }
+    h += '</div>';
     return h;
   }
 
@@ -144,9 +226,9 @@
     var box = document.getElementById('guide');
     if (!box) return;
     var t = {
-      a: '<b>A 类怎么练</b>：看到词根，先自己想它的核心义，再选答案。选完会展开这个词根的<b>整个词族</b>——同族词、拆解方式、记忆线索全在里面。',
-      b: '<b>B 类怎么练</b>：前缀定方向、词根定含义。先在纸上写出单词，再展开核对，看完解析后按「会／不会」如实自评。',
-      c: '<b>C 类怎么练</b>：给一个词根，尽量多写派生词。写完展开对比参考词族，缺哪个补哪个。'
+      a: '<b>A 类怎么练</b>：看到词根先自己想核心义，再选答案。答完展开的是这个词根的<b>完整档案</b>——词源、构词逻辑、前缀词族、固定搭配、易混辨析、记忆诀窍、考点提示。',
+      b: '<b>B 类怎么练</b>：前缀定方向、词根定含义。先在纸上写出单词，再展开核对，然后读一遍词根档案，按「会／不会」自评。',
+      c: '<b>C 类怎么练</b>：给一个词根，尽量多写派生词。写完展开对比，读词族表补齐缺口。'
     };
     box.innerHTML = t[MODE] || '';
   }
@@ -214,8 +296,7 @@
               return '<b>' + esc(r) + '</b> = ' + esc(it.pairs[r] || '');
             }).join('　') + '</div>';
         }
-        if (it.exp) h += '<div class="qexp">' + esc(it.exp) + '</div>';
-        h += detailHTML(it, 6);
+        h += analysisHTML(it, 8);
         h += '</div>';
       }
       h += '</div>';
@@ -262,7 +343,7 @@
 
       h += '<div class="pbtns">';
       h += '<button class="ptog" data-open="' + esc(id) + '">' +
-        (open ? '收起' : '先自己写 · 看答案与词族') + '</button>';
+        (open ? '收起解析' : '先自己写 · 看答案与词根档案') + '</button>';
       if (open) {
         h += '<button class="mark' + (mark === 'k' ? ' on' : '') + '" data-mark="k" data-id="' +
           esc(id) + '">会了</button>';
@@ -273,11 +354,8 @@
 
       if (open) {
         h += '<div class="pans">';
-        h += '<div class="plbl">答案</div><div class="ptxt">' + esc(it.ans) + '</div>';
-        if (it.exp) {
-          h += '<div class="plbl">解析</div><div class="ptxt">' + esc(it.exp) + '</div>';
-        }
-        h += detailHTML(it, 0);
+        h += '<div class="dans"><span>答案</span>' + esc(it.ans) + '</div>';
+        h += analysisHTML(it, 0);
         h += '</div>';
       }
       h += '</div>';
@@ -326,9 +404,8 @@
 
   var hb = document.getElementById('hBadge');
   if (hb) {
-    var w = 0;
-    (D.a).forEach(function (x) { if (x.detail) (x.detail.roots || []).forEach(function (r) { w += (r.words || []).length; }); });
-    hb.textContent = (D.a.length + D.b.length + D.c.length) + ' 题 · ' + w + ' 词';
+    hb.textContent = (D.a.length + D.b.length + D.c.length) + ' 题 · ' +
+      Object.keys(DEEP).length + ' 词根详解';
   }
 
   render();
