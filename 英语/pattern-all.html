@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>句式全库 · 山东专升本英语</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+/* 筛选条 */
+#filt{background:#fff;border:1px solid var(--line);border-radius:13px;padding:14px 17px;margin-bottom:16px}
+.frow{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.frow label{font-size:12.5px;color:var(--ink-4)}
+.frow select{font-family:inherit;font-size:13px;padding:6px 9px;border:1px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink-2);cursor:pointer;max-width:160px}
+.frow select:hover{border-color:var(--blue-400)}
+.fcount{font-size:12.5px;color:var(--blue-700);font-weight:600;margin-left:auto}
+.fbtn{font-family:inherit;font-size:12.5px;padding:6px 13px;border:1px solid var(--line);
+  border-radius:8px;background:#fff;color:var(--ink-3);cursor:pointer}
+.fbtn:hover{border-color:#e08b8b;color:#b04a4a}
+
+/* 进度 */
+.sline{display:flex;align-items:center;gap:14px;font-size:13px;color:var(--ink-3);
+  flex-wrap:wrap;margin-bottom:16px}
+.sline b{color:var(--blue-700);font-size:14px}
+.sp-bar{flex:1;min-width:140px;height:7px;background:var(--line);border-radius:20px;overflow:hidden}
+.sp-bar i{display:block;height:100%;background:var(--blue-500);border-radius:20px;transition:width .25s}
+
+/* 题卡 */
+.qcard{background:#fff;border:1px solid var(--line);border-radius:14px;
+  padding:16px 18px;margin-bottom:13px}
+.qcard.ok{border-color:#56b377;background:#f6fdf8}
+.qcard.no{border-color:#e08b8b;background:#fffafa}
+.qmeta{font-size:11.5px;color:var(--ink-4);margin-bottom:7px;letter-spacing:.2px}
+.qen{font-size:14.5px;line-height:1.85;color:var(--ink);font-weight:500}
+.qq{margin-top:10px;font-size:13px;color:var(--blue-800);font-weight:600}
+
+.qopts{display:flex;flex-wrap:wrap;gap:8px;margin-top:11px}
+.qopts.many .opt{font-size:12.5px;padding:8px 13px}
+.opt{background:#fff;border:1px solid var(--line);border-radius:9px;padding:9px 15px;
+  cursor:pointer;font-family:inherit;font-size:13px;color:var(--ink-2);
+  transition:all .13s;white-space:nowrap}
+.opt:hover:not(:disabled){border-color:var(--blue-400);background:var(--blue-50)}
+.opt.right{border:1.5px solid #56b377;background:#eefaf1;color:#2f7d4f;font-weight:600}
+.opt.wrong{border:1.5px solid #e08b8b;background:#fdf0f0;color:#b04a4a}
+.opt.dim{opacity:.4}
+.opt:disabled{cursor:default}
+
+.qans{margin-top:12px;border-top:1px dashed var(--line-2);padding-top:11px}
+.qverdict{font-size:13px;font-weight:700;margin-bottom:6px}
+.isok .qverdict{color:#2f7d4f}
+.isno .qverdict{color:#b04a4a}
+.qwhy{font-size:13px;line-height:1.85;color:var(--ink-2)}
+.qwhy b{color:var(--blue-800);font-family:var(--font-mono,ui-monospace,monospace)}
+.qcn2{margin-top:7px;font-size:12.5px;line-height:1.8;color:var(--ink-4)}
+
+.empty,.more{background:var(--bg-2);border:1px dashed var(--line);border-radius:13px;
+  padding:16px 20px;font-size:13px;color:var(--ink-4);line-height:1.8}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="page-head">
+  <div class="in">
+    <h1>句式全库 <span class="badge" id="hBadge">952 题</span></h1>
+    <div class="sub">1120 道翻译练习里的 952 道已全部标注句式：主干五种句型 + 九类特殊结构，逐句人工核过。</div>
+  </div>
+</div>
+
+<div class="main narrow">
+
+  <div class="pbar" style="display:flex;gap:9px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
+    <a href="pattern.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">← 句式分层（90 题精讲）</a>
+    <a href="专项练习.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">翻译练习</a>
+  </div>
+
+  <div id="filt"></div>
+  <div id="stat"></div>
+  <div id="list"></div>
+</div>
+
+<div class="footer">山东专升本英语</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script>window.GS_STATIC_MAP={ "__home": "专项练习.html" };</script>
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script src="data/pattern_all.js"></script>
+<script src="../assets/pg_en_pattern_all.js"></script>
+<script src="../assets/hub.js"></script>
+</body>
+</html>
