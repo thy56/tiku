@@ -28,7 +28,7 @@
       key: "yingyu", name: "英语", short: "英语", color: "#3f8f4a",
       pages: [
         ["index.html", "首页"],
-        ["know.html", "知识体系", "652点"],
+        ["know.html", "知识体系", "509点"],
         ["practice.html", "翻译练习", "1120题"],
         ["grammar.html", "语法体系", "94节"],
         ["tenses.html", "时态体系", "16节"],

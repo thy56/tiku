@@ -86,7 +86,7 @@
     h += '<a href="know.html?ch=4">从句：把句子装进句子里 <i style="opacity:.55;font-style:normal">23</i></a>';
     h += '<a href="know.html?ch=5">特殊句式：倒装、强调、虚拟 <i style="opacity:.55;font-style:normal">13</i></a>';
     h += '<a href="know.html?ch=6">时态与语态 <i style="opacity:.55;font-style:normal">21</i></a>';
-    h += '<a href="know.html?ch=7">词根词缀（58 组） <i style="opacity:.55;font-style:normal">146</i></a>';
+    h += '<a href="know.html?ch=7">词根词缀（58 组） <i style="opacity:.55;font-style:normal">3</i></a>';
     h += '<a href="know.html?ch=8">核心词汇 <i style="opacity:.55;font-style:normal">271</i></a>';
     h += '<a href="know.html?ch=9">常考词组（83 条） <i style="opacity:.55;font-style:normal">83</i></a>';
     h += '<a href="know.html?ch=10">形近词辨析（37 组） <i style="opacity:.55;font-style:normal">37</i></a>';
