@@ -74,6 +74,47 @@
 .plbl{font-size:12px;font-weight:700;color:var(--blue-700);margin:10px 0 5px}
 .plbl:first-child{margin-top:0}
 .ptxt{font-size:13px;line-height:1.9;color:var(--ink-2)}
+
+/* ===== 详细解析块 ===== */
+.dchip{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0 4px}
+.dch{background:#f3f7fc;border:1px solid #d5e3f2;border-radius:8px;
+  padding:5px 11px;font-size:12px;color:var(--blue-800);display:inline-flex;
+  align-items:baseline;gap:5px}
+.dch em{font-style:normal;font-size:10.5px;color:#8296aa;letter-spacing:.3px}
+.dch b{font-family:var(--font-mono,ui-monospace,monospace);font-size:12.5px}
+
+.dblock{margin-top:14px;border:1px solid var(--line);border-radius:11px;
+  background:#fbfdff;overflow:hidden}
+.dhead{display:flex;align-items:baseline;gap:10px;padding:10px 14px;
+  background:#f1f7fd;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.dro{font-family:var(--font-mono,ui-monospace,monospace);font-size:16px;
+  color:var(--blue-900);letter-spacing:.4px}
+.dmean{font-size:13px;color:#2f7d4f;font-weight:600}
+.dcnt{margin-left:auto;font-size:11.5px;color:#93a5b6}
+
+.dfam{padding:9px 14px;font-size:12.5px;line-height:1.85;color:var(--ink-3);
+  border-bottom:1px dashed var(--line-2);background:#fff}
+.dfam em{font-style:normal;font-size:10.5px;color:#8fa4b8;border:1px solid #dae5f0;
+  border-radius:5px;padding:1px 6px;margin-right:8px;vertical-align:1px}
+
+.dtab{width:100%;border-collapse:collapse;font-size:12.5px}
+.dtab td{padding:6px 8px;vertical-align:top;border-bottom:1px solid #f0f4f8}
+.dtab tr:last-child td{border-bottom:none}
+.dw{font-family:var(--font-mono,ui-monospace,monospace);color:var(--blue-800);
+  font-weight:600;white-space:nowrap;width:1%;padding-left:14px !important}
+.dp{color:#a0b0c0;font-size:11px;white-space:nowrap;width:1%}
+.dm{color:var(--ink-2)}
+.dmem{color:#8ca0b3;font-size:11.5px;line-height:1.7;padding-top:0 !important;
+  padding-bottom:8px !important}
+.dmore{padding:8px 14px;font-size:11.5px;color:#93a5b6;
+  border-top:1px dashed var(--line-2);text-align:center}
+
+@media (max-width:640px){
+  .qroot{font-size:22px}
+  .dtab{font-size:11.5px}
+  .dtab td{padding:5px 6px}
+  .dw{padding-left:10px !important}
+}
 </style>
 </head>
 <body>
@@ -83,7 +124,7 @@
 <div class="page-head">
   <div class="in">
     <h1>词根专项 <span class="badge" id="hBadge">168 题</span></h1>
-    <div class="sub">1120 道翻译练习里的 168 道词根题：释义、构词、派生三类分开练，一个词根串起一整族词。</div>
+    <div class="sub">1120 道翻译练习里的 168 道词根题，逐题配词族解析：词根释义、同族词串、拆解结构、记忆线索。</div>
   </div>
 </div>
 
@@ -92,6 +133,8 @@
   <div class="pbar" style="display:flex;gap:9px;align-items:center;margin-bottom:16px;flex-wrap:wrap">
     <a href="专项练习.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
       padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">← 翻译练习</a>
+    <a href="roots.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
+      padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">词根词缀库</a>
     <a href="pattern-all.html" style="background:#fff;border:1px solid var(--line);border-radius:8px;
       padding:7px 15px;font-size:13px;color:var(--ink-2);text-decoration:none">句式全库</a>
     <span style="margin-left:auto"></span>
