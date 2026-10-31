@@ -107,13 +107,26 @@
     h += "</div></div>";
   }
 
-  /* 本章其它功能页 */
+  /* 本章其它功能页 —— 按科目切换，只链真实存在的页 */
+  var SUB = window.KP_SUB || "";
   h += '<div class="ksec"><h3>本章资源</h3><div class="krel">';
   h += '<a class="krl krl-x" href="know.html?ch=' + IT.ch + '">本章知识目录</a>';
-  h += '<a class="krl krl-x" href="ex-ch' + IT.ch + '.html">本章例题</a>';
-  h += '<a class="krl krl-x" href="pr-ch' + IT.ch + '.html">本章练习</a>';
-  if (window.KP_SUB === "高数一") {
-    h += '<a class="krl krl-x" href="fm-ch' + IT.ch + '.html">本章公式表</a>';
+  if (SUB === "英语") {
+    h += '<a class="krl krl-x" href="专项练习.html">专项练习</a>';
+    h += '<a class="krl krl-x" href="题库.html">题库</a>';
+    h += '<a class="krl krl-x" href="历年真题.html">历年真题</a>';
+    h += '<a class="krl krl-x" href="grammar.html">语法专题</a>';
+  } else if (SUB === "语文") {
+    h += '<a class="krl krl-x" href="wen.html">课文篇目</a>';
+    h += '<a class="krl krl-x" href="专项练习.html">专项练习</a>';
+    h += '<a class="krl krl-x" href="题库.html">题库</a>';
+    h += '<a class="krl krl-x" href="历年真题.html">历年真题</a>';
+  } else {
+    h += '<a class="krl krl-x" href="ex-ch' + IT.ch + '.html">本章例题</a>';
+    h += '<a class="krl krl-x" href="pr-ch' + IT.ch + '.html">本章练习</a>';
+    if (SUB === "高数一") {
+      h += '<a class="krl krl-x" href="fm-ch' + IT.ch + '.html">本章公式表</a>';
+    }
   }
   h += "</div></div>";
 
