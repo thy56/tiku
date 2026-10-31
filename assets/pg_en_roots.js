@@ -37,13 +37,94 @@ function wordCount(g){
   return (g.roots||[]).reduce(function(a, rt){ return a + (rt.new_words||[]).length; }, 0);
 }
 
-/* ============ 目录页 ============ */
-function renderIndex(){
-  document.getElementById("bar").style.display = "none";
+/* ============ 目录页：三级分类 ============ */
+function catOf(){
+  var m = /[?&]cat=([a-z]+)/.exec(location.search || "");
+  return m ? m[1] : "";
+}
 
+function bigCard(href, no, title, desc, cnt){
+  return '<a class="card open" href="' + href + '" style="display:block;' +
+    'padding:20px 22px;margin-bottom:14px;text-decoration:none;' +
+    'transition:transform .15s,box-shadow .15s">' +
+    '<div style="display:flex;align-items:baseline;gap:10px;flex-wrap:wrap">' +
+      '<span style="font-size:13px;color:#9aa9b8;font-weight:600">' + no + '</span>' +
+      '<span style="font-size:20px;font-weight:700;color:#1a3a5c">' + title + '</span>' +
+      '<span style="font-size:13px;color:#2e74b5;background:#eef5fb;' +
+        'border-radius:10px;padding:1px 9px">' + cnt + '</span>' +
+    '</div>' +
+    '<div style="color:#6b7c8d;margin-top:8px;font-size:14px;line-height:1.7">' +
+      desc + '</div></a>';
+}
+
+function renderCats(){
+  document.getElementById("bar").style.display = "none";
+  var ci = document.getElementById("chapidx");
+  if(ci) ci.innerHTML = "";
+
+  var meta = R.meta || {};
+  var pre = meta.prefixes || [];
+  var suf = meta.suffixes || [];
+  var S = NAV.stats || {};
+  var wn = S.rootwords || 0;
+
+  var h = "";
+  h += bigCard("roots.html?cat=pre", "01", "常用前缀", 
+        "e-/ex- 出、in-/im- 进、re- 回、pre- 前…先认前缀，再猜词义方向。",
+        pre.length + " 个");
+  h += bigCard("roots.html?cat=suf", "02", "常用后缀",
+        "动词 -ate/-ize/-ify，形容词 -ful/-ous/-ive，名词 -tion/-ment/-ness…后缀定词性。",
+        suf.length + " 类");
+  h += bigCard("roots.html?cat=root", "03", "核心词根",
+        "gress 走、vers 转、press 压、duce 引…一个词根带一族同源词。",
+        GROUPS.length + " 组 / " + wn + " 词");
+
+  $main.innerHTML = '<div style="margin-top:6px">' + h + '</div>';
+
+  var bd = document.getElementById("hBadge");
+  if(bd) bd.textContent = "前缀 " + pre.length + " · 后缀 " + suf.length + " · 词根 " + GROUPS.length + " 组";
+  var sb = document.getElementById("hSub");
+  if(sb) sb.textContent = "按前缀、后缀、词根三类分开记。点哪一类，看哪一类。";
+}
+
+function renderAffixList(kind){
+  document.getElementById("bar").style.display = "none";
+  var ci = document.getElementById("chapidx");
+  if(ci) ci.innerHTML = "";
+
+  var meta = R.meta || {};
+  var arr = kind === "pre" ? (meta.prefixes || []) : (meta.suffixes || []);
+  var title = kind === "pre" ? "常用前缀" : "常用后缀";
+
+  var inner = '<div class="sec">' + title + '<span class="cnt">' + arr.length + " 个</span></div>";
+  arr.forEach(function(p, i){
+    var forms = p.forms || p.suffix || "";
+    var mean = p.meaning || "";
+    var eg = p.example || "";
+    inner += '<div class="wordrow" style="align-items:flex-start">' +
+      '<span class="ww" style="min-width:26px;color:#9aa9b8">' + String(i + 1).padStart(2, "0") + "</span>" +
+      '<span class="ww" style="min-width:200px;font-weight:600;color:#1a3a5c">' + esc(forms) + "</span>" +
+      '<span class="wm" style="min-width:150px">' + esc(mean) + "</span>" +
+      '<span class="wmem">例：' + esc(eg) + "</span></div>";
+  });
+
+  $main.innerHTML = '<a href="roots.html" style="display:inline-block;margin:4px 0 14px;' +
+    'color:#2e74b5;text-decoration:none;font-size:14px">← 返回三类</a>' +
+    '<div class="card open"><div class="cb" style="display:block;padding-top:4px">' + inner + "</div></div>";
+
+  var bd = document.getElementById("hBadge");
+  if(bd) bd.textContent = title + " · " + arr.length + " 个";
+  var sb = document.getElementById("hSub");
+  if(sb) sb.textContent = kind === "pre"
+    ? "前缀定方向：往前、往回、往里、往外、共同、否定。"
+    : "后缀定词性：动词、形容词、名词。";
+}
+
+function renderGroupGrid(){
+  document.getElementById("bar").style.display = "none";
   var items = GROUPS.map(function(g){
-    var roots = (g.roots||[]).map(function(rt){
-      return String(rt.root||"").replace(/——.*$/, "");
+    var roots = (g.roots || []).map(function(rt){
+      return String(rt.root || "").replace(/——.*$/, "");
     }).join(" · ");
     return {
       key: g.no,
@@ -51,23 +132,26 @@ function renderIndex(){
       title: g.theme,
       desc: "词根：" + roots,
       stats: [
-        { t: " 词根", v: (g.roots||[]).length },
+        { t: " 词根", v: (g.roots || []).length },
         { t: " 派生词", v: wordCount(g) }
       ]
     };
   });
-
   window.GS_renderUnitIndex("chapidx", items, "roots.html");
+  $main.innerHTML = '<a href="roots.html" style="display:inline-block;margin:4px 0 10px;' +
+    'color:#2e74b5;text-decoration:none;font-size:14px">← 返回三类</a>';
 
-  /* 前后缀表放目录页底部 */
-  $main.innerHTML = affixBlock();
-
-  var S = NAV.stats || {};
   var bd = document.getElementById("hBadge");
-  if(bd) bd.textContent = (S.rootgroups || GROUPS.length) + " 组 · " + (S.rootwords || 0) + " 词";
+  if(bd) bd.textContent = GROUPS.length + " 组词根";
   var sb = document.getElementById("hSub");
-  if(sb) sb.textContent = "共 " + GROUPS.length + " 组词根、 " + (S.rootwords||0) +
-    " 个派生词。一组一页，点进去记该组同源词。";
+  if(sb) sb.textContent = "共 " + GROUPS.length + " 组。点一组进去，看该组全部同源词。";
+}
+
+function renderIndex(){
+  var cat = catOf();
+  if(cat === "pre" || cat === "suf"){ renderAffixList(cat); return; }
+  if(cat === "root"){ renderGroupGrid(); return; }
+  renderCats();
 }
 
 function affixBlock(){
