@@ -29,6 +29,73 @@ function hl(s){
 function has(s){ return String(s==null?"":s).toLowerCase().indexOf(KEY) !== -1; }
 function nl(s){ return hl(s).replace(/\n/g,"<br>"); }
 
+/* ============ 完整解题步骤 ============ */
+var STEPS = {};
+(function(){
+  /* 合并各章步骤数据 */
+  var parts = [window.GS_STEPS_CH1, window.GS_STEPS_CH2, window.GS_STEPS_CH3,
+               window.GS_STEPS_CH4, window.GS_STEPS_CH5, window.GS_STEPS_CH6,
+               window.GS_STEPS_CH7, window.GS_STEPS_CH8];
+  parts.forEach(function(p){
+    if(p && typeof p === "object"){
+      for(var k in p){ if(Object.prototype.hasOwnProperty.call(p,k)) STEPS[k] = p[k]; }
+    }
+  });
+})();
+
+/* 注入步骤样式 */
+(function(){
+  if(document.getElementById("gsStepStyle")) return;
+  var st = document.createElement("style");
+  st.id = "gsStepStyle";
+  st.textContent = [
+    "/* 考点 */",
+    ".gs-kp{display:inline-block;font-size:12px;font-weight:700;color:#7c5a12;background:#fff6dd;border:1px solid #f0dfae;border-radius:6px;padding:3px 10px;margin-bottom:11px}",
+    "/* 思路块 */",
+    ".gs-sec{margin-top:12px;border-top:1px dashed #dbe6f0;padding-top:11px}",
+    ".gs-sec:first-of-type{border-top:none;padding-top:0;margin-top:4px}",
+    ".gs-lbl{font-size:11.5px;font-weight:700;color:#5b7fa3;letter-spacing:.4px;margin-bottom:7px}",
+    ".gs-txt{font-size:13.5px;line-height:2;color:#2c3e50}",
+    "/* 步骤 */",
+    ".gs-steps{margin:0;padding:0;list-style:none;counter-reset:gs}",
+    ".gs-steps li{position:relative;padding:8px 0 8px 34px;font-size:13.5px;line-height:2;color:#2c3e50;border-bottom:1px solid #f2f6fa}",
+    ".gs-steps li:last-child{border-bottom:none}",
+    ".gs-steps li:before{counter-increment:gs;content:counter(gs);position:absolute;left:0;top:9px;width:22px;height:22px;line-height:22px;text-align:center;font-size:11.5px;font-weight:700;color:#fff;background:#4a86b8;border-radius:50%}",
+    "/* 易错 */",
+    ".gs-trap{background:#fff8f4;border-left:3px solid #e8a878;border-radius:0 8px 8px 0;padding:11px 14px;font-size:13px;line-height:1.95;color:#8a5230}",
+    ".gs-trap .gs-lbl{color:#c07a45}",
+    "/* 考点块 */",
+    ".gs-box{background:#f7fbfe;border:1px solid #dbe9f4;border-radius:10px;padding:13px 16px}",
+    "@media(max-width:640px){.gs-txt,.gs-steps li{font-size:13px;line-height:1.9}}"
+  ].join("\n");
+  document.head.appendChild(st);
+})();
+
+/* 渲染完整步骤 */
+function gsDetail(q){
+  var d = STEPS[q.id];
+  if(!d) return "";
+  var h = '<div class="gs-box">';
+  if(d.kp) h += '<div class="gs-kp">考点 · '+esc(d.kp)+'</div>';
+  if(d.idea){
+    h += '<div class="gs-sec"><div class="gs-lbl">解题思路</div>';
+    h += '<div class="gs-txt">'+nl(d.idea)+'</div></div>';
+  }
+  if(d.steps && d.steps.length){
+    h += '<div class="gs-sec"><div class="gs-lbl">完整步骤</div>';
+    h += '<ol class="gs-steps">';
+    d.steps.forEach(function(x){ h += '<li>'+nl(x)+'</li>'; });
+    h += '</ol></div>';
+  }
+  if(d.trap){
+    h += '<div class="gs-sec"><div class="gs-trap">';
+    h += '<div class="gs-lbl">易错提醒</div>'+nl(d.trap);
+    h += '</div></div>';
+  }
+  h += '</div>';
+  return h;
+}
+
 var LET = ["A","B","C","D"];
 
 /* 题所属章：id 形如 "2-13" */
@@ -171,6 +238,7 @@ function renderChapter(){
           h += '<div class="ref">'+hl(q.a)+'</div>';
           h += '<div class="lbl">解析</div>';
           h += '<div class="note">'+nl(q.s)+'</div>';
+          h += gsDetail(q);
           h += '<div class="az-rate">';
           h += '<span>自评：</span>';
           h += '<button class="rate-btn'+(rate==="ok"?" on-ok":"")+'" data-rate="'+q.id+'" data-r="ok">答对了</button>';
@@ -188,6 +256,7 @@ function renderChapter(){
           h += '<div class="ref">'+esc(q.a)+'</div>';
           h += '<div class="lbl">解析</div>';
           h += '<div class="note">'+nl(q.s)+'</div>';
+          h += gsDetail(q);
           h += '</div>';
         }else{
           h += '<div class="az-actions" style="margin-top:9px">';
