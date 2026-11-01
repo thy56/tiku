@@ -4,6 +4,7 @@
 
 var NAV = window.YUWEN_NAV || {groups:[]};
 var QB = window.YUWEN_QUESTIONS || {groups:[]};
+var DEEP = window.YW_DEEP || {authors:{}};
 var KEY = "";
 var GKEY = window.GS_KEY;                    /* ?ch= 原样；null = 目录页 */
 var CUR = GKEY === null ? 0 : parseInt(GKEY, 10);
@@ -37,6 +38,92 @@ function hl(s){
 function has(s){
   return String(s==null?"":s).toLowerCase().indexOf(KEY) !== -1;
 }
+
+/* ============ 作者档案（深度解析） ============ */
+/* 题干注：note 格式“姓名，朝代。”，从 note 取姓名，再去作者表查档案 */
+function authorOf(item){
+  if(!item || item.src !== "人物→朝代") return null;
+  var note = item.note || "";
+  var nm = note.split("，")[0].trim();
+  if(!nm) nm = note.split(",")[0].trim();
+  if(!nm) return null;
+  var A = DEEP.authors || {};
+  if(A[nm]) return A[nm];
+  /* 容错：全称/简称差异，逐个包含比较 */
+  for(var k in A){
+    if(k && (nm.indexOf(k) !== -1 || k.indexOf(nm) !== -1)) return A[k];
+  }
+  return null;
+}
+
+function nl2(s){
+  return esc(s).replace(/\n/g,"<br>");
+}
+
+function deepHTML(item){
+  var a = authorOf(item);
+  if(!a) return "";
+
+  var h = '<div class="yw-deep">';
+  h += '<div class="yd-name">'+esc(a.name||"")+'</div>';
+
+  /* 基本信息行 */
+  var bits = [];
+  if(a.life && a.life !== "—") bits.push(a.life);
+  if(a.alias && a.alias !== "—") bits.push(esc(a.alias));
+  if(a.place && a.place !== "—") bits.push(esc(a.place));
+  if(a.era) bits.push('<b>'+esc(a.era)+'</b>');
+  if(bits.length) h += '<div class="yd-meta">'+bits.join(' <i>·</i> ')+'</div>';
+
+  if(a.status){
+    h += '<div class="yd-sec"><div class="yd-lbl">文学地位</div>';
+    h += '<div class="yd-txt">'+nl2(a.status)+'</div></div>';
+  }
+  if(a.style){
+    h += '<div class="yd-sec"><div class="yd-lbl">风格特点</div>';
+    h += '<div class="yd-txt">'+nl2(a.style)+'</div></div>';
+  }
+  if(a.works){
+    h += '<div class="yd-sec"><div class="yd-lbl">代表作品</div>';
+    h += '<div class="yd-txt">'+nl2(a.works)+'</div></div>';
+  }
+  if(a.quote && a.quote !== "—"){
+    h += '<div class="yd-sec"><div class="yd-lbl">名句</div>';
+    h += '<div class="yd-quote">'+nl2(a.quote)+'</div></div>';
+  }
+  if(a.keys && a.keys.length){
+    h += '<div class="yd-sec yd-keys"><div class="yd-lbl">考点提示</div><ul>';
+    a.keys.forEach(function(k){ h += '<li>'+nl2(k)+'</li>'; });
+    h += '</ul></div>';
+  }
+  h += '</div>';
+  return h;
+}
+
+/* 样式只插一次 */
+(function injectDeepStyle(){
+  if(document.getElementById("ywDeepStyle")) return;
+  var css = ''
+    + '.yw-deep{margin-top:12px;padding:14px 16px;border-radius:11px;'
+    + 'background:linear-gradient(180deg,#f7fafc,#eef4f8);border:1px solid #d8e3ec}'
+    + '.yd-name{font-size:15px;font-weight:700;color:#1f3a52;margin-bottom:6px}'
+    + '.yd-meta{font-size:12.5px;color:#5a7085;margin-bottom:11px;line-height:1.7}'
+    + '.yd-meta i{color:#a8bccb;font-style:normal;margin:0 2px}'
+    + '.yd-sec{margin-top:10px}'
+    + '.yd-lbl{display:inline-block;font-size:11.5px;font-weight:700;color:#2d6fa8;'
+    + 'background:#e3eef7;border-radius:4px;padding:1px 7px;margin-bottom:5px}'
+    + '.yd-txt{font-size:13.5px;line-height:1.85;color:#33495d}'
+    + '.yd-quote{font-size:13.5px;line-height:1.9;color:#7a5230;'
+    + 'border-left:3px solid #d9b98a;padding-left:10px;background:#fdf8f1;'
+    + 'border-radius:0 5px 5px 0;padding-top:5px;padding-bottom:5px}'
+    + '.yd-keys ul{margin:4px 0 0;padding-left:19px}'
+    + '.yd-keys li{font-size:13px;line-height:1.8;color:#3a5068;margin-bottom:3px}'
+    + '.yd-keys li::marker{color:#2d6fa8}';
+  var st = document.createElement("style");
+  st.id = "ywDeepStyle";
+  st.textContent = css;
+  document.head.appendChild(st);
+})();
 
 /* ============ 组列表 ============ */
 function renderGroupList(){
@@ -129,6 +216,7 @@ function renderMCQ(gno, part, item, i){
   h += '<span class="lab">答案：'+rightLetter+'．'+esc(item.atext||"")+'</span>';
   if(item.note) h += '\n解析：'+esc(item.note);
   if(item.src) h += '\n来源：常识库 '+esc(item.src);
+  h += deepHTML(item);
   h += '</div></div>';
   return h;
 }
