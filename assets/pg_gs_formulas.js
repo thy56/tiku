@@ -34,6 +34,7 @@ function hl(s){
 function has(s){ return String(s==null?"":s).toLowerCase().indexOf(KEY) !== -1; }
 
 function countOf(ch){
+  if(ch.mode === "rich") return ch.groups.length;
   var n = 0;
   ch.groups.forEach(function(g){ n += g.items.length; });
   return n;
@@ -48,24 +49,29 @@ function renderIndex(){
   document.getElementById("bar").style.display = "none";
 
   var items = ALL.map(function(c){
+    var rich = c.mode === "rich";
+    var n = countOf(c);
     return {
       no: c.no,
       title: c.title,
-      desc: "共 " + countOf(c) + " 条公式，分 " + c.groups.length + " 组",
-      stats: [
-        { t: " 条公式", v: countOf(c) },
-        { t: " 组", v: c.groups.length }
-      ]
+      desc: rich
+        ? "共 " + n + " 节讲义，公式内嵌含扩充"
+        : "共 " + n + " 条公式，分 " + c.groups.length + " 组",
+      stats: rich
+        ? [{ t: " 节", v: n }, { t: " 讲义", v: "" }]
+        : [{ t: " 条公式", v: n }, { t: " 组", v: c.groups.length }]
     };
   });
 
   window.GS_renderChapIndex("chapidx", items, "formulas.html");
 
   var total = F.total || 0;
+  var richN = F.richTotal || 0;
   var bd = document.getElementById("hBadge");
   if(bd) bd.textContent = total + " 条";
   var sb = document.getElementById("hSub");
-  if(sb) sb.textContent = "共 " + ALL.length + " 章 " + total + " 条公式。按章分开看，一章一页。";
+  if(sb) sb.textContent = "共 " + ALL.length + " 章 " + total + " 条公式"
+    + (richN ? "，另有 " + richN + " 节讲义" : "") + "。按章分开看，一章一页。";
 }
 
 /* ============ 本章分组目录（?ch=N，无 g）============ */
@@ -75,6 +81,8 @@ function renderGroupIndex(){
     $main.innerHTML = '<div class="empty">没有第 ' + CH + ' 章</div>';
     return;
   }
+
+  if(ch.mode === "rich"){ renderRichChapter(); return; }
 
   document.getElementById("bar").style.display = "none";
 
@@ -134,6 +142,8 @@ function renderGroup(){
     $main.innerHTML = '<div class="empty">没有第 ' + CH + ' 章</div>';
     return;
   }
+  if(ch.mode === "rich"){ renderRichChapter(); return; }
+
   var gi = G;
   if(gi === null || gi < 0 || gi >= ch.groups.length){ renderGroupIndex(); return; }
 
@@ -202,6 +212,50 @@ function renderGroup(){
   if(ph) ph.innerHTML = p;
 }
 
+/* ============ 讲义模式（mode="rich"）—— 分节 HTML，公式内嵌 ============ */
+function renderRichChapter(){
+  var ch = CHS[0];
+  if(!ch){
+    $main.innerHTML = '<div class="empty">没有第 ' + CH + ' 章</div>';
+    return;
+  }
+
+  document.getElementById("bar").style.display = "";
+
+  var html = '';
+  ch.groups.forEach(function(g, gi){
+    if(KEY && g.title.toLowerCase().indexOf(KEY) === -1
+       && (g.html || '').toLowerCase().indexOf(KEY) === -1) return;
+    html += '<div class="fm-sec" id="s' + gi + '">';
+    html += '<h2 class="fm-sh">' + hl(g.title) + '</h2>';
+    html += '<div class="fm-sb">' + (g.html || '') + '</div>';
+    html += '</div>';
+  });
+
+  var head = '<div class="chaphero">';
+  head += '<span class="ch-no">第 ' + ch.no + ' 章</span>';
+  head += '<h2>' + esc(window.GS_SHORT(ch.title)) + '</h2>';
+  head += '<div class="ch-st"><span><b>' + ch.groups.length + '</b> 节</span>';
+  head += '<span><b>讲义</b>含扩充</span></div>';
+  head += '</div>';
+
+  if(!html){
+    $main.innerHTML = head + '<div class="empty">本章没有匹配「' + esc(KEY) + '」的内容</div>';
+    return;
+  }
+
+  $main.innerHTML = head + html;
+
+  var bd = document.getElementById("hBadge");
+  if(bd) bd.textContent = "第 " + ch.no + " 章 · " + ch.groups.length + " 节";
+  var sb = document.getElementById("hSub");
+  if(sb) sb.textContent = window.GS_SHORT(ch.title) + "，共 " + ch.groups.length + " 节讲义。";
+
+  window.GS_renderChapBar("chapbar", "formulas.html",
+    { count: function(c){ return c.formulas; } });
+  window.GS_renderChapPager("chpager", "formulas.html");
+}
+
 /* ============ 整章页（静态 fm-chN.html）—— 所有组一次展开 ============ */
 function renderFullChapter(){
   var ch = CHS[0];
@@ -209,6 +263,8 @@ function renderFullChapter(){
     $main.innerHTML = '<div class="empty">没有第 ' + CH + ' 章</div>';
     return;
   }
+
+  if(ch.mode === "rich"){ renderRichChapter(); return; }
 
   document.getElementById("bar").style.display = "";
 
