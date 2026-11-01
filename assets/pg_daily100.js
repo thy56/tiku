@@ -138,7 +138,7 @@
         if (!hasAns) {
           h += '<span style="font-size:12.5px;color:#96591f">答案待补</span>';
         } else if (shown) {
-          h += '<span class="verdict ok">答案 ' + esc(q.a) + '</span>';
+          h += '<span class="verdict ok">答案已展开</span>';
           h += '<button class="revealbtn" data-hide="' + key + '">收起</button>';
         } else {
           h += '<button class="revealbtn" data-show="' + key + '">看答案</button>';

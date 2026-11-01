@@ -152,7 +152,7 @@
           if (!hasAns) {
             h += '<span style="font-size:12.5px;color:#96591f">答案待补</span>';
           } else if (shown) {
-            h += '<span class="verdict ok">答案 ' + esc(it.ans || '') + '</span>';
+            h += '<span class="verdict ok">答案已展开</span>';
             h += '<button class="revealbtn" data-hide="' + id + '">收起</button>';
           } else {
             h += '<span style="font-size:12.5px;color:#5d7080">先自己做，再看答案</span>';

@@ -142,7 +142,7 @@ function renderPaper(){
         if(!hasAns){
           h += '<span style="font-size:12.5px;color:#96591f">答案未公开</span>';
         }else if(shown){
-          h += '<span class="verdict ok">答案 ' + (it.ans||'') + '　' + (it.an ? esc(it.an) : '') + '</span>';
+          h += '<span class="verdict ok">答案已展开</span>';
           h += '<button class="revealbtn" data-hide="' + id + '">收起</button>';
         }else{
           h += '<span style="font-size:12.5px;color:#5d7080">先自己做，再看答案</span>';
