@@ -42,7 +42,7 @@
       pages: [
         ["index.html", "首页"],
         ["know.html", "知识体系", "141点"],
-        ["formulas.html", "公式总表", "405条"],
+        ["formulas.html", "公式总表", "409条"],
         ["examples.html", "例题精讲", "134例"],
         ["题库.html", "题库", "321题"],
       ]
