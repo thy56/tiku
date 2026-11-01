@@ -5,6 +5,16 @@
 var NAV = window.GS_NAV || {stats:{}};
 var F = window.GS_FORMULAS || {chapters:[]};
 var ALL = F.chapters || [];
+
+/* manifest 里可能有只有知识点、没有公式的章（如附录），
+   章节条不该列出来，否则点进去是空页。这里就地剔除。 */
+if (NAV.chapters && ALL.length){
+  var _have = {};
+  ALL.forEach(function(c){ _have[c.no] = 1; });
+  for (var _i = NAV.chapters.length - 1; _i >= 0; _i--){
+    if (!_have[NAV.chapters[_i].no]) NAV.chapters.splice(_i, 1);
+  }
+}
 var CH = window.GS_CH;
 var CHS = CH === null ? [] : ALL.filter(function(c){ return c.no === CH; });
 
