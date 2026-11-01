@@ -1124,3 +1124,36 @@ a{color:var(--blue-500);text-decoration:none}
   .wordrow .wm{min-width:0}
   .gtag{font-size:11px;padding:2px 8px}
 }
+
+/* ===== 例题精讲样式（2026-11-01 追加，来源 高数一/style.css） ===== */
+.excard .eq
+{
+  padding:14px 17px;background:var(--blue-50);
+  font-size:14.5px;line-height:1.95;color:var(--ink);
+  border-bottom:1px solid var(--line-2);
+}
+.excard .eq b
+{color:var(--blue-700);margin-right:6px}
+.excard .eb
+{padding:14px 17px}
+
+.exrow
+{margin-bottom:12px}
+.exrow:last-child
+{margin-bottom:0}
+.exrow .lb
+{
+  display:inline-block;font-size:11.5px;font-weight:700;
+  padding:2px 9px;border-radius:10px;margin-bottom:6px;letter-spacing:.03em;
+}
+.exrow.idea .lb
+{background:#eef4fb;color:#3a6ea5}
+.exrow.sol .lb
+{background:#eaf3ea;color:#3f8f4a}
+.exrow.trap .lb
+{background:#fdeeee;color:#b34a4a}
+.exrow .ct
+{font-size:13.5px;line-height:2;color:var(--ink-2);white-space:pre-wrap}
+.exrow.trap .ct
+{color:#8a4a4a;font-size:13px}
+/* ===== 例题精讲样式结束 ===== */

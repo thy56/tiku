@@ -18,7 +18,7 @@
   <h1> 山东专升本英语</h1>
   <p>
     <span class="sub" id="s1">56 组 · 1120 题</span>
-    <span class="sub" id="s2">语法 66 节</span>
+    <span class="sub" id="s2">语法 94 节</span>
     <span class="sub" id="s3">时态 21 节</span>
     <span class="sub" id="s4">词汇 271 词</span>
     <span class="sub" id="s5">词根 1367 词</span>
@@ -40,7 +40,7 @@
       <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 4.2a2 2 0 1 1 4 0v1.4h3.4v3.4h1.4a2 2 0 1 1 0 4h-1.4v3.4h-3.4v1.4a2 2 0 1 1-4 0v-1.4H6.6v-3.4H5.2a2 2 0 1 1 0-4h1.4V5.6H10z"/></svg></div>
       <h3>语法体系</h3>
       <div class="dc">五章递进：<b>五大基本句型</b>（主谓 / 主谓宾 / 主谓双宾 / 主谓宾补 / 主系表）→ 词法 → 动词体系 → 从句 → 特殊句式</div>
-      <div class="mt"><span>从句子骨架开始</span><span><b id="c-g">66</b> 节</span></div>
+      <div class="mt"><span>从句子骨架开始</span><span><b id="c-g">94</b> 节</span></div>
     </a>
 
     <a class="home-card" href="tenses.html">
@@ -49,6 +49,14 @@
       <div class="dc">不再死背 16 个公式：<b>时态 = 时间 × 状态</b>。先懂逻辑，再学现在 / 过去 / 将来，最后学被动语态。</div>
       <div class="mt"><span>五层递进</span><span><b id="c-t">21</b> 节</span></div>
     </a>
+
+    <a class="home-card" href="examples.html">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9.4 17.4a6 6 0 1 1 5.2 0"/><path d="M9.8 20.2h4.4M10.6 17.4h2.8"/></svg></div>
+      <h3>例题精讲</h3>
+      <div class="dc">与知识体系<b>分开存放</b>。按语法主线分章，覆盖五大句型、词法、动词体系、从句、特殊句式，每题按「题目 → 思路 → 详解 → 易错点」展开。</div>
+      <div class="mt"><span>学完一章就看例题</span><span><b id="c-ex">0</b> 例</span></div>
+    </a>
+
   </div>
 
   <div class="home-sec"> 词汇与词根</div>
@@ -92,6 +100,8 @@ var NAV = window.YUWEN_NAV || window.YW_NAV || {groups:[],stats:{}};
 var S = NAV.stats || {};
 
 function set(id, v){ var el=document.getElementById(id); if(el && v!=null) el.textContent=v; }
+
+set("c-ex", S.examples);
 set("c-g", S.gsections); set("c-t", S.tsections);
 set("c-v", S.vocab);     set("c-r", S.rootwords);
 set("c-p", S.questions); set("c-zt", S.zhenti);
