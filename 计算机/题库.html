@@ -89,7 +89,7 @@
     }
     if (!hit) hit = DATA.items[0];
     title = "第 " + hit.no + " 组 · " + hit.theme;
-    desc  = "覆盖 " + hit.date + " ~ " + hit.end + "，共 0 题。";
+    desc  = "覆盖 " + hit.date + " ~ " + hit.end + "。" + (hit.n ? "，共 " + hit.n + " 题。" : "");
     href  = PREFIX + hit.no + ".html";
   } else {
     var days = Math.floor((t - parse(START)) / 86400000);

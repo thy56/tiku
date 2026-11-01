@@ -115,6 +115,7 @@ window.JS_NAV = {
   ],
   "stats": {
     "groups": 53,
+    "chapters": 10,
     "items": 227,
     "formulas": 0,
     "points": 87,
