@@ -31,13 +31,13 @@
 <div class="tp-grid">
   <a class="home-card tp-card" href="type-zm.html">
     <h3>证明题专项</h3>
-    <div class="n"><b>30</b> 题 · 7 个知识点</div>
-    <div class="n" style="margin-top:8px;color:#8a8f98">积分不等式与定积分性质 8 · 零点定理与方程根 6 · 不等式证明（单调性法） 6 · 二重积分性质 4</div>
+    <div class="n"><b id="zmQ">-</b> 题 · <b id="zmK">-</b> 个知识点</div>
+    <div class="n" id="zmDist" style="margin-top:8px;color:#8a8f98">-</div>
   </a>
   <a class="home-card tp-card" href="type-yy.html">
     <h3>应用题专项</h3>
-    <div class="n"><b>36</b> 题 · 5 个知识点</div>
-    <div class="n" style="margin-top:8px;color:#8a8f98">平面图形面积 11 · 旋转体体积与弧长 11 · 物理应用（功·压力·运动） 7 · 最值·距离·优化 5</div>
+    <div class="n"><b id="yyQ">-</b> 题 · <b id="yyK">-</b> 个知识点</div>
+    <div class="n" id="yyDist" style="margin-top:8px;color:#8a8f98">-</div>
   </a>
 </div>
 </div>
@@ -55,5 +55,46 @@
 <script src="../assets/hub.js"></script>
 <script src="../assets/mathrender.js"></script>
 <script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+
+<script>
+(function(){
+  "use strict";
+  if(!window.GS_QUESTIONS || !window.GS_KP_TYPE) return;
+  var kp = window.GS_KP_TYPE;
+  function stat(tp){
+    var n = 0, g = {}, order = [];
+    (window.GS_QUESTIONS.questions || []).forEach(function(q){
+      if(q.type !== tp) return;
+      n++;
+      var lb = kp[q.id] || "其他";
+      if(!g[lb]){ g[lb] = 0; order.push(lb); }
+      g[lb]++;
+    });
+    return {n:n, groups:order, cnt:g, kn:order.length};
+  }
+  function set(id, v){ var e = document.getElementById(id); if(e) e.textContent = v; }
+
+  var zm = stat("证明"), yy = stat("应用");
+
+  /* 题型专项.html 的两张卡片 */
+  set("zmQ", zm.n); set("zmK", zm.kn);
+  set("yyQ", yy.n); set("yyK", yy.kn);
+  var dz = document.getElementById("zmDist");
+  if(dz) dz.textContent = zm.groups.map(function(k){ return k + " " + zm.cnt[k]; }).join(" · ");
+  var dy = document.getElementById("yyDist");
+  if(dy) dy.textContent = yy.groups.map(function(k){ return k + " " + yy.cnt[k]; }).join(" · ");
+
+  /* 单题型页头部 */
+  var CUR = window.GS_TYPE;
+  if(CUR){
+    var st = (CUR === "证明") ? zm : (CUR === "应用" ? yy : null);
+    if(st){
+      set("hBadge", st.n + " 题");
+      set("hCntQ", st.n);
+      set("hCntK", st.kn);
+    }
+  }
+})();
+</script>
 </body>
 </html>
