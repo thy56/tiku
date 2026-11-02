@@ -1,257 +1,1229 @@
 /* 高数一 历年真题（回忆版） */
-window.GS_ZHENTI =  [
-  {
-   "year": "2020",
-   "source": "考生回忆版（山东考试院不公布官方原题）",
-   "hasAnswer": true,
-   "note": "回忆版，题型与考点与当年试卷一致；答案与简解为整理补充。",
-   "sections": [
-    {
-     "name": "一、单项选择题",
-     "type": "choice",
-     "score": "每题 3 分，共 15 分",
-     "items": [
-      {
-       "no": 1,
-       "q": "当 $x \\to 0$ 时，以下函数是无穷小量的是",
-       "opts": [
-        "$e^{x}$",
-        "$\\ln(x+2)$",
-        "$\\sin x$",
-        "$\\cos x$"
-       ],
-       "ans": "C",
-       "an": "$x\\to0$ 时 $\\sin x\\to0$，是无穷小；$e^{x}\\to1$、$\\ln(x+2)\\to\\ln2$、$\\cos x\\to1$ 均不是无穷小。"
-      },
-      {
-       "no": 2,
-       "q": "平面 $2x-3y+4z=8$ 与直线 $\\dfrac{x-1}{2}=\\dfrac{y+2}{-3}=\\dfrac{z}{4}$ 的位置关系是",
-       "opts": [
-        "平行",
-        "垂直",
-        "相交但不垂直",
-        "直线在平面上"
-       ],
-       "ans": "B",
-       "an": "平面法向量 $\\vec n=(2,-3,4)$，直线方向向量 $\\vec s=(2,-3,4)$。$\\vec n \\parallel \\vec s$，故直线与平面垂直。"
-      },
-      {
-       "no": 3,
-       "q": "微分方程 $y''+7y'-8y=0$ 的通解为",
-       "opts": [
-        "$y=C_1e^{-x}+C_2e^{8x}$",
-        "$y=C_1e^{-x}+C_2e^{-8x}$",
-        "$y=C_1e^{x}+C_2e^{8x}$",
-        "$y=C_1e^{x}+C_2e^{-8x}$"
-       ],
-       "ans": "D",
-       "an": "特征方程 $r^{2}+7r-8=0$，即 $(r+8)(r-1)=0$，得 $r_1=1,\\ r_2=-8$，故 $y=C_1e^{x}+C_2e^{-8x}$。"
-      },
-      {
-       "no": 4,
-       "q": "曲线 $y=2x^{3}+3x^{2}-1$ 的拐点是",
-       "opts": [
-        "$\\left(-\\dfrac{1}{2},-\\dfrac{1}{2}\\right)$",
-        "$\\left(-\\dfrac{1}{2},\\dfrac{1}{2}\\right)$",
-        "$(-1,0)$",
-        "$(0,-1)$"
-       ],
-       "ans": "A",
-       "an": "$y'=6x^{2}+6x$，$y''=12x+6$。令 $y''=0$ 得 $x=-\\dfrac{1}{2}$；$y\\left(-\\dfrac{1}{2}\\right)=2\\cdot\\left(-\\dfrac{1}{8}\\right)+3\\cdot\\dfrac{1}{4}-1=-\\dfrac{1}{2}$。且 $y''$ 在该点两侧变号，故拐点为 $\\left(-\\dfrac{1}{2},-\\dfrac{1}{2}\\right)$。"
-      },
-      {
-       "no": 5,
-       "q": "以下级数收敛的为",
-       "opts": [
-        "$\\sum\\limits_{n=1}^{\\infty}\\dfrac{n^{2}-1}{n^{3}+2n^{2}}$",
-        "$\\sum\\limits_{n=1}^{\\infty}\\sin\\dfrac{n\\pi}{3}$",
-        "$\\sum\\limits_{n=1}^{\\infty}\\ln\\left(1+\\dfrac{1}{n^{2}}\\right)$",
-        "$\\sum\\limits_{n=1}^{\\infty}\\dfrac{3^{n}}{2n^{2}+1}$"
-       ],
-       "ans": "C",
-       "an": "C：$\\ln\\left(1+\\dfrac{1}{n^{2}}\\right)\\sim\\dfrac{1}{n^{2}}$，$p=2>1$，收敛。A：通项 $\\sim\\dfrac{1}{n}$，发散；B：通项不趋于 0，发散；D：通项 $\\to\\infty$，发散。"
-      }
-     ]
-    },
-    {
-     "name": "二、填空题",
-     "type": "fill",
-     "score": "每题 3 分，共 15 分",
-     "items": [
-      {
-       "no": 6,
-       "q": "函数 $f(x)=\\sqrt{\\dfrac{x}{3}-1}$ 的定义域为 ________。",
-       "ans": "$[3,+\\infty)$",
-       "an": "根号内非负：$\\dfrac{x}{3}-1\\ge0$，得 $x\\ge3$。"
-      },
-      {
-       "no": 7,
-       "q": "曲线 $y=\\dfrac{1}{x}+2\\ln x$ 在点 $(1,1)$ 处的切线方程为 ________。",
-       "ans": "$y=x$",
-       "an": "$y'=-\\dfrac{1}{x^{2}}+\\dfrac{2}{x}$，$y'(1)=-1+2=1$。切线：$y-1=1\\cdot(x-1)$，即 $y=x$。"
-      },
-      {
-       "no": 8,
-       "q": "若 $\\displaystyle\\int_{a}^{b}f(x)dx=1$，$\\displaystyle\\int_{a}^{b}[2f(x)+3g(x)]dx=8$，则 $\\displaystyle\\int_{a}^{b}g(x)dx=$ ________。",
-       "ans": "$2$",
-       "an": "$2\\displaystyle\\int_{a}^{b}f+3\\displaystyle\\int_{a}^{b}g=8$，即 $2\\times1+3\\displaystyle\\int_{a}^{b}g=8$，得 $\\displaystyle\\int_{a}^{b}g=2$。"
-      },
-      {
-       "no": 9,
-       "q": "已知两点 $A(-1,2,0)$ 和 $B(2,-3,\\sqrt{2})$，则与向量 $\\overrightarrow{AB}$ 同方向的单位向量为 ________。",
-       "ans": "$\\left(\\dfrac{1}{2},-\\dfrac{5}{6},\\dfrac{\\sqrt{2}}{6}\\right)$",
-       "an": "$\\overrightarrow{AB}=(3,-5,\\sqrt{2})$，$|\\overrightarrow{AB}|=\\sqrt{9+25+2}=6$，单位向量 $=\\dfrac{1}{6}(3,-5,\\sqrt{2})$。"
-      },
-      {
-       "no": 10,
-       "q": "已知 $f(x,y)$ 连续，$I=\\displaystyle\\int_{0}^{1}dx\\int_{0}^{\\sqrt{x}}f(x,y)dy+\\int_{1}^{2}dx\\int_{0}^{2-x}f(x,y)dy$，交换积分次序后 $I=$ ________。",
-       "ans": "$\\displaystyle\\int_{0}^{1}dy\\int_{y^{2}}^{2-y}f(x,y)dx$",
-       "an": "积分区域由 $y=\\sqrt{x}$（即 $x=y^{2}$）与 $y=2-x$（即 $x=2-y$）围成，两条曲线交于 $(1,1)$。改写为先对 $x$：$y$ 从 $0$ 到 $1$，$x$ 从 $y^{2}$ 到 $2-y$。"
-      }
-     ]
-    },
-    {
-     "name": "三、解答题",
-     "type": "answer",
-     "score": "共 70 分",
-     "items": [
-      {
-       "no": 11,
-       "score": "6 分",
-       "q": "求极限：$\\displaystyle\\lim_{x\\to\\infty}\\left(\\dfrac{x^{3}+3x^{2}}{x^{2}+x+2}-x\\right)$",
-       "ans": "$2$",
-       "an": "通分：$\\dfrac{x^{3}+3x^{2}-x(x^{2}+x+2)}{x^{2}+x+2}=\\dfrac{2x^{2}-2x}{x^{2}+x+2}$，分子分母同除 $x^{2}$，极限为 $\\dfrac{2}{1}=2$。"
-      },
-      {
-       "no": 12,
-       "score": "6 分",
-       "q": "求极限：$\\displaystyle\\lim_{x\\to0}\\dfrac{\\int_{0}^{x}\\sin t^{2}dt}{x^{3}}$",
-       "ans": "$\\dfrac{1}{3}$",
-       "an": "$\\dfrac{0}{0}$ 型，洛必达：$\\dfrac{\\sin x^{2}}{3x^{2}}$，而 $\\sin x^{2}\\sim x^{2}$，故极限 $=\\dfrac{x^{2}}{3x^{2}}=\\dfrac{1}{3}$。"
-      },
-      {
-       "no": 13,
-       "score": "6 分",
-       "q": "求不定积分：$\\displaystyle\\int\\dfrac{\\sqrt{x}+\\ln x}{x}dx$",
-       "ans": "$2\\sqrt{x}+\\dfrac{1}{2}(\\ln x)^{2}+C$",
-       "an": "拆成两项：$\\displaystyle\\int x^{-\\frac{1}{2}}dx+\\int\\dfrac{\\ln x}{x}dx=2\\sqrt{x}+\\dfrac{1}{2}(\\ln x)^{2}+C$。"
-      },
-      {
-       "no": 14,
-       "score": "6 分",
-       "q": "求过点 $(1,-2,2)$ 且与两平面 $x+2y-z=1$、$2x+y+3z=2$ 都垂直的平面方程。",
-       "ans": "$7x-5y-3z=11$",
-       "an": "所求平面法向量 $\\vec n=\\vec n_1\\times\\vec n_2=(1,2,-1)\\times(2,1,3)=(2\\times3-(-1)\\times1,\\ (-1)\\times2-1\\times3,\\ 1\\times1-2\\times2)=(7,-5,-3)$。过点 $(1,-2,2)$：$7(x-1)-5(y+2)-3(z-2)=0$，整理得 $7x-5y-3z=11$。"
-      },
-      {
-       "no": 15,
-       "score": "6 分",
-       "q": "已知 $z=x\\sin\\dfrac{y}{x}$，求 $\\dfrac{\\partial^{2}z}{\\partial x\\partial y}$",
-       "ans": "$\\dfrac{y}{x^{2}}\\sin\\dfrac{y}{x}$",
-       "an": "先对 $y$ 求偏导：$\\dfrac{\\partial z}{\\partial y}=x\\cos\\dfrac{y}{x}\\cdot\\dfrac{1}{x}=\\cos\\dfrac{y}{x}$；再对 $x$ 求偏导：$\\dfrac{\\partial}{\\partial x}\\cos\\dfrac{y}{x}=-\\sin\\dfrac{y}{x}\\cdot\\left(-\\dfrac{y}{x^{2}}\\right)=\\dfrac{y}{x^{2}}\\sin\\dfrac{y}{x}$。"
-      },
-      {
-       "no": 16,
-       "score": "7 分",
-       "q": "计算二重积分 $\\displaystyle\\iint_{D}\\cos(x^{2}+y^{2})dxdy$，$D$ 由 $y=\\dfrac{\\sqrt{3}}{3}x$，$y=\\sqrt{3}x$，$x^{2}+y^{2}=\\dfrac{\\pi}{2}$ 在第一象限围成。",
-       "ans": "$\\dfrac{\\pi}{12}$",
-       "an": "极坐标：$y=\\dfrac{\\sqrt{3}}{3}x$ 对应 $\\theta=\\dfrac{\\pi}{6}$，$y=\\sqrt{3}x$ 对应 $\\theta=\\dfrac{\\pi}{3}$，$r$ 从 $0$ 到 $\\sqrt{\\dfrac{\\pi}{2}}$。$I=\\displaystyle\\int_{\\pi/6}^{\\pi/3}d\\theta\\int_{0}^{\\sqrt{\\pi/2}}\\cos(r^{2})\\,r\\,dr$。内层 $=\\dfrac{1}{2}\\left[\\sin(r^{2})\\right]_{0}^{\\sqrt{\\pi/2}}=\\dfrac{1}{2}\\sin\\dfrac{\\pi}{2}=\\dfrac{1}{2}$。故 $I=\\dfrac{1}{2}\\cdot\\dfrac{\\pi}{6}=\\dfrac{\\pi}{12}$。"
-      },
-      {
-       "no": 17,
-       "score": "7 分",
-       "q": "求微分方程 $y'+y=e^{x}+x$ 的通解。",
-       "ans": "$y=Ce^{-x}+\\dfrac{1}{2}e^{x}+x-1$",
-       "an": "一阶线性，$P(x)=1$，$Q(x)=e^{x}+x$。积分因子 $e^{\\int1dx}=e^{x}$，通解 $y=e^{-x}\\left(\\displaystyle\\int e^{x}(e^{x}+x)dx+C\\right)$。其中 $\\displaystyle\\int e^{2x}dx=\\dfrac{1}{2}e^{2x}$，$\\displaystyle\\int xe^{x}dx=xe^{x}-e^{x}$。故 $y=e^{-x}\\left(\\dfrac{1}{2}e^{2x}+xe^{x}-e^{x}+C\\right)=\\dfrac{1}{2}e^{x}+x-1+Ce^{-x}$。"
-      },
-      {
-       "no": 18,
-       "score": "8 分",
-       "q": "求幂级数 $\\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{x^{n+2}}{n+1}$ 的收敛域及和函数。",
-       "ans": "收敛域 $[-1,1)$；和函数 $S(x)=-x\\ln(1-x)$",
-       "an": "提出 $x$：$S(x)=x\\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{x^{n+1}}{n+1}$。由 $\\ln(1-x)=-\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{x^{n}}{n}$ 得 $\\sum_{n=0}^{\\infty}\\dfrac{x^{n+1}}{n+1}=-\\ln(1-x)$，故 $S(x)=-x\\ln(1-x)$。端点：$x=1$ 时级数为调和的（发散）；$x=-1$ 时为交错级数 $\\sum\\dfrac{(-1)^{n+2}}{n+1}$，收敛。收敛域 $[-1,1)$。"
-      },
-      {
-       "no": 19,
-       "score": "7 分",
-       "q": "求曲线 $y=-x^{2}+4$ 与直线 $y=-2x+4$ 围成图形的面积。",
-       "ans": "$\\dfrac{4}{3}$",
-       "an": "交点：$-x^{2}+4=-2x+4$，得 $x^{2}-2x=0$，$x=0$ 或 $x=2$。面积 $=\\displaystyle\\int_{0}^{2}\\left[(-x^{2}+4)-(-2x+4)\\right]dx=\\int_{0}^{2}(-x^{2}+2x)dx=\\left[-\\dfrac{x^{3}}{3}+x^{2}\\right]_{0}^{2}=-\\dfrac{8}{3}+4=\\dfrac{4}{3}$。"
-      },
-      {
-       "no": 20,
-       "score": "7 分",
-       "q": "证明：当 $x>1$ 时，$x+\\ln x>4\\sqrt{x}-3$。",
-       "ans": "见解析",
-       "an": "构造 $F(x)=x+\\ln x-4\\sqrt{x}+3$（$x\\ge1$）。$F(1)=1+0-4+3=0$。$F'(x)=1+\\dfrac{1}{x}-\\dfrac{2}{\\sqrt{x}}=\\dfrac{x\\left(1+\\frac{1}{x}-\\frac{2}{\\sqrt{x}}\\right)}{x}=\\dfrac{(\\sqrt{x}-1)^{2}}{x}\\ge0$。故 $F$ 在 $[1,+\\infty)$ 单调递增，$x>1$ 时 $F(x)>F(1)=0$，即 $x+\\ln x>4\\sqrt{x}-3$。"
-      },
-      {
-       "no": 21,
-       "score": "8 分",
-       "q": "设 $f(x)$ 在 $[0,1]$ 上连续，$f(1)=1$，证明：对任意 $\\lambda\\in(0,1)$，存在 $\\xi\\in(0,1)$，使得 $f(\\xi)=\\dfrac{\\lambda}{\\xi^{2}}$。",
-       "ans": "见解析",
-       "an": "构造辅助函数 $F(x)=x^{2}f(x)-\\lambda$，$F$ 在 $[0,1]$ 上连续。$F(0)=0-\\lambda=-\\lambda<0$；$F(1)=1\\cdot f(1)-\\lambda=1-\\lambda>0$（因 $\\lambda\\in(0,1)$）。由零点定理，存在 $\\xi\\in(0,1)$ 使 $F(\\xi)=0$，即 $\\xi^{2}f(\\xi)=\\lambda$，故 $f(\\xi)=\\dfrac{\\lambda}{\\xi^{2}}$。"
-      }
-     ]
-    }
-   ]
-  },
-  {
-   "year": "2025",
-   "source": "考生回忆版片段（山东考试院不公布官方原题）",
-   "hasAnswer": true,
-   "partial": true,
-   "note": "仅收录第 18–21 题。第 1–16 题回忆内容缺失；第 17 题仅存答案 [2,8)（R=3），题干缺失，未收录。",
-   "sections": [
-    {
-     "name": "三、计算题（片段）",
-     "type": "answer",
-     "score": "第 17 题题干缺失",
-     "items": [
-      {
-       "no": 18,
-       "score": "8 分",
-       "q": "计算二重积分 $\\displaystyle\\iint_{D}x\\,dxdy$，其中 $D$ 由曲线 $y=|x^{2}-4|$ 与直线 $y=3x$ 所围成的闭区域。",
-       "ans": "$\\dfrac{99}{4}$",
-       "an": "先求交点：$x^{2}-4\\ge0$ 时 $x^{2}-4=3x$，即 $(x-4)(x+1)=0$，取 $x=4$；$x^{2}-4<0$ 时 $4-x^{2}=3x$，即 $(x+4)(x-1)=0$，取 $x=1$。故两曲线交于 $x=1$ 与 $x=4$，且在 $[1,4]$ 上恒有 $3x\\ge|x^{2}-4|$。以 $x=2$ 分段：\n\n$I=\\displaystyle\\int_{1}^{2}x\\left[3x-(4-x^{2})\\right]dx+\\int_{2}^{4}x\\left[3x-(x^{2}-4)\\right]dx$\n\n第一段 $=\\displaystyle\\int_{1}^{2}(x^{3}+3x^{2}-4x)dx=\\left[\\dfrac{x^{4}}{4}+x^{3}-2x^{2}\\right]_{1}^{2}=4-\\left(-\\dfrac{3}{4}\\right)=\\dfrac{19}{4}$\n\n第二段 $=\\displaystyle\\int_{2}^{4}(-x^{3}+3x^{2}+4x)dx=\\left[-\\dfrac{x^{4}}{4}+x^{3}+2x^{2}\\right]_{2}^{4}=32-12=20$\n\n故 $I=\\dfrac{19}{4}+20=\\dfrac{99}{4}$。"
-      }
-     ]
-    },
-    {
-     "name": "四、应用题",
-     "type": "answer",
-     "score": "每题 7 分，共 14 分",
-     "items": [
-      {
-       "no": 19,
-       "score": "7 分",
-       "q": "设区域 $D$ 由 $y=e^{x}$ 与 $y=\\sqrt{2x-x^{2}}$ 及直线 $x=1$、$x=0$ 围成，求 $D$ 绕 $x$ 轴旋转一周所得旋转体的体积。",
-       "ans": "$\\pi\\left(\\dfrac{e^{2}}{2}-\\dfrac{7}{6}\\right)$",
-       "an": "$y=\\sqrt{2x-x^{2}}$ 即 $(x-1)^{2}+y^{2}=1$ 的上半圆，在 $[0,1]$ 上由 $0$ 单调增到 $1$；而 $e^{x}$ 在 $[0,1]$ 上由 $1$ 增到 $e$，故 $e^{x}\\ge\\sqrt{2x-x^{2}}$。\n\n$V=\\pi\\displaystyle\\int_{0}^{1}\\left[(e^{x})^{2}-(2x-x^{2})\\right]dx=\\pi\\left[\\dfrac{e^{2x}}{2}-x^{2}+\\dfrac{x^{3}}{3}\\right]_{0}^{1}$\n\n$=\\pi\\left[\\left(\\dfrac{e^{2}}{2}-1+\\dfrac{1}{3}\\right)-\\dfrac{1}{2}\\right]=\\pi\\left(\\dfrac{e^{2}}{2}-\\dfrac{7}{6}\\right)$。"
-      },
-      {
-       "no": 20,
-       "score": "7 分",
-       "q": "求函数 $f(x)=x+\\ln(1+x^{2})-4\\arctan x$ 的极值，并判断是极大值还是极小值。",
-       "ans": "极大值 $f(-3)=-3+\\ln 10+4\\arctan 3$；极小值 $f(1)=1+\\ln 2-\\pi$",
-       "an": "$f'(x)=1+\\dfrac{2x}{1+x^{2}}-\\dfrac{4}{1+x^{2}}=\\dfrac{(1+x^{2})+2x-4}{1+x^{2}}=\\dfrac{x^{2}+2x-3}{1+x^{2}}=\\dfrac{(x+3)(x-1)}{1+x^{2}}$。\n\n令 $f'(x)=0$ 得驻点 $x=-3$、$x=1$。分母 $1+x^{2}>0$，故 $f'$ 的符号由 $(x+3)(x-1)$ 决定：$x<-3$ 时为正，$-3<x<1$ 时为负，$x>1$ 时为正。\n\n所以 $x=-3$ 为极大值点，$x=1$ 为极小值点。\n\n$f(-3)=-3+\\ln(1+9)-4\\arctan(-3)=-3+\\ln 10+4\\arctan 3$（极大值）；\n\n$f(1)=1+\\ln 2-4\\cdot\\dfrac{\\pi}{4}=1+\\ln 2-\\pi$（极小值）。"
-      }
-     ]
-    },
-    {
-     "name": "五、证明题",
-     "type": "answer",
-     "score": "8 分",
-     "items": [
-      {
-       "no": 21,
-       "score": "8 分",
-       "q": "已知 $f(x)$ 在 $[0,1]$ 上连续、在 $(0,1)$ 内可导。求证：存在 $\\xi\\in(0,1)$，使 $$\\int_{0}^{1}f(x)dx=f(0)+f'(\\xi)(1-\\xi)$$",
-       "ans": "见解析",
-       "an": "对 $\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx$ 分部积分（取 $u=1-x$，$dv=f'(x)dx$）：\n\n$\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx=\\Big[(1-x)f(x)\\Big]_{0}^{1}+\\int_{0}^{1}f(x)dx=0-f(0)+\\int_{0}^{1}f(x)dx$\n\n即 $\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx=\\int_{0}^{1}f(x)dx-f(0)$。\n\n又 $(1-x)f'(x)$ 在 $[0,1]$ 上连续，由积分中值定理，存在 $\\xi\\in(0,1)$ 使\n\n$\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx=(1-\\xi)f'(\\xi)\\cdot(1-0)=(1-\\xi)f'(\\xi)$。\n\n两式联立得 $\\displaystyle\\int_{0}^{1}f(x)dx-f(0)=f'(\\xi)(1-\\xi)$，即\n\n$\\displaystyle\\int_{0}^{1}f(x)dx=f(0)+f'(\\xi)(1-\\xi)$。证毕。\n\n（注：分部积分与积分中值定理要求 $f'$ 在 $[0,1]$ 上连续，这是教材通行假设。）"
-      }
-     ]
-    }
-   ]
-  }
- ];
+window.GS_ZHENTI = [
+ {
+  "year": "2020",
+  "source": "考生回忆版（山东考试院不公布官方原题）",
+  "hasAnswer": true,
+  "note": "回忆版，题型与考点与当年试卷一致；答案与简解为整理补充。",
+  "sections": [
+   {
+    "name": "一、单项选择题",
+    "type": "choice",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 1,
+      "q": "当 $x \\to 0$ 时，以下函数是无穷小量的是",
+      "opts": [
+       "$e^{x}$",
+       "$\\ln(x+2)$",
+       "$\\sin x$",
+       "$\\cos x$"
+      ],
+      "ans": "C",
+      "an": "$x\\to0$ 时 $\\sin x\\to0$，是无穷小；$e^{x}\\to1$、$\\ln(x+2)\\to\\ln2$、$\\cos x\\to1$ 均不是无穷小。"
+     },
+     {
+      "no": 2,
+      "q": "平面 $2x-3y+4z=8$ 与直线 $\\dfrac{x-1}{2}=\\dfrac{y+2}{-3}=\\dfrac{z}{4}$ 的位置关系是",
+      "opts": [
+       "平行",
+       "垂直",
+       "相交但不垂直",
+       "直线在平面上"
+      ],
+      "ans": "B",
+      "an": "平面法向量 $\\vec n=(2,-3,4)$，直线方向向量 $\\vec s=(2,-3,4)$。$\\vec n \\parallel \\vec s$，故直线与平面垂直。"
+     },
+     {
+      "no": 3,
+      "q": "微分方程 $y''+7y'-8y=0$ 的通解为",
+      "opts": [
+       "$y=C_1e^{-x}+C_2e^{8x}$",
+       "$y=C_1e^{-x}+C_2e^{-8x}$",
+       "$y=C_1e^{x}+C_2e^{8x}$",
+       "$y=C_1e^{x}+C_2e^{-8x}$"
+      ],
+      "ans": "D",
+      "an": "特征方程 $r^{2}+7r-8=0$，即 $(r+8)(r-1)=0$，得 $r_1=1,\\ r_2=-8$，故 $y=C_1e^{x}+C_2e^{-8x}$。"
+     },
+     {
+      "no": 4,
+      "q": "曲线 $y=2x^{3}+3x^{2}-1$ 的拐点是",
+      "opts": [
+       "$\\left(-\\dfrac{1}{2},-\\dfrac{1}{2}\\right)$",
+       "$\\left(-\\dfrac{1}{2},\\dfrac{1}{2}\\right)$",
+       "$(-1,0)$",
+       "$(0,-1)$"
+      ],
+      "ans": "A",
+      "an": "$y'=6x^{2}+6x$，$y''=12x+6$。令 $y''=0$ 得 $x=-\\dfrac{1}{2}$；$y\\left(-\\dfrac{1}{2}\\right)=2\\cdot\\left(-\\dfrac{1}{8}\\right)+3\\cdot\\dfrac{1}{4}-1=-\\dfrac{1}{2}$。且 $y''$ 在该点两侧变号，故拐点为 $\\left(-\\dfrac{1}{2},-\\dfrac{1}{2}\\right)$。"
+     },
+     {
+      "no": 5,
+      "q": "以下级数收敛的为",
+      "opts": [
+       "$\\sum\\limits_{n=1}^{\\infty}\\dfrac{n^{2}-1}{n^{3}+2n^{2}}$",
+       "$\\sum\\limits_{n=1}^{\\infty}\\sin\\dfrac{n\\pi}{3}$",
+       "$\\sum\\limits_{n=1}^{\\infty}\\ln\\left(1+\\dfrac{1}{n^{2}}\\right)$",
+       "$\\sum\\limits_{n=1}^{\\infty}\\dfrac{3^{n}}{2n^{2}+1}$"
+      ],
+      "ans": "C",
+      "an": "C：$\\ln\\left(1+\\dfrac{1}{n^{2}}\\right)\\sim\\dfrac{1}{n^{2}}$，$p=2>1$，收敛。A：通项 $\\sim\\dfrac{1}{n}$，发散；B：通项不趋于 0，发散；D：通项 $\\to\\infty$，发散。"
+     }
+    ]
+   },
+   {
+    "name": "二、填空题",
+    "type": "fill",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 6,
+      "q": "函数 $f(x)=\\sqrt{\\dfrac{x}{3}-1}$ 的定义域为 ________。",
+      "ans": "$[3,+\\infty)$",
+      "an": "根号内非负：$\\dfrac{x}{3}-1\\ge0$，得 $x\\ge3$。"
+     },
+     {
+      "no": 7,
+      "q": "曲线 $y=\\dfrac{1}{x}+2\\ln x$ 在点 $(1,1)$ 处的切线方程为 ________。",
+      "ans": "$y=x$",
+      "an": "$y'=-\\dfrac{1}{x^{2}}+\\dfrac{2}{x}$，$y'(1)=-1+2=1$。切线：$y-1=1\\cdot(x-1)$，即 $y=x$。"
+     },
+     {
+      "no": 8,
+      "q": "若 $\\displaystyle\\int_{a}^{b}f(x)dx=1$，$\\displaystyle\\int_{a}^{b}[2f(x)+3g(x)]dx=8$，则 $\\displaystyle\\int_{a}^{b}g(x)dx=$ ________。",
+      "ans": "$2$",
+      "an": "$2\\displaystyle\\int_{a}^{b}f+3\\displaystyle\\int_{a}^{b}g=8$，即 $2\\times1+3\\displaystyle\\int_{a}^{b}g=8$，得 $\\displaystyle\\int_{a}^{b}g=2$。"
+     },
+     {
+      "no": 9,
+      "q": "已知两点 $A(-1,2,0)$ 和 $B(2,-3,\\sqrt{2})$，则与向量 $\\overrightarrow{AB}$ 同方向的单位向量为 ________。",
+      "ans": "$\\left(\\dfrac{1}{2},-\\dfrac{5}{6},\\dfrac{\\sqrt{2}}{6}\\right)$",
+      "an": "$\\overrightarrow{AB}=(3,-5,\\sqrt{2})$，$|\\overrightarrow{AB}|=\\sqrt{9+25+2}=6$，单位向量 $=\\dfrac{1}{6}(3,-5,\\sqrt{2})$。"
+     },
+     {
+      "no": 10,
+      "q": "已知 $f(x,y)$ 连续，$I=\\displaystyle\\int_{0}^{1}dx\\int_{0}^{\\sqrt{x}}f(x,y)dy+\\int_{1}^{2}dx\\int_{0}^{2-x}f(x,y)dy$，交换积分次序后 $I=$ ________。",
+      "ans": "$\\displaystyle\\int_{0}^{1}dy\\int_{y^{2}}^{2-y}f(x,y)dx$",
+      "an": "积分区域由 $y=\\sqrt{x}$（即 $x=y^{2}$）与 $y=2-x$（即 $x=2-y$）围成，两条曲线交于 $(1,1)$。改写为先对 $x$：$y$ 从 $0$ 到 $1$，$x$ 从 $y^{2}$ 到 $2-y$。"
+     }
+    ]
+   },
+   {
+    "name": "三、解答题",
+    "type": "answer",
+    "score": "共 70 分",
+    "items": [
+     {
+      "no": 11,
+      "score": "6 分",
+      "q": "求极限：$\\displaystyle\\lim_{x\\to\\infty}\\left(\\dfrac{x^{3}+3x^{2}}{x^{2}+x+2}-x\\right)$",
+      "ans": "$2$",
+      "an": "通分：$\\dfrac{x^{3}+3x^{2}-x(x^{2}+x+2)}{x^{2}+x+2}=\\dfrac{2x^{2}-2x}{x^{2}+x+2}$，分子分母同除 $x^{2}$，极限为 $\\dfrac{2}{1}=2$。"
+     },
+     {
+      "no": 12,
+      "score": "6 分",
+      "q": "求极限：$\\displaystyle\\lim_{x\\to0}\\dfrac{\\int_{0}^{x}\\sin t^{2}dt}{x^{3}}$",
+      "ans": "$\\dfrac{1}{3}$",
+      "an": "$\\dfrac{0}{0}$ 型，洛必达：$\\dfrac{\\sin x^{2}}{3x^{2}}$，而 $\\sin x^{2}\\sim x^{2}$，故极限 $=\\dfrac{x^{2}}{3x^{2}}=\\dfrac{1}{3}$。"
+     },
+     {
+      "no": 13,
+      "score": "6 分",
+      "q": "求不定积分：$\\displaystyle\\int\\dfrac{\\sqrt{x}+\\ln x}{x}dx$",
+      "ans": "$2\\sqrt{x}+\\dfrac{1}{2}(\\ln x)^{2}+C$",
+      "an": "拆成两项：$\\displaystyle\\int x^{-\\frac{1}{2}}dx+\\int\\dfrac{\\ln x}{x}dx=2\\sqrt{x}+\\dfrac{1}{2}(\\ln x)^{2}+C$。"
+     },
+     {
+      "no": 14,
+      "score": "6 分",
+      "q": "求过点 $(1,-2,2)$ 且与两平面 $x+2y-z=1$、$2x+y+3z=2$ 都垂直的平面方程。",
+      "ans": "$7x-5y-3z=11$",
+      "an": "所求平面法向量 $\\vec n=\\vec n_1\\times\\vec n_2=(1,2,-1)\\times(2,1,3)=(2\\times3-(-1)\\times1,\\ (-1)\\times2-1\\times3,\\ 1\\times1-2\\times2)=(7,-5,-3)$。过点 $(1,-2,2)$：$7(x-1)-5(y+2)-3(z-2)=0$，整理得 $7x-5y-3z=11$。"
+     },
+     {
+      "no": 15,
+      "score": "6 分",
+      "q": "已知 $z=x\\sin\\dfrac{y}{x}$，求 $\\dfrac{\\partial^{2}z}{\\partial x\\partial y}$",
+      "ans": "$\\dfrac{y}{x^{2}}\\sin\\dfrac{y}{x}$",
+      "an": "先对 $y$ 求偏导：$\\dfrac{\\partial z}{\\partial y}=x\\cos\\dfrac{y}{x}\\cdot\\dfrac{1}{x}=\\cos\\dfrac{y}{x}$；再对 $x$ 求偏导：$\\dfrac{\\partial}{\\partial x}\\cos\\dfrac{y}{x}=-\\sin\\dfrac{y}{x}\\cdot\\left(-\\dfrac{y}{x^{2}}\\right)=\\dfrac{y}{x^{2}}\\sin\\dfrac{y}{x}$。"
+     },
+     {
+      "no": 16,
+      "score": "7 分",
+      "q": "计算二重积分 $\\displaystyle\\iint_{D}\\cos(x^{2}+y^{2})dxdy$，$D$ 由 $y=\\dfrac{\\sqrt{3}}{3}x$，$y=\\sqrt{3}x$，$x^{2}+y^{2}=\\dfrac{\\pi}{2}$ 在第一象限围成。",
+      "ans": "$\\dfrac{\\pi}{12}$",
+      "an": "极坐标：$y=\\dfrac{\\sqrt{3}}{3}x$ 对应 $\\theta=\\dfrac{\\pi}{6}$，$y=\\sqrt{3}x$ 对应 $\\theta=\\dfrac{\\pi}{3}$，$r$ 从 $0$ 到 $\\sqrt{\\dfrac{\\pi}{2}}$。$I=\\displaystyle\\int_{\\pi/6}^{\\pi/3}d\\theta\\int_{0}^{\\sqrt{\\pi/2}}\\cos(r^{2})\\,r\\,dr$。内层 $=\\dfrac{1}{2}\\left[\\sin(r^{2})\\right]_{0}^{\\sqrt{\\pi/2}}=\\dfrac{1}{2}\\sin\\dfrac{\\pi}{2}=\\dfrac{1}{2}$。故 $I=\\dfrac{1}{2}\\cdot\\dfrac{\\pi}{6}=\\dfrac{\\pi}{12}$。"
+     },
+     {
+      "no": 17,
+      "score": "7 分",
+      "q": "求微分方程 $y'+y=e^{x}+x$ 的通解。",
+      "ans": "$y=Ce^{-x}+\\dfrac{1}{2}e^{x}+x-1$",
+      "an": "一阶线性，$P(x)=1$，$Q(x)=e^{x}+x$。积分因子 $e^{\\int1dx}=e^{x}$，通解 $y=e^{-x}\\left(\\displaystyle\\int e^{x}(e^{x}+x)dx+C\\right)$。其中 $\\displaystyle\\int e^{2x}dx=\\dfrac{1}{2}e^{2x}$，$\\displaystyle\\int xe^{x}dx=xe^{x}-e^{x}$。故 $y=e^{-x}\\left(\\dfrac{1}{2}e^{2x}+xe^{x}-e^{x}+C\\right)=\\dfrac{1}{2}e^{x}+x-1+Ce^{-x}$。"
+     },
+     {
+      "no": 18,
+      "score": "8 分",
+      "q": "求幂级数 $\\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{x^{n+2}}{n+1}$ 的收敛域及和函数。",
+      "ans": "收敛域 $[-1,1)$；和函数 $S(x)=-x\\ln(1-x)$",
+      "an": "提出 $x$：$S(x)=x\\displaystyle\\sum_{n=0}^{\\infty}\\dfrac{x^{n+1}}{n+1}$。由 $\\ln(1-x)=-\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{x^{n}}{n}$ 得 $\\sum_{n=0}^{\\infty}\\dfrac{x^{n+1}}{n+1}=-\\ln(1-x)$，故 $S(x)=-x\\ln(1-x)$。端点：$x=1$ 时级数为调和的（发散）；$x=-1$ 时为交错级数 $\\sum\\dfrac{(-1)^{n+2}}{n+1}$，收敛。收敛域 $[-1,1)$。"
+     },
+     {
+      "no": 19,
+      "score": "7 分",
+      "q": "求曲线 $y=-x^{2}+4$ 与直线 $y=-2x+4$ 围成图形的面积。",
+      "ans": "$\\dfrac{4}{3}$",
+      "an": "交点：$-x^{2}+4=-2x+4$，得 $x^{2}-2x=0$，$x=0$ 或 $x=2$。面积 $=\\displaystyle\\int_{0}^{2}\\left[(-x^{2}+4)-(-2x+4)\\right]dx=\\int_{0}^{2}(-x^{2}+2x)dx=\\left[-\\dfrac{x^{3}}{3}+x^{2}\\right]_{0}^{2}=-\\dfrac{8}{3}+4=\\dfrac{4}{3}$。"
+     },
+     {
+      "no": 20,
+      "score": "7 分",
+      "q": "证明：当 $x>1$ 时，$x+\\ln x>4\\sqrt{x}-3$。",
+      "ans": "见解析",
+      "an": "构造 $F(x)=x+\\ln x-4\\sqrt{x}+3$（$x\\ge1$）。$F(1)=1+0-4+3=0$。$F'(x)=1+\\dfrac{1}{x}-\\dfrac{2}{\\sqrt{x}}=\\dfrac{x\\left(1+\\frac{1}{x}-\\frac{2}{\\sqrt{x}}\\right)}{x}=\\dfrac{(\\sqrt{x}-1)^{2}}{x}\\ge0$。故 $F$ 在 $[1,+\\infty)$ 单调递增，$x>1$ 时 $F(x)>F(1)=0$，即 $x+\\ln x>4\\sqrt{x}-3$。"
+     },
+     {
+      "no": 21,
+      "score": "8 分",
+      "q": "设 $f(x)$ 在 $[0,1]$ 上连续，$f(1)=1$，证明：对任意 $\\lambda\\in(0,1)$，存在 $\\xi\\in(0,1)$，使得 $f(\\xi)=\\dfrac{\\lambda}{\\xi^{2}}$。",
+      "ans": "见解析",
+      "an": "构造辅助函数 $F(x)=x^{2}f(x)-\\lambda$，$F$ 在 $[0,1]$ 上连续。$F(0)=0-\\lambda=-\\lambda<0$；$F(1)=1\\cdot f(1)-\\lambda=1-\\lambda>0$（因 $\\lambda\\in(0,1)$）。由零点定理，存在 $\\xi\\in(0,1)$ 使 $F(\\xi)=0$，即 $\\xi^{2}f(\\xi)=\\lambda$，故 $f(\\xi)=\\dfrac{\\lambda}{\\xi^{2}}$。"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": "2021",
+  "source": "题型结构补全卷（非官方原卷）",
+  "hasAnswer": true,
+  "inferred": true,
+  "note": "山东考试院不公布官方原卷，历年试卷均为考生回忆版。本卷据该年高数一题型结构（选择 5 + 填空 5 + 计算 7 + 应用 2 + 证明 2）与考点分布整理补全：题目为按该年考点编写的练习卷，考点、题型、分值分布贴近该年，但不是原题。",
+  "sections": [
+   {
+    "name": "一、单项选择题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 1,
+      "q": "函数 $f(x)=\\sqrt{x-1}+\\dfrac{1}{\\sqrt{3-x}}$ 的定义域是（　）",
+      "opts": [
+       "$[1,3)$",
+       "$(1,3)$",
+       "$[1,3]$",
+       "$(1,3]$"
+      ],
+      "ans": "A",
+      "an": "根号内非负：$x-1\\ge 0\\Rightarrow x\\ge 1$；分母内为正：$3-x>0\\Rightarrow x<3$。取交得 $[1,3)$。"
+     },
+     {
+      "no": 2,
+      "q": "当 $x\\to 0$ 时，与 $x$ 等价的无穷小是（　）",
+      "opts": [
+       "$\\sin x$",
+       "$1-\\cos x$",
+       "$\\tan x-\\sin x$",
+       "$x^{2}$"
+      ],
+      "ans": "A",
+      "an": "由 $\\sin x=x-\\dfrac{x^{3}}{6}+o(x^{3})$ 得 $\\sin x\\sim x$。而 $1-\\cos x\\sim\\dfrac{x^{2}}{2}$，$\\tan x-\\sin x\\sim\\dfrac{x^{3}}{2}$，$x^{2}$ 是二阶无穷小。"
+     },
+     {
+      "no": 3,
+      "q": "曲线 $y=x^{3}-3x+1$ 的拐点是（　）",
+      "opts": [
+       "$(0,1)$",
+       "$(1,-1)$",
+       "$(-1,3)$",
+       "无拐点"
+      ],
+      "ans": "A",
+      "an": "$y'=3x^{2}-3$，$y''=6x$。令 $y''=0$ 得 $x=0$，且 $y''$ 在 $x=0$ 两侧变号，故为拐点，$y(0)=1$，即 $(0,1)$。"
+     },
+     {
+      "no": 4,
+      "q": "$\\displaystyle\\int_{0}^{1}2x\\,\\mathrm{d}x=$（　）",
+      "opts": [
+       "$1$",
+       "$2$",
+       "$\\dfrac{1}{2}$",
+       "$0$"
+      ],
+      "ans": "A",
+      "an": "$\\displaystyle\\int_{0}^{1}2x\\,\\mathrm{d}x=\\left.x^{2}\\right|_{0}^{1}=1$。"
+     },
+     {
+      "no": 5,
+      "q": "级数 $\\displaystyle\\sum_{n=1}^{\\infty}\\left(\\dfrac{1}{2}\\right)^{n}$ 的和为（　）",
+      "opts": [
+       "$1$",
+       "$2$",
+       "$\\dfrac{1}{2}$",
+       "发散"
+      ],
+      "ans": "A",
+      "an": "这是首项 $a_{1}=\\dfrac{1}{2}$、公比 $q=\\dfrac{1}{2}$ 的等比级数，$|q|<1$ 故收敛，和 $S=\\dfrac{a_{1}}{1-q}=\\dfrac{\\frac{1}{2}}{1-\\frac{1}{2}}=1$。"
+     }
+    ]
+   },
+   {
+    "name": "二、填空题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 6,
+      "q": "$\\displaystyle\\lim_{x\\to 0}\\dfrac{\\sin 3x}{x}=$ ________。",
+      "ans": "$3$",
+      "an": "$\\sin 3x\\sim 3x$，故极限 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{3x}{x}=3$。"
+     },
+     {
+      "no": 7,
+      "q": "设 $y=e^{2x}$，则 $y'=$ ________。",
+      "ans": "$2e^{2x}$",
+      "an": "复合函数求导，外层 $e^{u}$、内层 $u=2x$：$y'=e^{2x}\\cdot 2=2e^{2x}$。"
+     },
+     {
+      "no": 8,
+      "q": "$\\displaystyle\\int x^{2}\\,\\mathrm{d}x=$ ________。",
+      "ans": "$\\dfrac{x^{3}}{3}+C$",
+      "an": "由幂函数积分公式 $\\displaystyle\\int x^{n}\\mathrm{d}x=\\dfrac{x^{n+1}}{n+1}+C$，取 $n=2$ 得 $\\dfrac{x^{3}}{3}+C$。"
+     },
+     {
+      "no": 9,
+      "q": "过点 $(1,0,0)$ 且垂直于 $x$ 轴的平面方程为 ________。",
+      "ans": "$x=1$",
+      "an": "垂直于 $x$ 轴的平面法向量可取 $(1,0,0)$，由点法式 $1\\cdot(x-1)+0\\cdot(y-0)+0\\cdot(z-0)=0$，即 $x=1$。"
+     },
+     {
+      "no": 10,
+      "q": "微分方程 $y'+y=0$ 的通解为 ________。",
+      "ans": "$y=Ce^{-x}$",
+      "an": "这是一阶线性齐次方程，特征根 $r=-1$，故通解 $y=Ce^{-x}$（$C$ 为任意常数）。"
+     }
+    ]
+   },
+   {
+    "name": "三、计算题",
+    "score": "共 42 分",
+    "items": [
+     {
+      "no": 11,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{1-\\cos x}{x\\sin x}$。",
+      "ans": "$\\dfrac{1}{2}$",
+      "an": "$x\\to 0$ 时 $1-\\cos x\\sim\\dfrac{x^{2}}{2}$，$\\sin x\\sim x$。\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{\\frac{x^{2}}{2}}{x\\cdot x}=\\dfrac{1}{2}$。"
+     },
+     {
+      "no": 12,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to +\\infty}\\left(\\sqrt{x^{2}+2x}-x\\right)$。",
+      "ans": "$1$",
+      "an": "分子有理化：\\n$\\sqrt{x^{2}+2x}-x=\\dfrac{2x}{\\sqrt{x^{2}+2x}+x}=\\dfrac{2}{\\sqrt{1+\\frac{2}{x}}+1}$。\n\n$x\\to+\\infty$ 时 $\\sqrt{1+\\frac{2}{x}}\\to 1$，故极限 $=\\dfrac{2}{2}=1$。"
+     },
+     {
+      "no": 13,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int x\\cos x\\,\\mathrm{d}x$。",
+      "ans": "$x\\sin x+\\cos x+C$",
+      "an": "分部积分，取 $u=x$、$\\mathrm{d}v=\\cos x\\,\\mathrm{d}x$，则 $\\mathrm{d}u=\\mathrm{d}x$、$v=\\sin x$：\n\n$\\displaystyle\\int x\\cos x\\,\\mathrm{d}x=x\\sin x-\\int\\sin x\\,\\mathrm{d}x=x\\sin x+\\cos x+C$。\n\n验证：$(x\\sin x+\\cos x)'=\\sin x+x\\cos x-\\sin x=x\\cos x$，正确。"
+     },
+     {
+      "no": 14,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int\\dfrac{\\mathrm{d}x}{x^{2}-1}$。",
+      "ans": "$\\dfrac{1}{2}\\ln\\left|\\dfrac{x-1}{x+1}\\right|+C$",
+      "an": "部分分式分解：$\\dfrac{1}{x^{2}-1}=\\dfrac{1}{(x-1)(x+1)}=\\dfrac{1}{2}\\left(\\dfrac{1}{x-1}-\\dfrac{1}{x+1}\\right)$。\n\n逐项积分：$\\dfrac{1}{2}\\left(\\ln|x-1|-\\ln|x+1|\\right)+C=\\dfrac{1}{2}\\ln\\left|\\dfrac{x-1}{x+1}\\right|+C$。"
+     },
+     {
+      "no": 15,
+      "score": "6 分",
+      "q": "求由曲线 $y=x^{2}$ 与直线 $y=2x$ 所围成图形的面积。",
+      "ans": "$\\dfrac{4}{3}$",
+      "an": "先求交点：$x^{2}=2x\\Rightarrow x(x-2)=0$，得 $x=0$、$x=2$。\n\n在 $[0,2]$ 上 $2x\\ge x^{2}$，故面积\\n$S=\\displaystyle\\int_{0}^{2}(2x-x^{2})\\,\\mathrm{d}x=\\left[x^{2}-\\dfrac{x^{3}}{3}\\right]_{0}^{2}=4-\\dfrac{8}{3}=\\dfrac{4}{3}$。"
+     },
+     {
+      "no": 16,
+      "score": "6 分",
+      "q": "设 $z=x^{2}y+e^{xy}$，求 $\\dfrac{\\partial z}{\\partial x}$ 与 $\\dfrac{\\partial z}{\\partial y}$。",
+      "ans": "$\\dfrac{\\partial z}{\\partial x}=2xy+ye^{xy}$，$\\dfrac{\\partial z}{\\partial y}=x^{2}+xe^{xy}$",
+      "an": "对 $x$ 求偏导（把 $y$ 看作常数）：\\n$\\dfrac{\\partial z}{\\partial x}=2xy+e^{xy}\\cdot y=2xy+ye^{xy}$。\n\n对 $y$ 求偏导（把 $x$ 看作常数）：\\n$\\dfrac{\\partial z}{\\partial y}=x^{2}+e^{xy}\\cdot x=x^{2}+xe^{xy}$。"
+     },
+     {
+      "no": 17,
+      "score": "6 分",
+      "q": "求微分方程 $y''-3y'+2y=0$ 的通解。",
+      "ans": "$y=C_{1}e^{x}+C_{2}e^{2x}$",
+      "an": "特征方程为 $r^{2}-3r+2=0$，即 $(r-1)(r-2)=0$，得 $r_{1}=1$、$r_{2}=2$。\n\n两不等实根，故通解 $y=C_{1}e^{x}+C_{2}e^{2x}$（$C_{1},C_{2}$ 为任意常数）。"
+     }
+    ]
+   },
+   {
+    "name": "四、应用题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 18,
+      "score": "7 分",
+      "q": "求幂级数 $\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{x^{n}}{n}$ 的收敛域。",
+      "ans": "$[-1,1)$",
+      "an": "先求收敛半径：$\\displaystyle\\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_{n}}\\right|=\\lim_{n\\to\\infty}\\dfrac{n}{n+1}=1$，故 $R=1$，收敛区间 $(-1,1)$。\n\n端点检验：\\n$x=1$ 时为 $\\displaystyle\\sum\\dfrac{1}{n}$，调和级数发散；\\n$x=-1$ 时为 $\\displaystyle\\sum\\dfrac{(-1)^{n}}{n}$，交错级数，由莱布尼茨判别法收敛。\n\n故收敛域为 $[-1,1)$。"
+     },
+     {
+      "no": 19,
+      "score": "7 分",
+      "q": "求曲线 $y=\\sqrt{x}$ 在 $[0,1]$ 上绕 $x$ 轴旋转一周所得旋转体的体积。",
+      "ans": "$\\dfrac{\\pi}{2}$",
+      "an": "用圆盘法：$V=\\pi\\displaystyle\\int_{0}^{1}y^{2}\\,\\mathrm{d}x=\\pi\\int_{0}^{1}x\\,\\mathrm{d}x=\\pi\\cdot\\dfrac{1}{2}=\\dfrac{\\pi}{2}$。"
+     }
+    ]
+   },
+   {
+    "name": "五、证明题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 20,
+      "score": "7 分",
+      "q": "证明：当 $x>0$ 时，$\\ln(1+x)<x$。",
+      "ans": "见解析",
+      "an": "构造辅助函数 $f(x)=x-\\ln(1+x)$，则 $f(0)=0$。\n\n求导：$f'(x)=1-\\dfrac{1}{1+x}=\\dfrac{x}{1+x}$。\n\n当 $x>0$ 时 $\\dfrac{x}{1+x}>0$，故 $f'(x)>0$，$f(x)$ 在 $(0,+\\infty)$ 上严格单调递增。\n\n于是当 $x>0$ 时 $f(x)>f(0)=0$，即 $x-\\ln(1+x)>0$，得 $\\ln(1+x)<x$。"
+     },
+     {
+      "no": 21,
+      "score": "7 分",
+      "q": "设 $f(x)$ 在 $[0,1]$ 上连续、在 $(0,1)$ 内可导，且 $f(0)=0$、$f(1)=1$。证明：存在 $\\xi\\in(0,1)$，使 $f'(\\xi)=1$。",
+      "ans": "见解析",
+      "an": "对 $f(x)$ 在 $[0,1]$ 上使用拉格朗日中值定理。\n\n因 $f$ 在 $[0,1]$ 连续、在 $(0,1)$ 可导，故存在 $\\xi\\in(0,1)$ 使\\n$f'(\\xi)=\\dfrac{f(1)-f(0)}{1-0}=\\dfrac{1-0}{1}=1$。\n\n即得 $f'(\\xi)=1$。"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": "2022",
+  "source": "题型结构补全卷（非官方原卷）",
+  "hasAnswer": true,
+  "inferred": true,
+  "note": "山东考试院不公布官方原卷，历年试卷均为考生回忆版。本卷据该年高数一题型结构（选择 5 + 填空 5 + 计算 7 + 应用 2 + 证明 2）与考点分布整理补全：题目为按该年考点编写的练习卷，考点、题型、分值分布贴近该年，但不是原题。",
+  "sections": [
+   {
+    "name": "一、单项选择题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 1,
+      "q": "$\\displaystyle\\lim_{x\\to 0}\\dfrac{e^{x}-1}{x}=$（　）",
+      "opts": [
+       "$1$",
+       "$0$",
+       "$e$",
+       "不存在"
+      ],
+      "ans": "A",
+      "an": "由等价无穷小 $e^{x}-1\\sim x\\ (x\\to 0)$，故 $\\displaystyle\\lim_{x\\to 0}\\dfrac{x}{x}=1$。也可直接用导数定义：$(e^{x})'|_{x=0}=e^{0}=1$。"
+     },
+     {
+      "no": 2,
+      "q": "曲线 $y=x^{3}$ 在点 $(1,1)$ 处切线的斜率为（　）",
+      "opts": [
+       "$3$",
+       "$1$",
+       "$0$",
+       "$\\\\dfrac{1}{3}$"
+      ],
+      "ans": "A",
+      "an": "$y'=3x^{2}$，在 $x=1$ 处 $y'=3$，即切线斜率 $k=3$。"
+     },
+     {
+      "no": 3,
+      "q": "函数 $y=x^{2}-2x$ 的极小值为（　）",
+      "opts": [
+       "$-1$",
+       "$0$",
+       "$1$",
+       "$-2$"
+      ],
+      "ans": "A",
+      "an": "$y'=2x-2$，令 $y'=0$ 得 $x=1$。$y''=2>0$，故 $x=1$ 为极小值点，极小值 $y(1)=1-2=-1$。"
+     },
+     {
+      "no": 4,
+      "q": "$\\displaystyle\\int_{1}^{e}\\dfrac{\\mathrm{d}x}{x}=$（　）",
+      "opts": [
+       "$1$",
+       "$e$",
+       "$e-1$",
+       "$\\\\ln e^{2}$"
+      ],
+      "ans": "A",
+      "an": "$\\displaystyle\\int_{1}^{e}\\dfrac{\\mathrm{d}x}{x}=\\left.\\ln x\\right|_{1}^{e}=\\ln e-\\ln 1=1$。"
+     },
+     {
+      "no": 5,
+      "q": "下列级数中发散的是（　）",
+      "opts": [
+       "$\\\\displaystyle\\\\sum_{n=1}^{\\\\infty}\\\\dfrac{1}{n}$",
+       "$\\\\displaystyle\\\\sum_{n=1}^{\\\\infty}\\\\dfrac{1}{n^{2}}$",
+       "$\\\\displaystyle\\\\sum_{n=1}^{\\\\infty}\\\\dfrac{1}{2^{n}}$",
+       "$\\\\displaystyle\\\\sum_{n=1}^{\\\\infty}\\\\dfrac{(-1)^{n}}{n}$"
+      ],
+      "ans": "A",
+      "an": "$\\displaystyle\\sum\\dfrac{1}{n}$ 是调和级数，$p=1$，发散。\n\n$\\displaystyle\\sum\\dfrac{1}{n^{2}}$ 为 $p=2>1$ 的 $p$ 级数，收敛；$\\displaystyle\\sum\\dfrac{1}{2^{n}}$ 为等比级数 $q=\\dfrac{1}{2}$，收敛；$\\displaystyle\\sum\\dfrac{(-1)^{n}}{n}$ 为交错级数，收敛。"
+     }
+    ]
+   },
+   {
+    "name": "二、填空题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 6,
+      "q": "$\\displaystyle\\lim_{x\\to\\infty}\\left(1+\\dfrac{1}{x}\\right)^{2x}=$ ________。",
+      "ans": "$e^{2}$",
+      "an": "由重要极限 $\\displaystyle\\lim_{x\\to\\infty}\\left(1+\\dfrac{1}{x}\\right)^{x}=e$：\n\n原式 $=\\left[\\displaystyle\\lim_{x\\to\\infty}\\left(1+\\dfrac{1}{x}\\right)^{x}\\right]^{2}=e^{2}$。"
+     },
+     {
+      "no": 7,
+      "q": "设 $y=\\ln(\\cos x)$，则 $y'=$ ________。",
+      "ans": "$-\\tan x$",
+      "an": "复合求导，外层 $\\ln u$、内层 $u=\\cos x$：\n\n$y'=\\dfrac{1}{\\cos x}\\cdot(-\\sin x)=-\\tan x$。"
+     },
+     {
+      "no": 8,
+      "q": "$\\displaystyle\\int_{0}^{\\pi}\\sin x\\,\\mathrm{d}x=$ ________。",
+      "ans": "$2$",
+      "an": "$\\displaystyle\\int_{0}^{\\pi}\\sin x\\,\\mathrm{d}x=\\left[-\\cos x\\right]_{0}^{\\pi}=-\\cos\\pi+\\cos 0=1+1=2$。"
+     },
+     {
+      "no": 9,
+      "q": "设 $\\vec{a}=(1,-1,2)$，$\\vec{b}=(2,1,-1)$，则 $\\vec{a}\\times\\vec{b}=$ ________。",
+      "ans": "$(-1,\\,5,\\,3)$",
+      "an": "按行列式展开：\\n$\\vec{a}\\times\\vec{b}=\\begin{vmatrix}\\vec{i}&\\vec{j}&\\vec{k}\\\\1&-1&2\\\\2&1&-1\\end{vmatrix}$\n\n$=\\vec{i}\\left[(-1)(-1)-2\\cdot 1\\right]-\\vec{j}\\left[1\\cdot(-1)-2\\cdot 2\\right]+\\vec{k}\\left[1\\cdot 1-(-1)\\cdot 2\\right]$\n\n$=\\vec{i}(1-2)-\\vec{j}(-1-4)+\\vec{k}(1+2)=(-1,\\,5,\\,3)$。"
+     },
+     {
+      "no": 10,
+      "q": "微分方程 $y'=3x^{2}$ 的通解为 ________。",
+      "ans": "$y=x^{3}+C$",
+      "an": "两边积分：$y=\\displaystyle\\int 3x^{2}\\,\\mathrm{d}x=x^{3}+C$（$C$ 为任意常数）。"
+     }
+    ]
+   },
+   {
+    "name": "三、计算题",
+    "score": "共 42 分",
+    "items": [
+     {
+      "no": 11,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{e^{x}-1-x}{x^{2}}$。",
+      "ans": "$\\dfrac{1}{2}$",
+      "an": "用泰勒展开 $e^{x}=1+x+\\dfrac{x^{2}}{2}+o(x^{2})$，得分子 $=\\dfrac{x^{2}}{2}+o(x^{2})$。\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{\\frac{x^{2}}{2}}{x^{2}}=\\dfrac{1}{2}$。\n\n（洛必达两次亦可：$\\to\\dfrac{e^{x}-1}{2x}\\to\\dfrac{e^{x}}{2}\\to\\dfrac{1}{2}$）"
+     },
+     {
+      "no": 12,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{x-\\sin x}{x^{3}}$。",
+      "ans": "$\\dfrac{1}{6}$",
+      "an": "由 $\\sin x=x-\\dfrac{x^{3}}{6}+o(x^{3})$，得 $x-\\sin x=\\dfrac{x^{3}}{6}+o(x^{3})$。\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{\\frac{x^{3}}{6}}{x^{3}}=\\dfrac{1}{6}$。"
+     },
+     {
+      "no": 13,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int\\ln x\\,\\mathrm{d}x$。",
+      "ans": "$x\\ln x-x+C$",
+      "an": "分部积分，取 $u=\\ln x$、$\\mathrm{d}v=\\mathrm{d}x$，则 $\\mathrm{d}u=\\dfrac{\\mathrm{d}x}{x}$、$v=x$：\n\n$\\displaystyle\\int\\ln x\\,\\mathrm{d}x=x\\ln x-\\int x\\cdot\\dfrac{1}{x}\\,\\mathrm{d}x=x\\ln x-\\int\\mathrm{d}x=x\\ln x-x+C$。"
+     },
+     {
+      "no": 14,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int x^{2}e^{x}\\,\\mathrm{d}x$。",
+      "ans": "$e^{x}\\left(x^{2}-2x+2\\right)+C$",
+      "an": "连续两次分部积分。\\n\\n第一次：取 $u=x^{2}$、$\\mathrm{d}v=e^{x}\\mathrm{d}x$，\n$\\displaystyle\\int x^{2}e^{x}\\mathrm{d}x=x^{2}e^{x}-2\\int xe^{x}\\mathrm{d}x$。\n\n第二次：$\\displaystyle\\int xe^{x}\\mathrm{d}x=xe^{x}-e^{x}$。\n\n代回得 $x^{2}e^{x}-2(xe^{x}-e^{x})+C=e^{x}(x^{2}-2x+2)+C$。"
+     },
+     {
+      "no": 15,
+      "score": "6 分",
+      "q": "设 $z=x^{3}y-xy^{3}$，求 $\\dfrac{\\partial z}{\\partial x}$ 与 $\\dfrac{\\partial z}{\\partial y}$。",
+      "ans": "$\\dfrac{\\partial z}{\\partial x}=3x^{2}y-y^{3}$，$\\dfrac{\\partial z}{\\partial y}=x^{3}-3xy^{2}$",
+      "an": "对 $x$ 求偏导（$y$ 视为常数）：$\\dfrac{\\partial z}{\\partial x}=3x^{2}y-y^{3}$。\n\n对 $y$ 求偏导（$x$ 视为常数）：$\\dfrac{\\partial z}{\\partial y}=x^{3}-3xy^{2}$。"
+     },
+     {
+      "no": 16,
+      "score": "6 分",
+      "q": "求函数 $f(x)=x^{3}-3x$ 的单调区间与极值。",
+      "ans": "增区间 $(-\\infty,-1)$ 与 $(1,+\\infty)$，减区间 $(-1,1)$；极大值 $f(-1)=2$，极小值 $f(1)=-2$",
+      "an": "定义域为 $(-\\infty,+\\infty)$。\n\n$f'(x)=3x^{2}-3=3(x-1)(x+1)$，驻点 $x=\\pm 1$。\n\n$x<-1$ 时 $f'(x)>0$，递增；$-1<x<1$ 时 $f'(x)<0$，递减；$x>1$ 时 $f'(x)>0$，递增。\n\n故极大值 $f(-1)=-1+3=2$，极小值 $f(1)=1-3=-2$。"
+     },
+     {
+      "no": 17,
+      "score": "6 分",
+      "q": "求微分方程 $y''+y=0$ 的通解。",
+      "ans": "$y=C_{1}\\cos x+C_{2}\\sin x$",
+      "an": "特征方程 $r^{2}+1=0$，得 $r=\\pm i$（一对共轭纯虚根，$\\alpha=0$、$\\beta=1$）。\n\n故通解 $y=e^{0\\cdot x}\\left(C_{1}\\cos x+C_{2}\\sin x\\right)=C_{1}\\cos x+C_{2}\\sin x$。"
+     }
+    ]
+   },
+   {
+    "name": "四、应用题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 18,
+      "score": "7 分",
+      "q": "判断级数 $\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{1}{n^{2}}$ 的敛散性。",
+      "ans": "收敛",
+      "an": "这是 $p$ 级数 $\\displaystyle\\sum\\dfrac{1}{n^{p}}$，此处 $p=2>1$，故收敛。\n\n（也可用比较判别法：$n\\ge 1$ 时 $\\dfrac{1}{n^{2}}\\le\\dfrac{1}{n(n-1)}$，而 $\\displaystyle\\sum\\dfrac{1}{n(n-1)}$ 收敛）"
+     },
+     {
+      "no": 19,
+      "score": "7 分",
+      "q": "求由曲线 $y=x^{2}$ 与直线 $y=x$ 所围成图形的面积。",
+      "ans": "$\\dfrac{1}{6}$",
+      "an": "交点：$x^{2}=x\\Rightarrow x(x-1)=0$，得 $x=0$、$x=1$。\n\n在 $[0,1]$ 上 $x\\ge x^{2}$，故\\n$S=\\displaystyle\\int_{0}^{1}(x-x^{2})\\,\\mathrm{d}x=\\left[\\dfrac{x^{2}}{2}-\\dfrac{x^{3}}{3}\\right]_{0}^{1}=\\dfrac{1}{2}-\\dfrac{1}{3}=\\dfrac{1}{6}$。"
+     }
+    ]
+   },
+   {
+    "name": "五、证明题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 20,
+      "score": "7 分",
+      "q": "证明：当 $x>0$ 时，$e^{x}>1+x$。",
+      "ans": "见解析",
+      "an": "构造 $f(x)=e^{x}-1-x$，则 $f(0)=0$。\n\n$f'(x)=e^{x}-1$。当 $x>0$ 时 $e^{x}>1$，故 $f'(x)>0$，$f$ 在 $(0,+\\infty)$ 上严格递增。\n\n于是 $x>0$ 时 $f(x)>f(0)=0$，即 $e^{x}-1-x>0$，得 $e^{x}>1+x$。"
+     },
+     {
+      "no": 21,
+      "score": "7 分",
+      "q": "设 $f(x)$ 在 $[0,2]$ 上连续、在 $(0,2)$ 内可导，且 $f(0)=f(2)=0$。证明：存在 $\\xi\\in(0,2)$，使 $f'(\\xi)=0$。",
+      "ans": "见解析",
+      "an": "这是罗尔定理的直接应用。\n\n验证三个条件：① $f$ 在 $[0,2]$ 上连续；② $f$ 在 $(0,2)$ 内可导；③ $f(0)=f(2)=0$。\n\n由罗尔定理，存在 $\\xi\\in(0,2)$ 使 $f'(\\xi)=0$。"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": "2023",
+  "source": "题型结构补全卷（非官方原卷）",
+  "hasAnswer": true,
+  "inferred": true,
+  "note": "山东考试院不公布官方原卷，历年试卷均为考生回忆版。本卷据该年高数一题型结构（选择 5 + 填空 5 + 计算 7 + 应用 2 + 证明 2）与考点分布整理补全：题目为按该年考点编写的练习卷，考点、题型、分值分布贴近该年，但不是原题。",
+  "sections": [
+   {
+    "name": "一、单项选择题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 1,
+      "q": "函数 $f(x)=\\dfrac{1}{\\ln(x-1)}$ 的定义域是（　）",
+      "opts": [
+       "$(1,2)\\cup(2,+\\infty)$",
+       "$(1,+\\infty)$",
+       "$[1,+\\infty)$",
+       "$(2,+\\infty)$"
+      ],
+      "ans": "A",
+      "an": "两个条件：① 对数真数为正 $x-1>0\\Rightarrow x>1$；② 分母不为零 $\\ln(x-1)\\ne 0\\Rightarrow x-1\\ne 1\\Rightarrow x\\ne 2$。\n\n取交集得 $(1,2)\\cup(2,+\\infty)$。"
+     },
+     {
+      "no": 2,
+      "q": "设 $f(x)$ 在 $x=0$ 处可导，且 $f'(0)=2$，则 $\\displaystyle\\lim_{x\\to 0}\\dfrac{f(x)-f(0)}{2x}=$（　）",
+      "opts": [
+       "$1$",
+       "$2$",
+       "$4$",
+       "$\\dfrac{1}{2}$"
+      ],
+      "ans": "A",
+      "an": "由导数定义 $f'(0)=\\displaystyle\\lim_{x\\to 0}\\dfrac{f(x)-f(0)}{x}=2$。\n\n所求 $=\\dfrac{1}{2}\\displaystyle\\lim_{x\\to 0}\\dfrac{f(x)-f(0)}{x}=\\dfrac{1}{2}\\cdot 2=1$。"
+     },
+     {
+      "no": 3,
+      "q": "曲线 $y=\\dfrac{x}{x^{2}+1}$ 的水平渐近线是（　）",
+      "opts": [
+       "$y=0$",
+       "$y=1$",
+       "$x=0$",
+       "无水平渐近线"
+      ],
+      "ans": "A",
+      "an": "$\\displaystyle\\lim_{x\\to\\infty}\\dfrac{x}{x^{2}+1}=\\lim_{x\\to\\infty}\\dfrac{1/x}{1+1/x^{2}}=0$。\n\n故水平渐近线为 $y=0$（$x$ 轴）。"
+     },
+     {
+      "no": 4,
+      "q": "若 $\\displaystyle\\int f(x)\\,\\mathrm{d}x=x^{2}e^{x}+C$，则 $f(x)=$（　）",
+      "opts": [
+       "$e^{x}(x^{2}+2x)$",
+       "$2xe^{x}$",
+       "$x^{2}e^{x}$",
+       "$e^{x}(x^{2}-2x)$"
+      ],
+      "ans": "A",
+      "an": "对右端求导即得 $f(x)$：\n\n$f(x)=\\left(x^{2}e^{x}\\right)'=2xe^{x}+x^{2}e^{x}=e^{x}(x^{2}+2x)$。"
+     },
+     {
+      "no": 5,
+      "q": "微分方程 $y''-4y=0$ 的通解是（　）",
+      "opts": [
+       "$y=C_{1}e^{2x}+C_{2}e^{-2x}$",
+       "$y=C_{1}e^{2x}+C_{2}$",
+       "$y=C_{1}\\cos 2x+C_{2}\\sin 2x$",
+       "$y=Ce^{2x}$"
+      ],
+      "ans": "A",
+      "an": "特征方程 $r^{2}-4=0$，得 $r=\\pm 2$（两不等实根）。\n\n故通解 $y=C_{1}e^{2x}+C_{2}e^{-2x}$。\\n\\n（$r=\\pm 2i$ 才是正余弦形式，此处不是）"
+     }
+    ]
+   },
+   {
+    "name": "二、填空题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 6,
+      "q": "$\\displaystyle\\lim_{x\\to 0}\\dfrac{\\tan 3x}{2x}=$ ________。",
+      "ans": "$\\dfrac{3}{2}$",
+      "an": "$\\tan 3x\\sim 3x$，故 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{3x}{2x}=\\dfrac{3}{2}$。"
+     },
+     {
+      "no": 7,
+      "q": "设 $y=x\\ln x$，则 $y'=$ ________。",
+      "ans": "$\\ln x+1$",
+      "an": "乘积法则：$y'=1\\cdot\\ln x+x\\cdot\\dfrac{1}{x}=\\ln x+1$。"
+     },
+     {
+      "no": 8,
+      "q": "$\\displaystyle\\int_{0}^{1}e^{2x}\\,\\mathrm{d}x=$ ________。",
+      "ans": "$\\dfrac{e^{2}-1}{2}$",
+      "an": "$\\displaystyle\\int_{0}^{1}e^{2x}\\mathrm{d}x=\\dfrac{1}{2}e^{2x}\\Big|_{0}^{1}=\\dfrac{e^{2}-1}{2}$。"
+     },
+     {
+      "no": 9,
+      "q": "向量 $\\vec{a}=(1,2,-1)$ 与 $\\vec{b}=(2,-1,3)$ 的数量积 $\\vec{a}\\cdot\\vec{b}=$ ________。",
+      "ans": "$-3$",
+      "an": "$\\vec{a}\\cdot\\vec{b}=1\\cdot 2+2\\cdot(-1)+(-1)\\cdot 3=2-2-3=-3$。"
+     },
+     {
+      "no": 10,
+      "q": "函数 $z=x^{2}+y^{2}$ 在点 $(1,1)$ 处的全微分 $\\mathrm{d}z=$ ________。",
+      "ans": "$2\\,\\mathrm{d}x+2\\,\\mathrm{d}y$",
+      "an": "$\\dfrac{\\partial z}{\\partial x}=2x$，$\\dfrac{\\partial z}{\\partial y}=2y$，在 $(1,1)$ 处两偏导均为 $2$。\n\n故 $\\mathrm{d}z=2\\,\\mathrm{d}x+2\\,\\mathrm{d}y$。"
+     }
+    ]
+   },
+   {
+    "name": "三、计算题",
+    "score": "共 42 分",
+    "items": [
+     {
+      "no": 11,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{\\ln(1+x)}{x}$。",
+      "ans": "$1$",
+      "an": "由等价无穷小 $\\ln(1+x)\\sim x\\ (x\\to 0)$：\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{x}{x}=1$。\n\n（这是第二个重要极限的等价形式）"
+     },
+     {
+      "no": 12,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{\\sqrt{1+x}-1}{x}$。",
+      "ans": "$\\dfrac{1}{2}$",
+      "an": "分子有理化，同乘 $\\sqrt{1+x}+1$：\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{(1+x)-1}{x\\left(\\sqrt{1+x}+1\\right)}=\\lim_{x\\to 0}\\dfrac{1}{\\sqrt{1+x}+1}=\\dfrac{1}{2}$。"
+     },
+     {
+      "no": 13,
+      "score": "6 分",
+      "q": "设 $y=x^{3}e^{x}$，求 $y'$。",
+      "ans": "$y'=e^{x}\\left(x^{3}+3x^{2}\\right)$",
+      "an": "乘积法则：\\n$y'=3x^{2}e^{x}+x^{3}e^{x}=e^{x}\\left(x^{3}+3x^{2}\\right)=x^{2}e^{x}(x+3)$。"
+     },
+     {
+      "no": 14,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int\\dfrac{2x}{x^{2}+1}\\,\\mathrm{d}x$。",
+      "ans": "$\\ln(x^{2}+1)+C$",
+      "an": "凑微分：$2x\\,\\mathrm{d}x=\\mathrm{d}(x^{2}+1)$。\n\n$\\displaystyle\\int\\dfrac{2x}{x^{2}+1}\\mathrm{d}x=\\int\\dfrac{\\mathrm{d}(x^{2}+1)}{x^{2}+1}=\\ln(x^{2}+1)+C$。\\n\\n（因 $x^{2}+1>0$，绝对值可省）"
+     },
+     {
+      "no": 15,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int_{0}^{1}xe^{x}\\,\\mathrm{d}x$。",
+      "ans": "$1$",
+      "an": "分部积分，取 $u=x$、$\\mathrm{d}v=e^{x}\\mathrm{d}x$：\n\n$\\displaystyle\\int_{0}^{1}xe^{x}\\mathrm{d}x=\\left[xe^{x}\\right]_{0}^{1}-\\int_{0}^{1}e^{x}\\mathrm{d}x=e-\\left[e^{x}\\right]_{0}^{1}=e-(e-1)=1$。"
+     },
+     {
+      "no": 16,
+      "score": "6 分",
+      "q": "设 $z=e^{x}\\sin y$，求 $\\dfrac{\\partial^{2}z}{\\partial x\\partial y}$。",
+      "ans": "$e^{x}\\cos y$",
+      "an": "先对 $x$ 求偏导：$\\dfrac{\\partial z}{\\partial x}=e^{x}\\sin y$。\n\n再对 $y$ 求偏导：$\\dfrac{\\partial^{2}z}{\\partial x\\partial y}=e^{x}\\cos y$。\n\n（先 $y$ 后 $x$ 结果相同，混合偏导连续时可交换次序）"
+     },
+     {
+      "no": 17,
+      "score": "6 分",
+      "q": "求微分方程 $y'+2xy=x$ 的通解。",
+      "ans": "$y=\\dfrac{1}{2}+Ce^{-x^{2}}$",
+      "an": "这是一阶线性非齐次方程 $y'+P(x)y=Q(x)$，其中 $P(x)=2x$、$Q(x)=x$。\n\n积分因子 $\\mu(x)=e^{\\int 2x\\,\\mathrm{d}x}=e^{x^{2}}$。\n\n方程两边乘 $\\mu$：$\\left(ye^{x^{2}}\\right)'=xe^{x^{2}}$。\n\n积分：$ye^{x^{2}}=\\displaystyle\\int xe^{x^{2}}\\mathrm{d}x=\\dfrac{1}{2}e^{x^{2}}+C$。\n\n故 $y=\\dfrac{1}{2}+Ce^{-x^{2}}$。"
+     }
+    ]
+   },
+   {
+    "name": "四、应用题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 18,
+      "score": "7 分",
+      "q": "求幂级数 $\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{x^{n}}{n\\cdot 3^{n}}$ 的收敛半径。",
+      "ans": "$R=3$",
+      "an": "用比值法：\\n$\\displaystyle\\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_{n}}\\right|=\\lim_{n\\to\\infty}\\dfrac{n\\cdot 3^{n}}{(n+1)\\cdot 3^{n+1}}=\\lim_{n\\to\\infty}\\dfrac{n}{3(n+1)}=\\dfrac{1}{3}$。\n\n故收敛半径 $R=\\dfrac{1}{1/3}=3$。"
+     },
+     {
+      "no": 19,
+      "score": "7 分",
+      "q": "求由曲线 $y=x^{2}$ 与直线 $y=2x+3$ 所围成图形的面积。",
+      "ans": "$\\dfrac{32}{3}$",
+      "an": "交点：$x^{2}=2x+3\\Rightarrow x^{2}-2x-3=0\\Rightarrow(x-3)(x+1)=0$，得 $x=-1$、$x=3$。\n\n在 $[-1,3]$ 上 $2x+3\\ge x^{2}$，故\\n$S=\\displaystyle\\int_{-1}^{3}\\left(2x+3-x^{2}\\right)\\mathrm{d}x=\\left[x^{2}+3x-\\dfrac{x^{3}}{3}\\right]_{-1}^{3}$。\n\n$=\\left(9+9-9\\right)-\\left(1-3+\\dfrac{1}{3}\\right)=9-\\left(-\\dfrac{5}{3}\\right)=\\dfrac{32}{3}$。"
+     }
+    ]
+   },
+   {
+    "name": "五、证明题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 20,
+      "score": "7 分",
+      "q": "证明：当 $0<x<\\dfrac{\\pi}{2}$ 时，$\\sin x<x$。",
+      "ans": "见解析",
+      "an": "构造 $f(x)=x-\\sin x$，则 $f(0)=0$。\n\n$f'(x)=1-\\cos x$。当 $0<x<\\dfrac{\\pi}{2}$ 时 $\\cos x<1$，故 $f'(x)>0$。\n\n于是 $f$ 在 $\\left(0,\\dfrac{\\pi}{2}\\right)$ 上严格递增，$f(x)>f(0)=0$，即 $x>\\sin x$。"
+     },
+     {
+      "no": 21,
+      "score": "7 分",
+      "q": "设 $f(x)$ 在 $[a,b]$ 上连续、在 $(a,b)$ 内可导，且 $f(a)=f(b)$。证明：至少存在一点 $\\xi\\in(a,b)$，使 $f'(\\xi)=0$。",
+      "ans": "见解析",
+      "an": "验证罗尔定理三个条件：\\n① $f$ 在 $[a,b]$ 上连续；\\n② $f$ 在 $(a,b)$ 内可导；\\n③ $f(a)=f(b)$。\n\n由罗尔定理，存在 $\\xi\\in(a,b)$ 使 $f'(\\xi)=0$。"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": "2024",
+  "source": "题型结构补全卷（非官方原卷）",
+  "hasAnswer": true,
+  "inferred": true,
+  "note": "山东考试院不公布官方原卷，历年试卷均为考生回忆版。本卷据该年高数一题型结构（选择 5 + 填空 5 + 计算 7 + 应用 2 + 证明 2）与考点分布整理补全：题目为按该年考点编写的练习卷，考点、题型、分值分布贴近该年，但不是原题。",
+  "sections": [
+   {
+    "name": "一、单项选择题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 1,
+      "q": "$\\displaystyle\\lim_{n\\to\\infty}\\dfrac{3n^{2}+2n-1}{2n^{2}-n+3}=$（　）",
+      "opts": [
+       "$\\dfrac{3}{2}$",
+       "$1$",
+       "$\\dfrac{2}{3}$",
+       "$\\infty$"
+      ],
+      "ans": "A",
+      "an": "分子分母同除以 $n^{2}$：\\n$\\displaystyle\\lim_{n\\to\\infty}\\dfrac{3+\\frac{2}{n}-\\frac{1}{n^{2}}}{2-\\frac{1}{n}+\\frac{3}{n^{2}}}=\\dfrac{3}{2}$。\n\n同次幂时极限等于最高次项系数之比。"
+     },
+     {
+      "no": 2,
+      "q": "设 $y=\\sin(2x)$，则 $y''=$（　）",
+      "opts": [
+       "$-4\\sin 2x$",
+       "$4\\sin 2x$",
+       "$-2\\sin 2x$",
+       "$2\\cos 2x$"
+      ],
+      "ans": "A",
+      "an": "$y'=2\\cos 2x$；\n\n$y''=2\\cdot(-2\\sin 2x)=-4\\sin 2x$。"
+     },
+     {
+      "no": 3,
+      "q": "函数 $f(x)=|x|$ 在 $x=0$ 处（　）",
+      "opts": [
+       "连续但不可导",
+       "可导但连续",
+       "既连续又可导",
+       "既不连续也不可导"
+      ],
+      "ans": "A",
+      "an": "连续性：$\\displaystyle\\lim_{x\\to 0}|x|=0=f(0)$，故连续。\n\n可导性：左导数 $\\displaystyle\\lim_{x\\to 0^{-}}\\dfrac{|x|-0}{x}=-1$，右导数 $\\displaystyle\\lim_{x\\to 0^{+}}\\dfrac{|x|-0}{x}=1$，左右不等，故不可导。"
+     },
+     {
+      "no": 4,
+      "q": "$\\displaystyle\\int\\sin x\\,\\mathrm{d}x=$（　）",
+      "opts": [
+       "$-\\cos x+C$",
+       "$\\cos x+C$",
+       "$\\sin x+C$",
+       "$-\\sin x+C$"
+      ],
+      "ans": "A",
+      "an": "$(-\\cos x)'=\\sin x$，故 $\\displaystyle\\int\\sin x\\,\\mathrm{d}x=-\\cos x+C$。"
+     },
+     {
+      "no": 5,
+      "q": "过点 $(1,2,3)$ 且垂直于向量 $\\vec{n}=(1,-1,2)$ 的平面方程是（　）",
+      "opts": [
+       "$x-y+2z=5$",
+       "$x-y+2z=0$",
+       "$x+y+2z=9$",
+       "$x-y-2z=-7$"
+      ],
+      "ans": "A",
+      "an": "平面法向量即 $\\vec{n}=(1,-1,2)$，用点法式：\n\n$1(x-1)-1(y-2)+2(z-3)=0$，展开得 $x-y+2z-5=0$，即 $x-y+2z=5$。\n\n验证：代入点 $(1,2,3)$，$1-2+6=5$，成立。"
+     }
+    ]
+   },
+   {
+    "name": "二、填空题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 6,
+      "q": "$\\displaystyle\\lim_{x\\to 0}\\dfrac{\\arcsin x}{x}=$ ________。",
+      "ans": "$1$",
+      "an": "$\\arcsin x\\sim x\\ (x\\to 0)$，故极限为 $1$。"
+     },
+     {
+      "no": 7,
+      "q": "设 $y=\\dfrac{1}{x}$，则 $y'=$ ________。",
+      "ans": "$-\\dfrac{1}{x^{2}}$",
+      "an": "$y=x^{-1}$，由幂函数公式 $y'=-1\\cdot x^{-2}=-\\dfrac{1}{x^{2}}$。"
+     },
+     {
+      "no": 8,
+      "q": "$\\displaystyle\\int_{0}^{1}(2x+1)\\,\\mathrm{d}x=$ ________。",
+      "ans": "$2$",
+      "an": "$\\displaystyle\\int_{0}^{1}(2x+1)\\mathrm{d}x=\\left[x^{2}+x\\right]_{0}^{1}=1+1=2$。"
+     },
+     {
+      "no": 9,
+      "q": "已知 $\\vec{a}=(2,-1,3)$，则 $|\\vec{a}|=$ ________。",
+      "ans": "$\\sqrt{14}$",
+      "an": "$|\\vec{a}|=\\sqrt{2^{2}+(-1)^{2}+3^{2}}=\\sqrt{4+1+9}=\\sqrt{14}$。"
+     },
+     {
+      "no": 10,
+      "q": "设 $z=x^{2}+3xy$，则 $\\dfrac{\\partial z}{\\partial y}=$ ________。",
+      "ans": "$3x$",
+      "an": "对 $y$ 求偏导（$x$ 视为常数）：$\\dfrac{\\partial z}{\\partial y}=0+3x=3x$。"
+     }
+    ]
+   },
+   {
+    "name": "三、计算题",
+    "score": "共 42 分",
+    "items": [
+     {
+      "no": 11,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{1-\\cos 2x}{x^{2}}$。",
+      "ans": "$2$",
+      "an": "由 $1-\\cos 2x\\sim\\dfrac{(2x)^{2}}{2}=2x^{2}$：\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{2x^{2}}{x^{2}}=2$。"
+     },
+     {
+      "no": 12,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to +\\infty}\\left(\\dfrac{x+1}{x-1}\\right)^{x}$。",
+      "ans": "$e^{2}$",
+      "an": "这是 $1^{\\infty}$ 型，取对数：$L=e^{\\lim_{x\\to\\infty}x\\ln\\frac{x+1}{x-1}}$。\n\n$\\dfrac{x+1}{x-1}=1+\\dfrac{2}{x-1}$，故 $\\ln\\dfrac{x+1}{x-1}\\sim\\dfrac{2}{x-1}$。\n\n$\\displaystyle\\lim_{x\\to\\infty}x\\cdot\\dfrac{2}{x-1}=2$，故 $L=e^{2}$。"
+     },
+     {
+      "no": 13,
+      "score": "6 分",
+      "q": "设 $y=\\ln\\left(x+\\sqrt{1+x^{2}}\\right)$，求 $y'$。",
+      "ans": "$\\dfrac{1}{\\sqrt{1+x^{2}}}$",
+      "an": "复合求导，外层 $\\ln$、内层 $x+\\sqrt{1+x^{2}}$：\n\n$y'=\\dfrac{1}{x+\\sqrt{1+x^{2}}}\\cdot\\left(1+\\dfrac{x}{\\sqrt{1+x^{2}}}\\right)$。\n\n括号内通分：$\\dfrac{\\sqrt{1+x^{2}}+x}{\\sqrt{1+x^{2}}}$。\n\n约去公因子得 $y'=\\dfrac{1}{\\sqrt{1+x^{2}}}$。"
+     },
+     {
+      "no": 14,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int x\\sin x\\,\\mathrm{d}x$。",
+      "ans": "$-x\\cos x+\\sin x+C$",
+      "an": "分部积分，取 $u=x$、$\\mathrm{d}v=\\sin x\\,\\mathrm{d}x$，则 $\\mathrm{d}u=\\mathrm{d}x$、$v=-\\cos x$：\n\n$\\displaystyle\\int x\\sin x\\,\\mathrm{d}x=-x\\cos x+\\int\\cos x\\,\\mathrm{d}x=-x\\cos x+\\sin x+C$。"
+     },
+     {
+      "no": 15,
+      "score": "6 分",
+      "q": "求曲线 $y=x^{2}$ 与 $y=\\sqrt{x}$ 所围成图形的面积。",
+      "ans": "$\\dfrac{1}{3}$",
+      "an": "交点：$x^{2}=\\sqrt{x}$，两边平方得 $x^{4}=x\\Rightarrow x(x^{3}-1)=0$，在 $[0,+\\infty)$ 得 $x=0$、$x=1$。\n\n在 $[0,1]$ 上 $\\sqrt{x}\\ge x^{2}$，故\\n$S=\\displaystyle\\int_{0}^{1}\\left(\\sqrt{x}-x^{2}\\right)\\mathrm{d}x=\\left[\\dfrac{2}{3}x^{3/2}-\\dfrac{x^{3}}{3}\\right]_{0}^{1}=\\dfrac{2}{3}-\\dfrac{1}{3}=\\dfrac{1}{3}$。"
+     },
+     {
+      "no": 16,
+      "score": "6 分",
+      "q": "求函数 $f(x)=x^{3}-3x^{2}+1$ 的单调区间与极值。",
+      "ans": "增区间 $(-\\infty,0)$ 与 $(2,+\\infty)$，减区间 $(0,2)$；极大值 $f(0)=1$，极小值 $f(2)=-3$",
+      "an": "$f'(x)=3x^{2}-6x=3x(x-2)$，驻点 $x=0$、$x=2$。\n\n$x<0$ 时 $f'>0$，递增；$0<x<2$ 时 $f'<0$，递减；$x>2$ 时 $f'>0$，递增。\n\n极大值 $f(0)=1$；极小值 $f(2)=8-12+1=-3$。"
+     },
+     {
+      "no": 17,
+      "score": "6 分",
+      "q": "求微分方程 $y''-y'-2y=0$ 的通解。",
+      "ans": "$y=C_{1}e^{2x}+C_{2}e^{-x}$",
+      "an": "特征方程 $r^{2}-r-2=0$，即 $(r-2)(r+1)=0$，得 $r_{1}=2$、$r_{2}=-1$。\n\n两不等实根，故通解 $y=C_{1}e^{2x}+C_{2}e^{-x}$。"
+     }
+    ]
+   },
+   {
+    "name": "四、应用题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 18,
+      "score": "7 分",
+      "q": "求幂级数 $\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{x^{n}}{n^{2}}$ 的收敛域。",
+      "ans": "$[-1,1]$",
+      "an": "收敛半径：$\\displaystyle\\lim_{n\\to\\infty}\\left|\\dfrac{a_{n+1}}{a_{n}}\\right|=\\lim_{n\\to\\infty}\\dfrac{n^{2}}{(n+1)^{2}}=1$，故 $R=1$。\n\n端点检验：\\n$x=1$ 时为 $\\displaystyle\\sum\\dfrac{1}{n^{2}}$，$p=2>1$，收敛；\\n$x=-1$ 时为 $\\displaystyle\\sum\\dfrac{(-1)^{n}}{n^{2}}$，绝对收敛。\n\n故收敛域为 $[-1,1]$。"
+     },
+     {
+      "no": 19,
+      "score": "7 分",
+      "q": "求由 $y=x^{2}$、$x=1$ 与 $x$ 轴围成的图形绕 $y$ 轴旋转所得旋转体体积。",
+      "ans": "$\\dfrac{\\pi}{2}$",
+      "an": "用柱壳法：$V=2\\pi\\displaystyle\\int_{0}^{1}x\\cdot y\\,\\mathrm{d}x=2\\pi\\int_{0}^{1}x\\cdot x^{2}\\,\\mathrm{d}x=2\\pi\\int_{0}^{1}x^{3}\\mathrm{d}x$。\n\n$=2\\pi\\cdot\\dfrac{1}{4}=\\dfrac{\\pi}{2}$。"
+     }
+    ]
+   },
+   {
+    "name": "五、证明题",
+    "score": "共 14 分",
+    "items": [
+     {
+      "no": 20,
+      "score": "7 分",
+      "q": "证明：对任意实数 $x$，有 $e^{x}\\ge 1+x$。",
+      "ans": "见解析",
+      "an": "构造 $f(x)=e^{x}-1-x$，则 $f(0)=0$，$f'(x)=e^{x}-1$。\n\n$x>0$ 时 $f'(x)>0$，$f$ 递增；$x<0$ 时 $f'(x)<0$，$f$ 递减。\n\n故 $x=0$ 是 $f$ 的全局最小值点，$f(x)\\ge f(0)=0$，即 $e^{x}\\ge 1+x$。\n\n等号仅在 $x=0$ 处成立。"
+     },
+     {
+      "no": 21,
+      "score": "7 分",
+      "q": "设 $f(x)$ 在 $[0,1]$ 上连续、在 $(0,1)$ 内可导，且 $f(0)=1$、$f(1)=0$。证明：存在 $\\xi\\in(0,1)$，使 $f(\\xi)+\\xi f'(\\xi)=0$。",
+      "ans": "见解析",
+      "an": "关键是构造辅助函数，使其导数等于 $f(\\xi)+\\xi f'(\\xi)$。\n\n取 $F(x)=xf(x)$，则 $F(0)=0\\cdot 1=0$，$F(1)=1\\cdot 0=0$。\n\n$F$ 在 $[0,1]$ 连续、在 $(0,1)$ 可导，且 $F(0)=F(1)=0$，满足罗尔定理条件。\n\n故存在 $\\xi\\in(0,1)$ 使 $F'(\\xi)=0$，即 $f(\\xi)+\\xi f'(\\xi)=0$。"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "year": "2025",
+  "source": "考生回忆版片段 + 题型结构补全",
+  "hasAnswer": true,
+  "inferred": true,
+  "partial": false,
+  "note": "原卷第 18–21 题为考生回忆版实测内容，已保留。第 1–16 题据该年题型结构与考点分布补全（非原题）；第 17 题仅存答案 [2,8)（R=3），题干缺失，未收录。",
+  "sections": [
+   {
+    "name": "一、单项选择题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 1,
+      "q": "$\\displaystyle\\lim_{x\\to 0}\\dfrac{\\cos x-1}{x^{2}}=$（　）",
+      "opts": [
+       "$-\\dfrac{1}{2}$",
+       "$\\dfrac{1}{2}$",
+       "$-1$",
+       "$1$"
+      ],
+      "ans": "A",
+      "an": "$1-\\cos x\\sim\\dfrac{x^{2}}{2}$，故 $\\cos x-1\\sim-\\dfrac{x^{2}}{2}$。\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{-\\frac{x^{2}}{2}}{x^{2}}=-\\dfrac{1}{2}$。"
+     },
+     {
+      "no": 2,
+      "q": "设 $f(x)=x^{3}+2x$，则 $f'(1)=$（　）",
+      "opts": [
+       "$5$",
+       "$3$",
+       "$2$",
+       "$6$"
+      ],
+      "ans": "A",
+      "an": "$f'(x)=3x^{2}+2$，代入 $x=1$ 得 $f'(1)=3+2=5$。"
+     },
+     {
+      "no": 3,
+      "q": "$\\displaystyle\\int\\dfrac{1}{x}\\,\\mathrm{d}x=$（　）",
+      "opts": [
+       "$\\ln|x|+C$",
+       "$\\dfrac{1}{x^{2}}+C$",
+       "$-\\dfrac{1}{x^{2}}+C$",
+       "$x\\ln x+C$"
+      ],
+      "ans": "A",
+      "an": "$\\left(\\ln|x|\\right)'=\\dfrac{1}{x}$，故 $\\displaystyle\\int\\dfrac{\\mathrm{d}x}{x}=\\ln|x|+C$。"
+     },
+     {
+      "no": 4,
+      "q": "微分方程 $y'=y$ 的通解为（　）",
+      "opts": [
+       "$y=Ce^{x}$",
+       "$y=Cx$",
+       "$y=C$",
+       "$y=x+C$"
+      ],
+      "ans": "A",
+      "an": "分离变量：$\\dfrac{\\mathrm{d}y}{y}=\\mathrm{d}x$。\n\n两边积分：$\\ln|y|=x+C_{1}$，即 $y=\\pm e^{C_{1}}e^{x}=Ce^{x}$。"
+     },
+     {
+      "no": 5,
+      "q": "级数 $\\displaystyle\\sum_{n=1}^{\\infty}\\dfrac{1}{n^{3}}$ 的敛散性为（　）",
+      "opts": [
+       "收敛",
+       "发散",
+       "条件收敛",
+       "无法判定"
+      ],
+      "ans": "A",
+      "an": "这是 $p$ 级数，$p=3>1$，故收敛。"
+     }
+    ]
+   },
+   {
+    "name": "二、填空题",
+    "score": "每题 3 分，共 15 分",
+    "items": [
+     {
+      "no": 6,
+      "q": "$\\displaystyle\\lim_{x\\to\\infty}\\dfrac{\\sin x}{x}=$ ________。",
+      "ans": "$0$",
+      "an": "用夹逼定理。因 $|\\sin x|\\le 1$，故 $0\\le\\left|\\dfrac{\\sin x}{x}\\right|\\le\\dfrac{1}{|x|}$。\n\n$x\\to\\infty$ 时 $\\dfrac{1}{|x|}\\to 0$，由夹逼定理得极限为 $0$（有界乘无穷小）。"
+     },
+     {
+      "no": 7,
+      "q": "设 $y=\\tan x$，则 $y'=$ ________。",
+      "ans": "$\\sec^{2}x$",
+      "an": "基本导数公式：$(\\tan x)'=\\sec^{2}x=\\dfrac{1}{\\cos^{2}x}$。"
+     },
+     {
+      "no": 8,
+      "q": "$\\displaystyle\\int_{0}^{\\frac{\\pi}{2}}\\cos x\\,\\mathrm{d}x=$ ________。",
+      "ans": "$1$",
+      "an": "$\\displaystyle\\int_{0}^{\\frac{\\pi}{2}}\\cos x\\,\\mathrm{d}x=\\left[\\sin x\\right]_{0}^{\\frac{\\pi}{2}}=\\sin\\dfrac{\\pi}{2}-\\sin 0=1$。"
+     },
+     {
+      "no": 9,
+      "q": "两点 $A(1,0,-1)$、$B(3,2,1)$ 之间的距离为 ________。",
+      "ans": "$2\\sqrt{3}$",
+      "an": "$|AB|=\\sqrt{(3-1)^{2}+(2-0)^{2}+(1-(-1))^{2}}=\\sqrt{4+4+4}=\\sqrt{12}=2\\sqrt{3}$。"
+     },
+     {
+      "no": 10,
+      "q": "设 $z=x^{2}y$，则 $\\dfrac{\\partial z}{\\partial x}=$ ________。",
+      "ans": "$2xy$",
+      "an": "对 $x$ 求偏导（$y$ 视为常数）：$\\dfrac{\\partial z}{\\partial x}=2xy$。"
+     }
+    ]
+   },
+   {
+    "name": "三、计算题",
+    "score": "共 42 分",
+    "items": [
+     {
+      "no": 11,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{\\tan x-x}{x^{3}}$。",
+      "ans": "$\\dfrac{1}{3}$",
+      "an": "由 $\\tan x=x+\\dfrac{x^{3}}{3}+o(x^{3})$，得 $\\tan x-x=\\dfrac{x^{3}}{3}+o(x^{3})$。\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{\\frac{x^{3}}{3}}{x^{3}}=\\dfrac{1}{3}$。"
+     },
+     {
+      "no": 12,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\lim_{x\\to 0}\\dfrac{\\ln(1+x)-x}{x^{2}}$。",
+      "ans": "$-\\dfrac{1}{2}$",
+      "an": "由 $\\ln(1+x)=x-\\dfrac{x^{2}}{2}+o(x^{2})$，得 $\\ln(1+x)-x=-\\dfrac{x^{2}}{2}+o(x^{2})$。\n\n原式 $=\\displaystyle\\lim_{x\\to 0}\\dfrac{-\\frac{x^{2}}{2}}{x^{2}}=-\\dfrac{1}{2}$。"
+     },
+     {
+      "no": 13,
+      "score": "6 分",
+      "q": "设 $y=e^{-x}\\cos x$，求 $y'$。",
+      "ans": "$y'=-e^{-x}(\\cos x+\\sin x)$",
+      "an": "乘积法则，两项都含复合求导：\n\n$y'=(-e^{-x})\\cos x+e^{-x}(-\\sin x)=-e^{-x}(\\cos x+\\sin x)$。"
+     },
+     {
+      "no": 14,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int x^{2}\\ln x\\,\\mathrm{d}x$。",
+      "ans": "$\\dfrac{x^{3}}{3}\\ln x-\\dfrac{x^{3}}{9}+C$",
+      "an": "分部积分，取 $u=\\ln x$、$\\mathrm{d}v=x^{2}\\mathrm{d}x$，则 $\\mathrm{d}u=\\dfrac{\\mathrm{d}x}{x}$、$v=\\dfrac{x^{3}}{3}$：\n\n$\\displaystyle\\int x^{2}\\ln x\\,\\mathrm{d}x=\\dfrac{x^{3}}{3}\\ln x-\\int\\dfrac{x^{3}}{3}\\cdot\\dfrac{\\mathrm{d}x}{x}=\\dfrac{x^{3}}{3}\\ln x-\\dfrac{1}{3}\\int x^{2}\\mathrm{d}x$。\n\n$=\\dfrac{x^{3}}{3}\\ln x-\\dfrac{x^{3}}{9}+C$。"
+     },
+     {
+      "no": 15,
+      "score": "6 分",
+      "q": "求 $\\displaystyle\\int_{1}^{e}\\ln x\\,\\mathrm{d}x$。",
+      "ans": "$1$",
+      "an": "分部积分：$\\displaystyle\\int\\ln x\\,\\mathrm{d}x=x\\ln x-x$。\n\n$\\displaystyle\\int_{1}^{e}\\ln x\\,\\mathrm{d}x=\\left[x\\ln x-x\\right]_{1}^{e}=(e\\cdot 1-e)-(1\\cdot 0-1)=0-(-1)=1$。"
+     },
+     {
+      "no": 16,
+      "score": "6 分",
+      "q": "求由曲线 $y=x^{2}$ 与直线 $y=4$ 所围成图形的面积。",
+      "ans": "$\\dfrac{32}{3}$",
+      "an": "由对称性，交点 $x=\\pm 2$。\n\n$S=\\displaystyle\\int_{-2}^{2}\\left(4-x^{2}\\right)\\mathrm{d}x=\\left[4x-\\dfrac{x^{3}}{3}\\right]_{-2}^{2}$。\n\n$=\\left(8-\\dfrac{8}{3}\\right)-\\left(-8+\\dfrac{8}{3}\\right)=2\\left(8-\\dfrac{8}{3}\\right)=\\dfrac{32}{3}$。"
+     }
+    ]
+   },
+   {
+    "name": "三、计算题（续）",
+    "score": "第 17 题题干缺失，未收录",
+    "items": [
+     {
+      "no": 18,
+      "score": "8 分",
+      "q": "计算二重积分 $\\displaystyle\\iint_{D}x\\,dxdy$，其中 $D$ 由曲线 $y=|x^{2}-4|$ 与直线 $y=3x$ 所围成的闭区域。",
+      "ans": "$\\dfrac{99}{4}$",
+      "an": "先求交点：$x^{2}-4\\ge0$ 时 $x^{2}-4=3x$，即 $(x-4)(x+1)=0$，取 $x=4$；$x^{2}-4<0$ 时 $4-x^{2}=3x$，即 $(x+4)(x-1)=0$，取 $x=1$。故两曲线交于 $x=1$ 与 $x=4$，且在 $[1,4]$ 上恒有 $3x\\ge|x^{2}-4|$。以 $x=2$ 分段：\n\n$I=\\displaystyle\\int_{1}^{2}x\\left[3x-(4-x^{2})\\right]dx+\\int_{2}^{4}x\\left[3x-(x^{2}-4)\\right]dx$\n\n第一段 $=\\displaystyle\\int_{1}^{2}(x^{3}+3x^{2}-4x)dx=\\left[\\dfrac{x^{4}}{4}+x^{3}-2x^{2}\\right]_{1}^{2}=4-\\left(-\\dfrac{3}{4}\\right)=\\dfrac{19}{4}$\n\n第二段 $=\\displaystyle\\int_{2}^{4}(-x^{3}+3x^{2}+4x)dx=\\left[-\\dfrac{x^{4}}{4}+x^{3}+2x^{2}\\right]_{2}^{4}=32-12=20$\n\n故 $I=\\dfrac{19}{4}+20=\\dfrac{99}{4}$。"
+     }
+    ]
+   },
+   {
+    "name": "四、应用题",
+    "score": "每题 7 分，共 14 分",
+    "items": [
+     {
+      "no": 19,
+      "score": "7 分",
+      "q": "设区域 $D$ 由 $y=e^{x}$ 与 $y=\\sqrt{2x-x^{2}}$ 及直线 $x=1$、$x=0$ 围成，求 $D$ 绕 $x$ 轴旋转一周所得旋转体的体积。",
+      "ans": "$\\pi\\left(\\dfrac{e^{2}}{2}-\\dfrac{7}{6}\\right)$",
+      "an": "$y=\\sqrt{2x-x^{2}}$ 即 $(x-1)^{2}+y^{2}=1$ 的上半圆，在 $[0,1]$ 上由 $0$ 单调增到 $1$；而 $e^{x}$ 在 $[0,1]$ 上由 $1$ 增到 $e$，故 $e^{x}\\ge\\sqrt{2x-x^{2}}$。\n\n$V=\\pi\\displaystyle\\int_{0}^{1}\\left[(e^{x})^{2}-(2x-x^{2})\\right]dx=\\pi\\left[\\dfrac{e^{2x}}{2}-x^{2}+\\dfrac{x^{3}}{3}\\right]_{0}^{1}$\n\n$=\\pi\\left[\\left(\\dfrac{e^{2}}{2}-1+\\dfrac{1}{3}\\right)-\\dfrac{1}{2}\\right]=\\pi\\left(\\dfrac{e^{2}}{2}-\\dfrac{7}{6}\\right)$。"
+     },
+     {
+      "no": 20,
+      "score": "7 分",
+      "q": "求函数 $f(x)=x+\\ln(1+x^{2})-4\\arctan x$ 的极值，并判断是极大值还是极小值。",
+      "ans": "极大值 $f(-3)=-3+\\ln 10+4\\arctan 3$；极小值 $f(1)=1+\\ln 2-\\pi$",
+      "an": "$f'(x)=1+\\dfrac{2x}{1+x^{2}}-\\dfrac{4}{1+x^{2}}=\\dfrac{(1+x^{2})+2x-4}{1+x^{2}}=\\dfrac{x^{2}+2x-3}{1+x^{2}}=\\dfrac{(x+3)(x-1)}{1+x^{2}}$。\n\n令 $f'(x)=0$ 得驻点 $x=-3$、$x=1$。分母 $1+x^{2}>0$，故 $f'$ 的符号由 $(x+3)(x-1)$ 决定：$x<-3$ 时为正，$-3<x<1$ 时为负，$x>1$ 时为正。\n\n所以 $x=-3$ 为极大值点，$x=1$ 为极小值点。\n\n$f(-3)=-3+\\ln(1+9)-4\\arctan(-3)=-3+\\ln 10+4\\arctan 3$（极大值）；\n\n$f(1)=1+\\ln 2-4\\cdot\\dfrac{\\pi}{4}=1+\\ln 2-\\pi$（极小值）。"
+     }
+    ]
+   },
+   {
+    "name": "五、证明题",
+    "score": "8 分",
+    "items": [
+     {
+      "no": 21,
+      "score": "8 分",
+      "q": "已知 $f(x)$ 在 $[0,1]$ 上连续、在 $(0,1)$ 内可导。求证：存在 $\\xi\\in(0,1)$，使 $$\\int_{0}^{1}f(x)dx=f(0)+f'(\\xi)(1-\\xi)$$",
+      "ans": "见解析",
+      "an": "对 $\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx$ 分部积分（取 $u=1-x$，$dv=f'(x)dx$）：\n\n$\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx=\\Big[(1-x)f(x)\\Big]_{0}^{1}+\\int_{0}^{1}f(x)dx=0-f(0)+\\int_{0}^{1}f(x)dx$\n\n即 $\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx=\\int_{0}^{1}f(x)dx-f(0)$。\n\n又 $(1-x)f'(x)$ 在 $[0,1]$ 上连续，由积分中值定理，存在 $\\xi\\in(0,1)$ 使\n\n$\\displaystyle\\int_{0}^{1}(1-x)f'(x)dx=(1-\\xi)f'(\\xi)\\cdot(1-0)=(1-\\xi)f'(\\xi)$。\n\n两式联立得 $\\displaystyle\\int_{0}^{1}f(x)dx-f(0)=f'(\\xi)(1-\\xi)$，即\n\n$\\displaystyle\\int_{0}^{1}f(x)dx=f(0)+f'(\\xi)(1-\\xi)$。证毕。\n\n（注：分部积分与积分中值定理要求 $f'$ 在 $[0,1]$ 上连续，这是教材通行假设。）"
+     }
+    ]
+   }
+  ]
+ }
+];

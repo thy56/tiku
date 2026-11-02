@@ -30,8 +30,8 @@
     h += '<a class="nav-brand" href="index.html"><i class="bi" style="background:#2e74b5"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14.4 3.6c-1.9 0-2.9 1.2-2.9 3.2v10.4c0 2-1 3.2-2.9 3.2"/></svg></i>山东专升本高数一</a>';
     h += '<div class="nav-links">';
     /* ---------- 题库：统一下拉入口（专项/每日/真题 同源） ---------- */
-    var tkOn = ['题库', '专项练习', '每日一练', '历年真题'].indexOf(cur) >= 0
-      || /^pr-/.test(cur) || /^zt-/.test(cur);
+    var tkOn = ['题库', '专项练习', '题型专项', '每日一练', '历年真题'].indexOf(cur) >= 0
+      || /^pr-/.test(cur) || /^zt-/.test(cur) || /^type-/.test(cur);
     h += '<div class="nav-menu" id="mTk">';
     h += '<a class="nav-a' + (tkOn ? " on" : "") + '" href="题库.html">题库'
       + '<span class="caret">▼</span></a>';
@@ -39,6 +39,7 @@
     h += '<a href="题库.html"' + (cur === '题库' ? ' class="on"' : '') + '>题库总览</a>';
     h += '<div class="dsep"></div>';
     h += '<a href="专项练习.html"' + (cur === '专项练习' ? ' class="on"' : '') + '>专项练习</a>';
+    h += '<a href="题型专项.html"' + (cur === '题型专项' || /^type-/.test(cur) ? ' class="on"' : '') + '>题型专项</a>';
     h += '<a href="每日一练.html"' + (cur === '每日一练' ? ' class="on"' : '') + '>每日一练</a>';
     h += '<a href="历年真题.html"' + (cur === '历年真题' ? ' class="on"' : '') + '>历年真题</a>';
     h += '</div></div>';

@@ -192,7 +192,7 @@ function renderChapter(){
 
   h += '<div class="stats"><span>显示 '+list.length+' / '+QS.length+' 题'+(KEY?'（搜索：'+esc(KEY)+'）':'')+'</span></div>';
 
-  ["单选","填空","计算"].forEach(function(tp){
+  ["单选","填空","计算","应用","证明"].forEach(function(tp){
     var items = list.filter(function(q){ return q.type === tp; });
     if(!items.length) return;
 
