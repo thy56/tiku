@@ -11,7 +11,7 @@ window.GS_NAV = {
       "points": 99,
       "topics": 11,
       "examples": 31,
-      "questions": 70
+      "questions": 76
     },
     {
       "no": 2,
@@ -22,7 +22,7 @@ window.GS_NAV = {
       "points": 11,
       "topics": 5,
       "examples": 21,
-      "questions": 51
+      "questions": 71
     },
     {
       "no": 3,
@@ -33,7 +33,7 @@ window.GS_NAV = {
       "points": 8,
       "topics": 2,
       "examples": 20,
-      "questions": 50
+      "questions": 72
     },
     {
       "no": 4,
@@ -55,7 +55,7 @@ window.GS_NAV = {
       "points": 7,
       "topics": 4,
       "examples": 14,
-      "questions": 39
+      "questions": 49
     },
     {
       "no": 6,
@@ -66,7 +66,7 @@ window.GS_NAV = {
       "points": 7,
       "topics": 2,
       "examples": 12,
-      "questions": 37
+      "questions": 39
     },
     {
       "no": 7,
@@ -77,7 +77,7 @@ window.GS_NAV = {
       "points": 7,
       "topics": 2,
       "examples": 12,
-      "questions": 37
+      "questions": 43
     },
     {
       "no": 8,
@@ -98,6 +98,6 @@ window.GS_NAV = {
     "points": 144,
     "topics": 36,
     "examples": 134,
-    "questions": 427
+    "questions": 493
   }
 };
