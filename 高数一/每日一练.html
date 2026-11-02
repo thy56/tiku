@@ -61,7 +61,11 @@
   if (hb) hb.textContent = D.days + " 天";
 
   var hs = document.getElementById("hSub");
-  if (hs) hs.textContent = "共 " + D.days + " 套 · 每天 " + (D.perDay || 23) + " 题";
+  if (hs) {
+    var ns = D.papers.map(function(p){ return p.n || (p.ids ? p.ids.length : 0); });
+    hs.textContent = "共 " + D.days + " 套 · 卷型随机，每套 "
+      + Math.min.apply(null, ns) + "–" + Math.max.apply(null, ns) + " 题";
+  }
 
   function key(d){
     return d + "|" + (new Date().toDateString());
@@ -83,7 +87,7 @@
       h += '<a class="dcard' + (isToday ? " today" : "") + '" href="daily.html?d=' + p.d + '">'
         + '<div class="n">第 ' + p.d + ' 天' + (isToday ? '<span class="tbadge">今天</span>' : '') + '</div>'
         + '<div class="dt">' + p.date + '</div>'
-        + '<div class="mt"><span>' + (p.ids ? p.ids.length : (D.perDay || 23)) + ' 题</span><b>进入 →</b></div>'
+        + '<div class="mt"><span>' + (p.ids ? p.ids.length : 0) + ' 题</span><b>进入 →</b></div>'
         + '</a>';
     });
     h += '</div>';

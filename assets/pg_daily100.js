@@ -79,7 +79,8 @@
 
     /* 页头 */
     var h1 = document.getElementById("h1");
-    if (h1) h1.innerHTML = '第 ' + day + ' 天 <span class="badge">' + (paper.ids ? paper.ids.length : 0) + ' 题</span>';
+    if (h1) h1.innerHTML = '第 ' + day + ' 天 <span class="badge">'
+      + (paper.n || (paper.ids ? paper.ids.length : 0)) + ' 题</span>';
 
     var sub = document.getElementById("sub");
     if (sub) sub.textContent = paper.date;
@@ -94,12 +95,13 @@
     h += '</div></div>';
 
     /* 各大题 */
+    /* 卷型每日随机：题量与题型构成都不固定，故不标固定分值 */
     var SEC = [
-      { t: "单选", name: "单项选择题", score: "每题 3 分" },
-      { t: "填空", name: "填空题", score: "每题 3 分" },
-      { t: "计算", name: "计算题", score: "每题 6 分" },
-      { t: "应用", name: "应用题", score: "7 分" },
-      { t: "证明", name: "证明题", score: "8 分" }
+      { t: "单选", name: "单项选择题", score: "" },
+      { t: "填空", name: "填空题", score: "" },
+      { t: "计算", name: "计算题", score: "" },
+      { t: "应用", name: "应用题", score: "" },
+      { t: "证明", name: "证明题", score: "" }
     ];
     var hint = {};
     SEC.forEach(function (x) { hint[x.t] = { name: x.name, score: x.score }; });
