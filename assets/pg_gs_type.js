@@ -79,6 +79,23 @@
       + '<span><b>' + pct + '%</b> 正确率</span></div>';
     h += '</div>';
 
+    /* 搜索结果统计（与章节练习页保持一致） */
+    var shownCnt = 0;
+    ORDER.forEach(function (lb) {
+      shownCnt += GROUPS[lb].filter(function (q) {
+        if (KEY) {
+          var hay = (q.t || "") + " " + (q.s || "") + " " + (q.a || "");
+          if (hay.toLowerCase().indexOf(KEY) === -1) return false;
+        }
+        if (STATE === "todo" && (picked[q.id] || rates[q.id])) return false;
+        if (STATE === "wrong" && rates[q.id] !== "err") return false;
+        if (STATE === "done" && !(picked[q.id] || rates[q.id])) return false;
+        return true;
+      }).length;
+    });
+    h += '<div class="stats"><span>显示 ' + shownCnt + ' / ' + POOL.length + ' 题'
+      + (KEY ? '（搜索：' + esc(KEY) + '）' : '') + '</span></div>';
+
     /* 知识点导航 */
     h += '<div class="tp-nav">';
     ORDER.forEach(function (lb) {
