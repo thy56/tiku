@@ -36,7 +36,7 @@
   <div class="in">
     <h1>每日一练 <span class="badge" id="hBadge">100 天</span></h1>
     <div class="sub" id="hSub"></div>
-    <div class="sub" style="color:#6b7280;font-size:12.5px;margin-top:6px">卷型参考历年考生回忆版真题归纳：选择 5 + 填空 5 固定，其余题型数量随机浮动。山东考试院不公布官方原卷，故本页卷型为参考模拟，非官方标准结构。</div>
+    <div class="sub" style="color:#6b7280;font-size:12.5px;margin-top:6px">每套 21 题左右，必考题型都有，应用/证明轮换出现。题型结构参考历年考生回忆版，非官方标准。</div>
   </div>
 </div>
 
@@ -64,8 +64,7 @@
   var hs = document.getElementById("hSub");
   if (hs) {
     var ns = D.papers.map(function(p){ return p.n || (p.ids ? p.ids.length : 0); });
-    hs.textContent = "共 " + D.days + " 套 · 卷型随机，每套 "
-      + Math.min.apply(null, ns) + "–" + Math.max.apply(null, ns) + " 题";
+    hs.textContent = "共 " + D.days + " 套 · 每套 21 题左右";
   }
 
   function key(d){
