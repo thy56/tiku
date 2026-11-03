@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3.1 不定积分 · 山东专升本高数一</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+.tp-hero{background:linear-gradient(135deg,#1f4e79,#2e74b5);color:#fff;
+  border-radius:16px;padding:26px 28px;margin:22px 0 20px}
+.tp-hero .cn{font-size:12px;opacity:.72;letter-spacing:.06em}
+.tp-hero h1{margin:7px 0 10px;font-size:23px;line-height:1.35;color:#fff}
+.tp-hero .dsc{font-size:13.5px;line-height:1.75;opacity:.92}
+.tp-hero .st{margin-top:14px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px}
+.tp-hero .st b{font-size:16px;font-weight:700}
+.tp-sec{margin:26px 0 12px;font-size:15.5px;font-weight:700;color:var(--blue-900);
+  display:flex;align-items:center;gap:9px;padding-bottom:9px;
+  border-bottom:1px solid var(--line-2)}
+.tp-sec .n{margin-left:auto;font-size:12px;font-weight:400;color:var(--ink-4)}
+.tp-kp{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.tp-kpa{display:block;padding:12px 15px;border:1px solid var(--line);border-radius:11px;
+  background:#fff;text-decoration:none;transition:.15s}
+.tp-kpa:hover{border-color:var(--blue-300);box-shadow:0 3px 10px rgba(31,78,121,.09)}
+.tp-kpa .nm{font-size:13.8px;color:var(--blue-900);font-weight:600;line-height:1.45}
+.tp-kpa .no{font-size:11.5px;color:var(--ink-4);margin-top:4px}
+.tp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:11px}
+.tp-card{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;
+  background:#fff;text-decoration:none;transition:.15s}
+.tp-card:hover{border-color:var(--blue-300);box-shadow:0 3px 12px rgba(31,78,121,.10);
+  transform:translateY(-1px)}
+.tp-card h3{font-size:14px;margin:0 0 5px;color:var(--blue-900);line-height:1.4}
+.tp-card .wg{font-size:12.2px;color:var(--ink-3);line-height:1.55;margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tp-card .mt{margin-top:9px;font-size:11.8px;color:var(--ink-4);
+  display:flex;justify-content:space-between;align-items:center}
+.tp-card .bg{background:var(--blue-50);color:var(--blue-700);padding:2px 8px;
+  border-radius:20px;font-weight:600}
+.tp-card .go{color:var(--blue-600);font-weight:600}
+.tp-nav{display:flex;gap:12px;margin:30px 0 10px;flex-wrap:wrap}
+.tp-nav a{flex:1;min-width:190px;padding:13px 16px;border:1px solid var(--line);
+  border-radius:11px;background:#fff;text-decoration:none;transition:.15s}
+.tp-nav a:hover{border-color:var(--blue-300)}
+.tp-nav .dir{font-size:11.5px;color:var(--ink-4);margin-bottom:4px}
+.tp-nav .tt{font-size:13.5px;color:var(--blue-900);font-weight:600}
+.tp-nav .dis{opacity:.4;pointer-events:none}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="wrap">
+
+<div class="tp-hero">
+  <div class="cn">第三章 · 考点</div>
+  <h1>3.1 不定积分</h1>
+  <div class="dsc">本考点知识点与配套题型。</div>
+  <div class="st">
+    <span><b>9</b> 个知识点</span>
+    <span><b>5</b> 个题型</span>
+    <span><b>95</b> 道题</span>
+  </div>
+</div>
+
+<div class="tp-sec">本考点知识点<span class="n">点进去看概念与公式</span></div>
+<div class="tp-kp">
+<a class="tp-kpa" href="kp-3-1.html"><div class="nm">原函数与不定积分的概念</div><div class="no">第三章 · 第 1 个知识点</div></a><a class="tp-kpa" href="kp-3-2.html"><div class="nm">不定积分基本公式</div><div class="no">第三章 · 第 2 个知识点</div></a><a class="tp-kpa" href="kp-3-3.html"><div class="nm">第一类换元法（凑微分法）</div><div class="no">第三章 · 第 3 个知识点</div></a><a class="tp-kpa" href="kp-3-4.html"><div class="nm">第二类换元法与分部积分法</div><div class="no">第三章 · 第 4 个知识点</div></a><a class="tp-kpa" href="kp-3-5.html"><div class="nm">简单有理函数的不定积分</div><div class="no">第三章 · 第 5 个知识点</div></a><a class="tp-kpa" href="kp-3-6.html"><div class="nm">不定积分的性质</div><div class="no">第三章 · 第 6 个知识点</div></a><a class="tp-kpa" href="kp-3-7.html"><div class="nm">不定积分的基本公式</div><div class="no">第三章 · 第 7 个知识点</div></a><a class="tp-kpa" href="kp-3-8.html"><div class="nm">计算</div><div class="no">第三章 · 第 8 个知识点</div></a><a class="tp-kpa" href="kp-3-9.html"><div class="nm">简单有理数的不定积分</div><div class="no">第三章 · 第 9 个知识点</div></a>
+</div>
+
+<div class="tp-sec">本考点题型<span class="n">按解题方法练</span></div>
+<div class="tp-grid"><a class="tp-card" href="skill-single.html?id=int-basic"><h3>直接积分 · 基本公式</h3><p class="wg">被积函数是幂函数、指数、三角的简单组合，能直接套公式</p><div class="mt"><span class="bg">36 题</span><span class="go">开始练 →</span></div></a><a class="tp-card" href="skill-single.html?id=int-sub"><h3>凑微分 · 第一换元法（父子法）</h3><p class="wg">被积函数里有 f(φ(x)) 和 φ'(x) 同时出现，如 ∫xe^{x²}dx、∫(2x+1)⁵dx</p><div class="mt"><span class="bg">22 题</span><span class="go">开始练 →</span></div></a><a class="tp-card" href="skill-single.html?id=int-parts"><h3>分部积分（反对幂指三）</h3><p class="wg">被积函数是两类不同函数相乘，如 x·cos x、x·ln x、x·e^x</p><div class="mt"><span class="bg">15 题</span><span class="go">开始练 →</span></div></a><a class="tp-card" href="skill-single.html?id=int-rational"><h3>有理函数积分 · 拆项</h3><p class="wg">被积函数是多项式/多项式，如 x/(x+1)、1/(x²−4)</p><div class="mt"><span class="bg">10 题</span><span class="go">开始练 →</span></div></a><a class="tp-card" href="skill-single.html?id=int-primitive"><h3>原函数 · 由初始条件定常数</h3><p class="wg">已知 F(x) 是 f(x) 的原函数，且给了一个函数值，求 F(x)</p><div class="mt"><span class="bg">12 题</span><span class="go">开始练 →</span></div></a></div>
+
+<div class="tp-sec">开始练<span class="n">综合本考点全部题型</span></div>
+<div class="tp-grid"><a class="tp-card" href="skill-single.html?id=int-basic"><h3>本考点综合练习（95 题）</h3><p class="wg">把本考点所有题型的题合成一套，从头到尾刷一遍。</p><div class="mt"><span class="bg">95 题</span><span class="go">进入 →</span></div></a></div>
+
+<div class="tp-nav">
+<a href="topic-2-4.html"><div class="dir">← 上一考点</div><div class="tt">2.5 导数的应用</div></a><a href="topic-3-1.html"><div class="dir">下一考点 →</div><div class="tt">3.2 定积分</div></a>
+</div>
+
+</div>
+
+<div class="footer">山东专升本高数一</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+</body>
+</html>

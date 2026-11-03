@@ -134,6 +134,11 @@
       if (g.desc) hg += '<p>' + esc(g.desc) + '</p>';
       hg += '<div class="ch-st"><span><b>' + g.items.length + '</b> 知识点</span></div></div>';
 
+      hg += '<div style="margin:0 0 16px"><a href="topic-' + ch.no + '-' + G + '.html" '
+        + 'style="display:inline-block;padding:9px 20px;border-radius:8px;'
+        + 'background:#1f4e79;color:#fff;font-size:13px;font-weight:600;'
+        + 'text-decoration:none">进入本站点专页（含题型与练习） →</a></div>';
+
       hg += '<div class="kplist">';
       g.items.forEach(function (it) {
         hg += '<a class="kpi" href="' + it.id + '.html">';
@@ -159,14 +164,14 @@
     h += '<span><b>' + ch.groups.length + '</b> 专题</span>';
     h += '</div></div>';
 
-    /* 专题卡 */
-    h += '<div class="kp-sech">专题导航</div>';
+    /* 专题卡 —— 直达考点专页 topic-N-M.html */
+    h += '<div class="kp-sech">考点专页<span style="margin-left:auto;font-size:12px;font-weight:400;color:var(--ink-4)">每个考点一页：知识点 + 题型 + 练习</span></div>';
     h += '<div class="kp-ggrid">';
     ch.groups.forEach(function (g, gi) {
-      h += '<a class="kp-gcard" href="know.html?ch=' + ch.no + '&g=' + gi + '">';
+      h += '<a class="kp-gcard" href="topic-' + ch.no + '-' + gi + '.html">';
       h += '<div class="kp-gno">' + (gi + 1) + '</div>';
       h += '<div class="kp-gbd"><h4>' + esc(g.title) + '</h4>';
-      h += '<span>' + g.items.length + ' 个知识点</span></div>';
+      h += '<span>' + g.items.length + ' 个知识点 · 进入专页</span></div>';
       h += '<div class="kp-going">→</div></a>';
     });
     h += '</div>';

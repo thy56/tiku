@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>三、函数的连续性 · 山东专升本高数一</title>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/design.css">
+<style>
+.tp-hero{background:linear-gradient(135deg,#1f4e79,#2e74b5);color:#fff;
+  border-radius:16px;padding:26px 28px;margin:22px 0 20px}
+.tp-hero .cn{font-size:12px;opacity:.72;letter-spacing:.06em}
+.tp-hero h1{margin:7px 0 10px;font-size:23px;line-height:1.35;color:#fff}
+.tp-hero .dsc{font-size:13.5px;line-height:1.75;opacity:.92}
+.tp-hero .st{margin-top:14px;display:flex;gap:20px;flex-wrap:wrap;font-size:12.5px}
+.tp-hero .st b{font-size:16px;font-weight:700}
+.tp-sec{margin:26px 0 12px;font-size:15.5px;font-weight:700;color:var(--blue-900);
+  display:flex;align-items:center;gap:9px;padding-bottom:9px;
+  border-bottom:1px solid var(--line-2)}
+.tp-sec .n{margin-left:auto;font-size:12px;font-weight:400;color:var(--ink-4)}
+.tp-kp{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.tp-kpa{display:block;padding:12px 15px;border:1px solid var(--line);border-radius:11px;
+  background:#fff;text-decoration:none;transition:.15s}
+.tp-kpa:hover{border-color:var(--blue-300);box-shadow:0 3px 10px rgba(31,78,121,.09)}
+.tp-kpa .nm{font-size:13.8px;color:var(--blue-900);font-weight:600;line-height:1.45}
+.tp-kpa .no{font-size:11.5px;color:var(--ink-4);margin-top:4px}
+.tp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:11px}
+.tp-card{display:block;padding:14px 16px;border:1px solid var(--line);border-radius:12px;
+  background:#fff;text-decoration:none;transition:.15s}
+.tp-card:hover{border-color:var(--blue-300);box-shadow:0 3px 12px rgba(31,78,121,.10);
+  transform:translateY(-1px)}
+.tp-card h3{font-size:14px;margin:0 0 5px;color:var(--blue-900);line-height:1.4}
+.tp-card .wg{font-size:12.2px;color:var(--ink-3);line-height:1.55;margin:0;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.tp-card .mt{margin-top:9px;font-size:11.8px;color:var(--ink-4);
+  display:flex;justify-content:space-between;align-items:center}
+.tp-card .bg{background:var(--blue-50);color:var(--blue-700);padding:2px 8px;
+  border-radius:20px;font-weight:600}
+.tp-card .go{color:var(--blue-600);font-weight:600}
+.tp-nav{display:flex;gap:12px;margin:30px 0 10px;flex-wrap:wrap}
+.tp-nav a{flex:1;min-width:190px;padding:13px 16px;border:1px solid var(--line);
+  border-radius:11px;background:#fff;text-decoration:none;transition:.15s}
+.tp-nav a:hover{border-color:var(--blue-300)}
+.tp-nav .dir{font-size:11.5px;color:var(--ink-4);margin-bottom:4px}
+.tp-nav .tt{font-size:13.5px;color:var(--blue-900);font-weight:600}
+.tp-nav .dis{opacity:.4;pointer-events:none}
+</style>
+</head>
+<body>
+
+<div id="nav" class="nav"></div>
+
+<div class="wrap">
+
+<div class="tp-hero">
+  <div class="cn">第一章 · 考点</div>
+  <h1>三、函数的连续性</h1>
+  <div class="dsc">连续 = 极限值等于函数值。它把「趋近」和「取到」统一起来，是函数最重要的好性质。</div>
+  <div class="st">
+    <span><b>7</b> 个知识点</span>
+    <span><b>3</b> 个题型</span>
+    <span><b>50</b> 道题</span>
+  </div>
+</div>
+
+<div class="tp-sec">本考点知识点<span class="n">点进去看概念与公式</span></div>
+<div class="tp-kp">
+<a class="tp-kpa" href="kp-1-36.html"><div class="nm">函数在一点连续的定义</div><div class="no">第一章 · 第 36 个知识点</div></a><a class="tp-kpa" href="kp-1-37.html"><div class="nm">左连续与右连续</div><div class="no">第一章 · 第 37 个知识点</div></a><a class="tp-kpa" href="kp-1-38.html"><div class="nm">区间上的连续函数</div><div class="no">第一章 · 第 38 个知识点</div></a><a class="tp-kpa" href="kp-1-39.html"><div class="nm">间断点及其分类</div><div class="no">第一章 · 第 39 个知识点</div></a><a class="tp-kpa" href="kp-1-40.html"><div class="nm">连续函数的运算</div><div class="no">第一章 · 第 40 个知识点</div></a><a class="tp-kpa" href="kp-1-41.html"><div class="nm">闭区间上连续函数的性质（四大定理）</div><div class="no">第一章 · 第 41 个知识点</div></a><a class="tp-kpa" href="kp-1-42.html"><div class="nm">函数在一点出连续条件</div><div class="no">第一章 · 第 42 个知识点</div></a>
+</div>
+
+<div class="tp-sec">本考点题型<span class="n">按解题方法练</span></div>
+<div class="tp-grid"><a class="tp-card" href="skill-single.html?id=lim-discont"><h3>间断点判定 · 先找点再分类</h3><p class="wg">题目给一个函数，问「在 x=a 处是什么类型的间断点」，或要求「找出全部间断点并分类」</p><div class="mt"><span class="bg">25 题</span><span class="go">开始练 →</span></div></a><a class="tp-card" href="skill-single.html?id=lim-cont-param"><h3>分段函数连续 · 求参数</h3><p class="wg">分段函数在分界点连续，求其中的待定常数 a</p><div class="mt"><span class="bg">13 题</span><span class="go">开始练 →</span></div></a><a class="tp-card" href="skill-single.html?id=zero-point"><h3>零点定理 · 证方程有根</h3><p class="wg">证「方程 f(x)=0 在 (a,b) 内至少有一个根」</p><div class="mt"><span class="bg">12 题</span><span class="go">开始练 →</span></div></a></div>
+
+<div class="tp-sec">开始练<span class="n">综合本考点全部题型</span></div>
+<div class="tp-grid"><a class="tp-card" href="skill-single.html?id=lim-discont"><h3>本考点综合练习（50 题）</h3><p class="wg">把本考点所有题型的题合成一套，从头到尾刷一遍。</p><div class="mt"><span class="bg">50 题</span><span class="go">进入 →</span></div></a></div>
+
+<div class="tp-nav">
+<a href="topic-1-1.html"><div class="dir">← 上一考点</div><div class="tt">二、极限</div></a><a href="topic-2-0.html"><div class="dir">下一考点 →</div><div class="tt">2.1 导数</div></a>
+</div>
+
+</div>
+
+<div class="footer">山东专升本高数一</div>
+<button class="top" id="top" title="回到顶部">↑</button>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/nav.js"></script>
+<script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
+</body>
+</html>

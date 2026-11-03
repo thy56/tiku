@@ -130,6 +130,24 @@ function renderGroupIndex(){
   var host = document.getElementById("chapidx");
   if(host) host.innerHTML = gidx;
 
+  /* 考点专页入口：每个考点一个独立页面 topic-N-M.html */
+  var tpx = '<div style="margin:26px 0 12px;font-size:15px;font-weight:700;'
+    + 'color:var(--blue-900);display:flex;align-items:baseline;gap:9px;'
+    + 'padding-bottom:8px;border-bottom:1px solid var(--line-2)">考点专页'
+    + '<span style="margin-left:auto;font-size:12px;font-weight:400;color:var(--ink-4)">'
+    + '每个考点单独一页：知识点 + 题型 + 练习</span></div>';
+  tpx += '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:10px">';
+  ch.groups.forEach(function(g, gi){
+    tpx += '<a href="topic-' + ch.no + '-' + gi + '.html" '
+      + 'style="display:block;padding:13px 16px;border:1px solid var(--line);'
+      + 'border-radius:11px;background:#fff;text-decoration:none">'
+      + '<div style="font-size:13.8px;color:var(--blue-900);font-weight:600;'
+      + 'line-height:1.45">' + esc(g.title) + '</div>'
+      + '<div style="font-size:11.8px;color:var(--ink-4);margin-top:6px">'
+      + g.items.length + ' 个知识点 · 进入专页 →</div></a>';
+  });
+  tpx += '</div>';
+
   var head = '<div class="chaphero">';
   head += '<span class="ch-no">第 ' + ch.no + ' 章</span>';
   head += '<h2>' + esc(window.GS_SHORT(ch.title)) + '</h2>';
@@ -138,8 +156,8 @@ function renderGroupIndex(){
   head += '<span><b>'+ch.groups.length+'</b> 分组</span></div>';
   head += '</div>';
 
-  $main.innerHTML = head +
-    '<div class="stats"><span>本章分 ' + ch.groups.length +
+  $main.innerHTML = head + tpx +
+    '<div class="stats" style="margin-top:22px"><span>本章分 ' + ch.groups.length +
     ' 组，点上面任意一组进入（每组单独一页）</span></div>';
 
   var bd = document.getElementById("hBadge");
@@ -202,6 +220,11 @@ function renderGroup(){
   head += '<span><b>'+nf+'</b> 公式</span>';
   head += '<span><b>'+npt+'</b> 考点</span>';
   head += '<span><b>'+(gi+1)+'/'+ch.groups.length+'</b> 组</span></div>';
+  head += '<div style="margin-top:14px">'
+    + '<a href="topic-' + ch.no + '-' + gi + '.html" '
+    + 'style="display:inline-block;padding:8px 18px;border-radius:8px;'
+    + 'background:#fff;color:#1f4e79;font-size:13px;font-weight:600;'
+    + 'text-decoration:none">进入本站点专页 →</a></div>';
   head += '</div>';
 
   var body;
