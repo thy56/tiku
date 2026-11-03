@@ -25,7 +25,13 @@ window.GS_SKILL = {
     "8-07",
     "8-08",
     "8-09",
-    "1-107"
+    "1-107",
+    "G1-lim-eq-01",
+    "G1-lim-eq-02",
+    "G1-lim-eq-03",
+    "G1-lim-eq-04",
+    "G1-lim-eq-05",
+    "G1-lim-eq-06"
    ]
   },
   {
@@ -42,7 +48,13 @@ window.GS_SKILL = {
    "warn": "约分是恒等变形，x≠a；但极限只看 x→a 附近的趋势，不影响结果",
    "qids": [
     "1-41",
-    "1-50"
+    "1-50",
+    "G1-lim-factor-01",
+    "G1-lim-factor-02",
+    "G1-lim-factor-03",
+    "G1-lim-factor-04",
+    "G1-lim-factor-05",
+    "G1-lim-factor-06"
    ]
   },
   {
@@ -62,7 +74,13 @@ window.GS_SKILL = {
     "1-43",
     "1-111",
     "1-112",
-    "1-118"
+    "1-118",
+    "G1-lim-ratio-01",
+    "G1-lim-ratio-02",
+    "G1-lim-ratio-03",
+    "G1-lim-ratio-04",
+    "G1-lim-ratio-05",
+    "G1-lim-ratio-06"
    ]
   },
   {
@@ -83,7 +101,13 @@ window.GS_SKILL = {
     "1-121",
     "1-122",
     "1-124",
-    "1-125"
+    "1-125",
+    "G1-lim-1inf-01",
+    "G1-lim-1inf-02",
+    "G1-lim-1inf-03",
+    "G1-lim-1inf-04",
+    "G1-lim-1inf-05",
+    "G1-lim-1inf-06"
    ]
   },
   {
@@ -105,7 +129,13 @@ window.GS_SKILL = {
     "8-91",
     "1-109",
     "1-110",
-    "1-113"
+    "1-113",
+    "G1-lim-lhopital-01",
+    "G1-lim-lhopital-02",
+    "G1-lim-lhopital-03",
+    "G1-lim-lhopital-04",
+    "G1-lim-lhopital-05",
+    "G1-lim-lhopital-06"
    ]
   },
   {
@@ -121,7 +151,13 @@ window.GS_SKILL = {
    ],
    "warn": "选哪个下放很重要——下放后要变简单，不是变复杂",
    "qids": [
-    "2-14"
+    "2-14",
+    "G1-lim-0inf-01",
+    "G1-lim-0inf-02",
+    "G1-lim-0inf-03",
+    "G1-lim-0inf-04",
+    "G1-lim-0inf-05",
+    "G1-lim-0inf-06"
    ]
   },
   {
@@ -141,7 +177,14 @@ window.GS_SKILL = {
     "1-48",
     "1-131",
     "1-132",
-    "1-133"
+    "1-133",
+    "G1-lim-discont-01",
+    "G1-lim-discont-02",
+    "G1-lim-discont-03",
+    "G1-lim-discont-04",
+    "G1-lim-discont-05",
+    "G1-lim-discont-06",
+    "G1-lim-discont-07"
    ]
   },
   {
@@ -161,7 +204,14 @@ window.GS_SKILL = {
     "1-127",
     "1-128",
     "1-129",
-    "1-130"
+    "1-130",
+    "G1-lim-cont-param-01",
+    "G1-lim-cont-param-02",
+    "G1-lim-cont-param-03",
+    "G1-lim-cont-param-04",
+    "G1-lim-cont-param-05",
+    "G1-lim-cont-param-06",
+    "G1-lim-cont-param-07"
    ]
   },
   {
@@ -185,7 +235,17 @@ window.GS_SKILL = {
     "1-123",
     "1-126",
     "8-10",
-    "1-114"
+    "1-114",
+    "G1-lim-taylor-01",
+    "G1-lim-taylor-02",
+    "G1-lim-taylor-03",
+    "G1-lim-taylor-04",
+    "G1-lim-taylor-05",
+    "G1-lim-taylor-06",
+    "G1-lim-taylor-07",
+    "G1-lim-taylor-08",
+    "G1-lim-taylor-09",
+    "G1-lim-taylor-10"
    ]
   },
   {
@@ -204,7 +264,14 @@ window.GS_SKILL = {
    "warn": "∞−∞ 不能直接算，必须先合并成一个式子；通分后分母常是 x²，分子要展到 x² 阶",
    "qids": [
     "8-90",
-    "1-119"
+    "1-119",
+    "G1-lim-inf-inf-01",
+    "G1-lim-inf-inf-02",
+    "G1-lim-inf-inf-03",
+    "G1-lim-inf-inf-04",
+    "G1-lim-inf-inf-05",
+    "G1-lim-inf-inf-06",
+    "G1-lim-inf-inf-07"
    ]
   },
   {
@@ -221,7 +288,13 @@ window.GS_SKILL = {
    ],
    "warn": "分段点必须分左右导数，只说「可导」不算完成",
    "qids": [
-    "2-1"
+    "2-1",
+    "G2-der-def-01",
+    "G2-der-def-02",
+    "G2-der-def-03",
+    "G2-der-def-04",
+    "G2-der-def-05",
+    "G2-der-def-06"
    ]
   },
   {
@@ -237,7 +310,16 @@ window.GS_SKILL = {
    ],
    "warn": "最常见的错：漏乘最内层的导数（忘记乘 2、乘 2x）",
    "qids": [
-    "2-4"
+    "2-4",
+    "G2-der-chain-01",
+    "G2-der-chain-02",
+    "G2-der-chain-03",
+    "G2-der-chain-04",
+    "G2-der-chain-05",
+    "G2-der-chain-06",
+    "G2-der-chain-07",
+    "G2-der-chain-08",
+    "G2-der-chain-09"
    ]
   },
   {
@@ -253,7 +335,16 @@ window.GS_SKILL = {
    ],
    "warn": "商的分子是「上导下不导 减 上不导下导」，顺序反了符号就错",
    "qids": [
-    "2-3"
+    "2-3",
+    "G2-der-product-01",
+    "G2-der-product-02",
+    "G2-der-product-03",
+    "G2-der-product-04",
+    "G2-der-product-05",
+    "G2-der-product-06",
+    "G2-der-product-07",
+    "G2-der-product-08",
+    "G2-der-product-09"
    ]
   },
   {
@@ -271,7 +362,14 @@ window.GS_SKILL = {
    "warn": "对 y 求导必须乘 y'，(y²)' = 2y·y'",
    "qids": [
     "2-5",
-    "2-133"
+    "2-133",
+    "G2-der-implicit-01",
+    "G2-der-implicit-02",
+    "G2-der-implicit-03",
+    "G2-der-implicit-04",
+    "G2-der-implicit-05",
+    "G2-der-implicit-06",
+    "G2-der-implicit-07"
    ]
   },
   {
@@ -292,7 +390,14 @@ window.GS_SKILL = {
     "2-7",
     "2-136",
     "8-23",
-    "8-25"
+    "8-25",
+    "G2-der-high-01",
+    "G2-der-high-02",
+    "G2-der-high-03",
+    "G2-der-high-04",
+    "G2-der-high-05",
+    "G2-der-high-06",
+    "G2-der-high-07"
    ]
   },
   {
@@ -308,7 +413,13 @@ window.GS_SKILL = {
    ],
    "warn": "二阶导**不是**直接把一阶导再对 t 求一次！必须再除以 dx/dt",
    "qids": [
-    "2-135"
+    "2-135",
+    "G2-der-param-01",
+    "G2-der-param-02",
+    "G2-der-param-03",
+    "G2-der-param-04",
+    "G2-der-param-05",
+    "G2-der-param-06"
    ]
   },
   {
@@ -330,7 +441,15 @@ window.GS_SKILL = {
     "2-141",
     "8-13",
     "8-14",
-    "8-15"
+    "8-15",
+    "G2-der-tangent-01",
+    "G2-der-tangent-02",
+    "G2-der-tangent-03",
+    "G2-der-tangent-04",
+    "G2-der-tangent-05",
+    "G2-der-tangent-06",
+    "G2-der-tangent-07",
+    "G2-der-tangent-08"
    ]
   },
   {
@@ -347,7 +466,14 @@ window.GS_SKILL = {
    "warn": "x₀ 要选成能精确算的点，如 √1.01 取 x₀=1",
    "qids": [
     "2-8",
-    "2-9"
+    "2-9",
+    "G2-der-diff-01",
+    "G2-der-diff-02",
+    "G2-der-diff-03",
+    "G2-der-diff-04",
+    "G2-der-diff-05",
+    "G2-der-diff-06",
+    "G2-der-diff-07"
    ]
   },
   {
@@ -365,7 +491,13 @@ window.GS_SKILL = {
    "warn": "幂指函数**不能**直接套 xⁿ 或 aˣ 的公式，必须取对数或写成 e^{sin x·ln x}",
    "qids": [
     "2-134",
-    "2-11"
+    "2-11",
+    "G2-der-log-01",
+    "G2-der-log-02",
+    "G2-der-log-03",
+    "G2-der-log-04",
+    "G2-der-log-05",
+    "G2-der-log-06"
    ]
   },
   {
@@ -384,7 +516,13 @@ window.GS_SKILL = {
    "warn": "「极值」不是「最值」；极值是局部概念，求最值还要比端点",
    "qids": [
     "2-15",
-    "2-138"
+    "2-138",
+    "G2-der-monotone-01",
+    "G2-der-monotone-02",
+    "G2-der-monotone-03",
+    "G2-der-monotone-04",
+    "G2-der-monotone-05",
+    "G2-der-monotone-06"
    ]
   },
   {
@@ -403,7 +541,13 @@ window.GS_SKILL = {
    "qids": [
     "2-18",
     "2-19",
-    "2-139"
+    "2-139",
+    "G2-der-concave-01",
+    "G2-der-concave-02",
+    "G2-der-concave-03",
+    "G2-der-concave-04",
+    "G2-der-concave-05",
+    "G2-der-concave-06"
    ]
   },
   {
@@ -421,7 +565,13 @@ window.GS_SKILL = {
    "qids": [
     "2-20",
     "2-21",
-    "2-140"
+    "2-140",
+    "G2-der-asymptote-01",
+    "G2-der-asymptote-02",
+    "G2-der-asymptote-03",
+    "G2-der-asymptote-04",
+    "G2-der-asymptote-05",
+    "G2-der-asymptote-06"
    ]
   },
   {
@@ -440,7 +590,13 @@ window.GS_SKILL = {
    "qids": [
     "2-10",
     "8-48",
-    "8-49"
+    "8-49",
+    "G2-der-rolle-01",
+    "G2-der-rolle-02",
+    "G2-der-rolle-03",
+    "G2-der-rolle-04",
+    "G2-der-rolle-05",
+    "G2-der-rolle-06"
    ]
   },
   {
@@ -458,7 +614,13 @@ window.GS_SKILL = {
    "warn": "**端点必须算**——最值可能在端点取得（如 f(x)=x 在 [0,1]）；应用题还要检查驻点是否在实际范围内",
    "qids": [
     "2-16",
-    "2-17"
+    "2-17",
+    "G2-der-maxmin-01",
+    "G2-der-maxmin-02",
+    "G2-der-maxmin-03",
+    "G2-der-maxmin-04",
+    "G2-der-maxmin-05",
+    "G2-der-maxmin-06"
    ]
   },
   {
@@ -477,7 +639,16 @@ window.GS_SKILL = {
     "3-2",
     "3-3",
     "3-4",
-    "8-32"
+    "8-32",
+    "G3-int-basic-01",
+    "G3-int-basic-02",
+    "G3-int-basic-03",
+    "G3-int-basic-04",
+    "G3-int-basic-05",
+    "G3-int-basic-06",
+    "G3-int-basic-07",
+    "G3-int-basic-08",
+    "G3-int-basic-09"
    ]
   },
   {
@@ -498,7 +669,16 @@ window.GS_SKILL = {
     "3-5",
     "3-6",
     "8-33",
-    "8-34"
+    "8-34",
+    "G3-int-sub-01",
+    "G3-int-sub-02",
+    "G3-int-sub-03",
+    "G3-int-sub-04",
+    "G3-int-sub-05",
+    "G3-int-sub-06",
+    "G3-int-sub-07",
+    "G3-int-sub-08",
+    "G3-int-sub-09"
    ]
   },
   {
@@ -518,7 +698,14 @@ window.GS_SKILL = {
    "qids": [
     "3-7",
     "3-8",
-    "8-35"
+    "8-35",
+    "G3-int-parts-01",
+    "G3-int-parts-02",
+    "G3-int-parts-03",
+    "G3-int-parts-04",
+    "G3-int-parts-05",
+    "G3-int-parts-06",
+    "G3-int-parts-07"
    ]
   },
   {
@@ -536,7 +723,13 @@ window.GS_SKILL = {
    "warn": "分母是 x²+a² 时积出 arctan，不是 ln",
    "qids": [
     "3-9",
-    "3-10"
+    "3-10",
+    "G3-int-rational-01",
+    "G3-int-rational-02",
+    "G3-int-rational-03",
+    "G3-int-rational-04",
+    "G3-int-rational-05",
+    "G3-int-rational-06"
    ]
   },
   {
@@ -555,7 +748,13 @@ window.GS_SKILL = {
     "3-11",
     "3-12",
     "8-38",
-    "8-39"
+    "8-39",
+    "G3-int-defprop-01",
+    "G3-int-defprop-02",
+    "G3-int-defprop-03",
+    "G3-int-defprop-04",
+    "G3-int-defprop-05",
+    "G3-int-defprop-06"
    ]
   },
   {
@@ -571,7 +770,13 @@ window.GS_SKILL = {
    ],
    "warn": "最常见错误：忘记乘上限的导数（如 ∫₀^{x²} → 要乘 2x）",
    "qids": [
-    "3-14"
+    "3-14",
+    "G3-int-varupper-01",
+    "G3-int-varupper-02",
+    "G3-int-varupper-03",
+    "G3-int-varupper-04",
+    "G3-int-varupper-05",
+    "G3-int-varupper-06"
    ]
   },
   {
@@ -591,7 +796,15 @@ window.GS_SKILL = {
     "3-15",
     "3-16",
     "8-40",
-    "8-98"
+    "8-98",
+    "G3-int-definite-01",
+    "G3-int-definite-02",
+    "G3-int-definite-03",
+    "G3-int-definite-04",
+    "G3-int-definite-05",
+    "G3-int-definite-06",
+    "G3-int-definite-07",
+    "G3-int-definite-08"
    ]
   },
   {
@@ -609,7 +822,13 @@ window.GS_SKILL = {
    "warn": "只写「收敛」不算完，题目要求值时要算出具体数",
    "qids": [
     "3-17",
-    "3-18"
+    "3-18",
+    "G3-int-improper-01",
+    "G3-int-improper-02",
+    "G3-int-improper-03",
+    "G3-int-improper-04",
+    "G3-int-improper-05",
+    "G3-int-improper-06"
    ]
   },
   {
@@ -627,7 +846,12 @@ window.GS_SKILL = {
    "warn": "上下限搞反会得负数；曲线交叉要分段积分",
    "qids": [
     "3-19",
-    "8-43"
+    "8-43",
+    "G3-app-area-01",
+    "G3-app-area-02",
+    "G3-app-area-03",
+    "G3-app-area-04",
+    "G3-app-area-05"
    ]
   },
   {
@@ -645,7 +869,13 @@ window.GS_SKILL = {
    "warn": "公式里是**平方**，别漏；两曲线时是「外半径² − 内半径²」，不是「(外−内)²」",
    "qids": [
     "3-20",
-    "8-44"
+    "8-44",
+    "G3-app-volume-01",
+    "G3-app-volume-02",
+    "G3-app-volume-03",
+    "G3-app-volume-04",
+    "G3-app-volume-05",
+    "G3-app-volume-06"
    ]
   },
   {
@@ -661,7 +891,13 @@ window.GS_SKILL = {
    ],
    "warn": "先积再定 C，顺序不能反；C 只加一个",
    "qids": [
-    "3-1"
+    "3-1",
+    "G3-int-primitive-01",
+    "G3-int-primitive-02",
+    "G3-int-primitive-03",
+    "G3-int-primitive-04",
+    "G3-int-primitive-05",
+    "G3-int-primitive-06"
    ]
   },
   {
@@ -684,7 +920,14 @@ window.GS_SKILL = {
     "4-3",
     "4-4",
     "4-5",
-    "4-6"
+    "4-6",
+    "G47-vec-op-01",
+    "G47-vec-op-02",
+    "G47-vec-op-03",
+    "G47-vec-op-04",
+    "G47-vec-op-05",
+    "G47-vec-op-06",
+    "G47-vec-op-07"
    ]
   },
   {
@@ -702,7 +945,13 @@ window.GS_SKILL = {
    "qids": [
     "4-7",
     "4-12",
-    "8-75"
+    "8-75",
+    "G47-geo-plane-01",
+    "G47-geo-plane-02",
+    "G47-geo-plane-03",
+    "G47-geo-plane-04",
+    "G47-geo-plane-05",
+    "G47-geo-plane-06"
    ]
   },
   {
@@ -719,7 +968,13 @@ window.GS_SKILL = {
    "warn": "分母为 0 不能直接写，要单独列式",
    "qids": [
     "4-9",
-    "4-11"
+    "4-11",
+    "G47-geo-line-01",
+    "G47-geo-line-02",
+    "G47-geo-line-03",
+    "G47-geo-line-04",
+    "G47-geo-line-05",
+    "G47-geo-line-06"
    ]
   },
   {
@@ -735,7 +990,13 @@ window.GS_SKILL = {
    ],
    "warn": "分子必须加绝对值，否则可能得负数",
    "qids": [
-    "4-8"
+    "4-8",
+    "G47-geo-dist-01",
+    "G47-geo-dist-02",
+    "G47-geo-dist-03",
+    "G47-geo-dist-04",
+    "G47-geo-dist-05",
+    "G47-geo-dist-06"
    ]
   },
   {
@@ -752,7 +1013,13 @@ window.GS_SKILL = {
    ],
    "warn": "「平行」和「在平面内」点积都为 0，要把直线上一点代入平面方程区分",
    "qids": [
-    "4-10"
+    "4-10",
+    "G47-geo-pos-01",
+    "G47-geo-pos-02",
+    "G47-geo-pos-03",
+    "G47-geo-pos-04",
+    "G47-geo-pos-05",
+    "G47-geo-pos-06"
    ]
   },
   {
@@ -770,7 +1037,13 @@ window.GS_SKILL = {
    "qids": [
     "5-3",
     "5-4",
-    "8-51"
+    "8-51",
+    "G47-multi-pde-01",
+    "G47-multi-pde-02",
+    "G47-multi-pde-03",
+    "G47-multi-pde-04",
+    "G47-multi-pde-05",
+    "G47-multi-pde-06"
    ]
   },
   {
@@ -786,7 +1059,13 @@ window.GS_SKILL = {
    ],
    "warn": "公式前面有**负号**，最容易漏",
    "qids": [
-    "5-5"
+    "5-5",
+    "G47-multi-implicit-01",
+    "G47-multi-implicit-02",
+    "G47-multi-implicit-03",
+    "G47-multi-implicit-04",
+    "G47-multi-implicit-05",
+    "G47-multi-implicit-06"
    ]
   },
   {
@@ -804,7 +1083,13 @@ window.GS_SKILL = {
    "qids": [
     "5-6",
     "5-7",
-    "8-52"
+    "8-52",
+    "G47-multi-total-01",
+    "G47-multi-total-02",
+    "G47-multi-total-03",
+    "G47-multi-total-04",
+    "G47-multi-total-05",
+    "G47-multi-total-06"
    ]
   },
   {
@@ -822,7 +1107,13 @@ window.GS_SKILL = {
    "warn": "先解驻点再判，两个条件缺一不可（Δ 和 A 的符号都要看）",
    "qids": [
     "5-8",
-    "5-9"
+    "5-9",
+    "G47-multi-extremum-01",
+    "G47-multi-extremum-02",
+    "G47-multi-extremum-03",
+    "G47-multi-extremum-04",
+    "G47-multi-extremum-05",
+    "G47-multi-extremum-06"
    ]
   },
   {
@@ -841,7 +1132,13 @@ window.GS_SKILL = {
    "qids": [
     "5-12",
     "5-14",
-    "8-106"
+    "8-106",
+    "G47-dbl-cart-01",
+    "G47-dbl-cart-02",
+    "G47-dbl-cart-03",
+    "G47-dbl-cart-04",
+    "G47-dbl-cart-05",
+    "G47-dbl-cart-06"
    ]
   },
   {
@@ -860,7 +1157,13 @@ window.GS_SKILL = {
    "qids": [
     "5-10",
     "5-11",
-    "5-13"
+    "5-13",
+    "G47-dbl-polar-01",
+    "G47-dbl-polar-02",
+    "G47-dbl-polar-03",
+    "G47-dbl-polar-04",
+    "G47-dbl-polar-05",
+    "G47-dbl-polar-06"
    ]
   },
   {
@@ -877,7 +1180,13 @@ window.GS_SKILL = {
    "warn": "沿两条路径得到同一个值**不能**证明极限存在；只有找到两条不同值才能证明不存在",
    "qids": [
     "5-1",
-    "5-2"
+    "5-2",
+    "G47-multi-limit-01",
+    "G47-multi-limit-02",
+    "G47-multi-limit-03",
+    "G47-multi-limit-04",
+    "G47-multi-limit-05",
+    "G47-multi-limit-06"
    ]
   },
   {
@@ -895,7 +1204,13 @@ window.GS_SKILL = {
    "qids": [
     "6-1",
     "6-3",
-    "6-4"
+    "6-4",
+    "G47-ser-posit-01",
+    "G47-ser-posit-02",
+    "G47-ser-posit-03",
+    "G47-ser-posit-04",
+    "G47-ser-posit-05",
+    "G47-ser-posit-06"
    ]
   },
   {
@@ -913,7 +1228,13 @@ window.GS_SKILL = {
    "warn": "「绝对收敛」和「条件收敛」要分别判断，不能只写一个",
    "qids": [
     "6-5",
-    "6-6"
+    "6-6",
+    "G47-ser-alt-01",
+    "G47-ser-alt-02",
+    "G47-ser-alt-03",
+    "G47-ser-alt-04",
+    "G47-ser-alt-05",
+    "G47-ser-alt-06"
    ]
   },
   {
@@ -933,7 +1254,13 @@ window.GS_SKILL = {
     "6-7",
     "6-8",
     "8-56",
-    "8-57"
+    "8-57",
+    "G47-ser-radius-01",
+    "G47-ser-radius-02",
+    "G47-ser-radius-03",
+    "G47-ser-radius-04",
+    "G47-ser-radius-05",
+    "G47-ser-radius-06"
    ]
   },
   {
@@ -951,7 +1278,13 @@ window.GS_SKILL = {
    "qids": [
     "6-2",
     "6-9",
-    "6-10"
+    "6-10",
+    "G47-ser-sum-01",
+    "G47-ser-sum-02",
+    "G47-ser-sum-03",
+    "G47-ser-sum-04",
+    "G47-ser-sum-05",
+    "G47-ser-sum-06"
    ]
   },
   {
@@ -968,7 +1301,13 @@ window.GS_SKILL = {
    "warn": "**展开**是写成一串级数，不是「背出前几项」——必须写出通项和成立区间",
    "qids": [
     "6-11",
-    "6-12"
+    "6-12",
+    "G47-ser-expand-01",
+    "G47-ser-expand-02",
+    "G47-ser-expand-03",
+    "G47-ser-expand-04",
+    "G47-ser-expand-05",
+    "G47-ser-expand-06"
    ]
   },
   {
@@ -986,7 +1325,13 @@ window.GS_SKILL = {
    "warn": "两边积分时只需在一个 C，别两边都加",
    "qids": [
     "7-3",
-    "7-4"
+    "7-4",
+    "G47-ode-sep-01",
+    "G47-ode-sep-02",
+    "G47-ode-sep-03",
+    "G47-ode-sep-04",
+    "G47-ode-sep-05",
+    "G47-ode-sep-06"
    ]
   },
   {
@@ -1004,7 +1349,13 @@ window.GS_SKILL = {
    "warn": "必须先化成标准形（y' 系数为 1），否则 P、Q 会取错",
    "qids": [
     "7-5",
-    "7-6"
+    "7-6",
+    "G47-ode-linear1-01",
+    "G47-ode-linear1-02",
+    "G47-ode-linear1-03",
+    "G47-ode-linear1-04",
+    "G47-ode-linear1-05",
+    "G47-ode-linear1-06"
    ]
   },
   {
@@ -1022,7 +1373,13 @@ window.GS_SKILL = {
    "warn": "三种情形对应三种形式，别混；复根时 β 是虚部，别漏 e^{αx}",
    "qids": [
     "7-9",
-    "7-10"
+    "7-10",
+    "G47-ode-const2-01",
+    "G47-ode-const2-02",
+    "G47-ode-const2-03",
+    "G47-ode-const2-04",
+    "G47-ode-const2-05",
+    "G47-ode-const2-06"
    ]
   },
   {
@@ -1042,7 +1399,13 @@ window.GS_SKILL = {
     "7-2",
     "7-7",
     "7-8",
-    "8-61"
+    "8-61",
+    "G47-ode-struct-01",
+    "G47-ode-struct-02",
+    "G47-ode-struct-03",
+    "G47-ode-struct-04",
+    "G47-ode-struct-05",
+    "G47-ode-struct-06"
    ]
   },
   {
@@ -1059,7 +1422,13 @@ window.GS_SKILL = {
    ],
    "warn": "设特解形式时要检查「f(x) 的指数是否撞上特征根」，撞上就要乘 x",
    "qids": [
-    "7-11"
+    "7-11",
+    "G47-ode-particular-01",
+    "G47-ode-particular-02",
+    "G47-ode-particular-03",
+    "G47-ode-particular-04",
+    "G47-ode-particular-05",
+    "G47-ode-particular-06"
    ]
   },
   {
@@ -1076,7 +1445,13 @@ window.GS_SKILL = {
    ],
    "warn": "最关键的判断：f(x) 里的指数 λ 撞上特征根就必须乘 x，撞几次乘几次",
    "qids": [
-    "7-12"
+    "7-12",
+    "G47-ode-setform-01",
+    "G47-ode-setform-02",
+    "G47-ode-setform-03",
+    "G47-ode-setform-04",
+    "G47-ode-setform-05",
+    "G47-ode-setform-06"
    ]
   }
  ]
