@@ -16,7 +16,7 @@
       key: "yuwen", name: "语文", short: "语文", color: "#b9793a",
       pages: [
         ["index.html", "首页"],
-        ["know.html", "知识体系", "374点"],
+        ["know.html", "知识体系", "141点"],
         ["daily.html", "每日一题", "549题"],
         ["wen.html", "文言文", "25篇"],
         ["changshi.html", "文学常识", "1292条"],
@@ -29,7 +29,7 @@
       key: "yingyu", name: "英语", short: "英语", color: "#3f8f4a",
       pages: [
         ["index.html", "首页"],
-        ["know.html", "知识体系", "509点"],
+        ["know.html", "知识体系", "141点"],
         ["专项练习.html", "翻译练习", "1120题"],
         ["grammar.html", "语法体系", "94节"],
         ["tenses.html", "时态体系", "21节"],
@@ -46,9 +46,9 @@
         ["know.html", "知识体系", "141点"],
         ["formulas.html", "公式总表", "352条"],
         ["examples.html", "例题精讲", "134例"],
-        ["题库.html", "题库中心", "1062题"],
-        ["专项练习.html", "专项练习", "8章"],
-        ["skill.html", "题型专项", "58类"],
+        ["题库.html", "题库中心", "1139题"],
+        ["专项练习.html", "专项练习", "68题型"],
+        ["skill.html", "题型专项", "68类"],
         ["每日一练.html", "每日一练", "100套"],
         ["历年真题.html", "历年真题", "6套"]
       ]
@@ -57,7 +57,7 @@
       key: "jisuanji", name: "计算机", short: "计基", color: "#7a5aa8",
       pages: [
         ["index.html", "首页"],
-        ["know.html", "知识体系", "227点"],
+        ["know.html", "知识体系", "141点"],
         ["examples.html", "例题精讲", "115例"],
         ["题库.html", "题库", "312题"],
         ["历年真题.html", "历年真题", "195题"],
