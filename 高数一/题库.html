@@ -31,7 +31,7 @@
 
 <div class="page-head">
   <div class="in">
-    <h1>题库 <span class="badge">8 章 · 493 题</span></h1>
+    <h1>题库 <span class="badge">8 章 · 1062 题</span></h1>
   </div>
 </div>
 
@@ -46,7 +46,7 @@
   <a class="home-card" href="每日一练.html">
     <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5.4" width="16" height="14.6" rx="2.2"/><path d="M4 10h16M8.6 3.4v3.6M15.4 3.4v3.6"/></svg></div>
     <h3>每日一练</h3>
-    <div class="dc">100 套模拟卷 · 每套 21 题左右，选择/填空/计算/证明每套都有，应用题轮换出现。题库共 542 道，其中参与组卷 436 道（第 8 章附录 106 道为必背公式与难点题型，不计入组卷）</div>
+    <div class="dc">100 套模拟卷 · 每套 21 题左右，选择/填空/计算/证明每套都有，应用题轮换出现。题库共 1062 道，全部为可练习题目</div>
     <div class="mt"><span>100 天</span><span>卷型随机</span></div>
   </a>
   <a class="home-card" href="历年真题.html">
@@ -65,50 +65,5 @@
 <script src="assets/manifest.js"></script>
 <script src="assets/nav.js"></script>
 <script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
-<script>
-(function(){
-  "use strict";
-  var DATA = {"mode": "rot", "items": [{"title": "第 1 章 · 函数、极限和连续", "desc": "本章 70 题。"}, {"title": "第 2 章 · 一元函数微分学", "desc": "本章 51 题。"}, {"title": "第 3 章 · 一元函数积分学", "desc": "本章 50 题。"}, {"title": "第 4 章 · 向量代数与空间解析几何", "desc": "本章 37 题。"}, {"title": "第 5 章 · 多元函数微积分学", "desc": "本章 39 题。"}, {"title": "第 6 章 · 无穷级数", "desc": "本章 37 题。"}, {"title": "第 7 章 · 常微分方程", "desc": "本章 37 题。"}, {"title": "第 8 章 · 必备公式与难点题型", "desc": "本章 106 题。"}]};
-  var START = "2026-10-29";
-  var PREFIX = "pr-ch";
-  function today(){
-    var d = new Date();
-    return new Date(d.getFullYear(), d.getMonth(), d.getDate());
-  }
-  function parse(s){
-    var p = s.split("-");
-    return new Date(+p[0], +p[1]-1, +p[2]);
-  }
-  var t = today(), title, desc, href, idx;
-
-  if (DATA.mode === "date") {
-    var hit = null;
-    for (var i=0;i<DATA.items.length;i++){
-      var it = DATA.items[i];
-      if (!hit && parse(it.date) <= t && t < parse(it.end)) hit = it;
-    }
-    if (!hit) hit = DATA.items[0];
-    title = "第 " + hit.no + " 组 · " + hit.theme;
-    desc  = "覆盖 " + hit.date + " ~ " + hit.end + "。" + (hit.n ? "，共 " + hit.n + " 题。" : "");
-    href  = PREFIX + hit.no + ".html";
-  } else {
-    var days = Math.floor((t - parse(START)) / 86400000);
-    if (days < 0) days = 0;
-    idx = (days % DATA.items.length);
-    var it2 = DATA.items[idx];
-    title = it2.title;
-    desc  = it2.desc;
-    href  = PREFIX + (idx+1) + ".html";
-  }
-  var a = document.getElementById("dayTitle");
-  if (a) a.textContent = title;
-  var b = document.getElementById("dayDesc");
-  if (b) b.textContent = desc;
-  var c = document.getElementById("dayGo");
-  if (c) c.href = href;
-  var d2 = document.getElementById("dayTag");
-  if (d2) d2.textContent = "今天 " + (t.getMonth()+1) + " 月 " + t.getDate() + " 日";
-})();
-</script>
 </body>
 </html>

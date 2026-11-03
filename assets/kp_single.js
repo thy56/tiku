@@ -83,8 +83,11 @@
     IT.formulas.forEach(function (f) {
       var name = typeof f === "string" ? f : (f.name || "");
       var tex = typeof f === "string" ? f : (f.tex || "");
+      /* 数据里的 tex 可能已自带 $...$（甚至一条里有多个内联公式），
+         已有 $ 就原样输出；没有才用 $$ 包成独立公式块。 */
+      var texHtml = /\$/.test(tex) ? esc(tex) : ('$$' + esc(tex) + '$$');
       h += '<div class="kfrow"><span class="kfname">' + esc(name) + '</span>';
-      h += '<span class="kftex">$$' + esc(tex) + '$$</span></div>';
+      h += '<span class="kftex">' + texHtml + '</span></div>';
     });
     h += '</div></div>';
   }
