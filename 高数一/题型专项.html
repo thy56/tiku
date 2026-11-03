@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>题型专项 · 山东专升本高数一</title>
+<title>题型专项 · 按解题方法练 · 山东专升本高数一</title>
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="stylesheet" href="assets/design.css">
-<link rel="stylesheet" href="assets/type.css">
+<link rel="stylesheet" href="assets/skill.css">
+<meta http-equiv="refresh" content="0;url=skill.html">
 </head>
 <body>
 
@@ -17,84 +17,26 @@
 
 <div class="page-head">
   <div class="in">
-    <h1>题型专项 <span class="badge">2 个题型 · 66 题</span></h1>
-    <div class="sub">按<b>题型</b>组织，不是按章节。比如「证明题」——把全科 30 道证明题聚在一起，再按知识点分块：零点定理、中值定理、不等式证明……一块一块攻。</div>
+    <h1>题型专项</h1>
+    <div class="sub">正在跳转到新版「按解题方法练」…</div>
   </div>
 </div>
 
-<div class="wrap">
-<div class="tp-switch">
-  <a href="type-zm.html">证明题 <i style="font-style:normal;opacity:.75">30</i></a>
-  <a href="type-yy.html">应用题 <i style="font-style:normal;opacity:.75">36</i></a>
-</div>
-
-<div class="tp-grid">
-  <a class="home-card tp-card" href="type-zm.html">
-    <h3>证明题专项</h3>
-    <div class="n"><b id="zmQ">-</b> 题 · <b id="zmK">-</b> 个知识点</div>
-    <div class="n" id="zmDist" style="margin-top:8px;color:#8a8f98">-</div>
-  </a>
-  <a class="home-card tp-card" href="type-yy.html">
-    <h3>应用题专项</h3>
-    <div class="n"><b id="yyQ">-</b> 题 · <b id="yyK">-</b> 个知识点</div>
-    <div class="n" id="yyDist" style="margin-top:8px;color:#8a8f98">-</div>
-  </a>
-</div>
+<div class="main">
+  <div id="main">
+    <div class="sk-box sk-whenbox">
+      <div class="sk-lab">新版入口</div>
+      <div class="sk-body">
+        题型专项已改为<b>按解题方法</b>组织：每个题型给出「什么特征用它 → 固定几步做完 → 套用的题」。<br>
+        如果页面没有自动跳转，请点这里：<a href="skill.html" style="color:#4a7cf5">进入题型专项</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="footer">山东专升本高数一</div>
-<button class="top" id="top" title="回到顶部">↑</button>
 
-<script></script>
 <script src="assets/manifest.js"></script>
 <script src="assets/nav.js"></script>
-<script src="data/questions.js"></script>
-<script src="data/kp_type.js"></script>
-<script src="assets/store.js"></script>
-<script src="../assets/pg_gs_type.js"></script>
-<script src="../assets/hub.js"></script>
-<script src="../assets/mathrender.js"></script>
-<script>(function(){"use strict";var e=document.getElementById("top");if(e)e.onclick=function(){window.scrollTo({top:0,behavior:"smooth"});};})();</script>
-
-<script>
-(function(){
-  "use strict";
-  if(!window.GS_QUESTIONS || !window.GS_KP_TYPE) return;
-  var kp = window.GS_KP_TYPE;
-  function stat(tp){
-    var n = 0, g = {}, order = [];
-    (window.GS_QUESTIONS.questions || []).forEach(function(q){
-      if(q.type !== tp) return;
-      n++;
-      var lb = kp[q.id] || "其他";
-      if(!g[lb]){ g[lb] = 0; order.push(lb); }
-      g[lb]++;
-    });
-    return {n:n, groups:order, cnt:g, kn:order.length};
-  }
-  function set(id, v){ var e = document.getElementById(id); if(e) e.textContent = v; }
-
-  var zm = stat("证明"), yy = stat("应用");
-
-  /* 题型专项.html 的两张卡片 */
-  set("zmQ", zm.n); set("zmK", zm.kn);
-  set("yyQ", yy.n); set("yyK", yy.kn);
-  var dz = document.getElementById("zmDist");
-  if(dz) dz.textContent = zm.groups.map(function(k){ return k + " " + zm.cnt[k]; }).join(" · ");
-  var dy = document.getElementById("yyDist");
-  if(dy) dy.textContent = yy.groups.map(function(k){ return k + " " + yy.cnt[k]; }).join(" · ");
-
-  /* 单题型页头部 */
-  var CUR = window.GS_TYPE;
-  if(CUR){
-    var st = (CUR === "证明") ? zm : (CUR === "应用" ? yy : null);
-    if(st){
-      set("hBadge", st.n + " 题");
-      set("hCntQ", st.n);
-      set("hCntK", st.kn);
-    }
-  }
-})();
-</script>
 </body>
 </html>
